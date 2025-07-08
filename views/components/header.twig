@@ -1,0 +1,11 @@
+<header class="">
+  <a href="inline-block" class="">
+    {{ include('svgs/logo.twig') }}
+  </a>
+  {% for item in primary_menu.items %}
+    <a
+      href="{{ item.url }}"
+      class=""
+    >{{ item.title }}</a>
+  {% endfor %}
+</header>

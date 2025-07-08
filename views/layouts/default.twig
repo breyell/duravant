@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html {{ function('language_attributes') }}>
+
+<head>
+  <meta charset="{{ function('bloginfo', 'charset') }}">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0" name="viewport">
+
+  <link rel="stylesheet" href="https://use.typekit.net/pny5eoy.css">
+
+  {{ function('wp_head') }}
+</head>
+
+<body {{ function('body_class') }}>
+  {# <div>
+    <a class="" href="#main">Skip To Main Content</a>
+    <a class="" href="#footer">Skip to Footer</a>
+  </div> #}
+
+  {% include "components/header.twig" %}
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  {% include "components/footer.twig" %}
+
+  {{ function('wp_footer') }}
+</body>
+
+</html>

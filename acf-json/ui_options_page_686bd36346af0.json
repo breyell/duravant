@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_686bd36346af0",
+    "title": "Global Options",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Global Options",
+    "menu_slug": "global-options",
+    "parent_slug": "none",
+    "advanced_configuration": false,
+    "icon_url": "",
+    "menu_title": "",
+    "position": null,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": false,
+    "modified": 1751896931
+}
