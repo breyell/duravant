@@ -44,7 +44,6 @@
     "wpackagist-plugin/favicon-by-realfavicongenerator": "^1.3",
     "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "^3.2",
     "wpackagist-plugin/safe-svg": "^2.3",
-    "wpackagist-plugin/query-monitor": "^3.18",
     "junaidbhura/acf-extended-pro": "^0.9.1"
   },
   "extra": {
@@ -57,5 +56,8 @@
       "composer/installers": true,
       "junaidbhura/composer-wp-pro-plugins": true
     }
+  },
+  "require-dev": {
+    "wpackagist-plugin/query-monitor": "^3.18"
   }
 }
