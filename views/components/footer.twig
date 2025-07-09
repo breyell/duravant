@@ -1,7 +1,6 @@
 <footer
   id="footer"
-  class="fluid-grid text-white py-12 lg:pt-24"
-  style="background-color:#1d222a;"
+  class="fluid-grid text-white bg-gray-dark py-12 lg:pt-24"
 >
   <div class="span-content grid grid-cols-subgrid gap-y-10">
     <div class="col-span-12 lg:col-span-4 flex flex-col">
@@ -25,21 +24,27 @@
     </div>
     <div class="grid grid-cols-subgrid col-span-12 lg:col-span-8 row-span-2 gap-y-7.5">
       {% for column in footer_menu.items %}
-        <div class="flex flex-col gap-y-7.5 col-span-6 lg:col-span-2">
-          {% for group in column.children %}
-            <div class="flex flex-col gap-y-2 5">
-              <header class="text-h5">{{ group.title }}</header>
-              <div class="flex flex-col gap-y-2.5">
-                {% for link in group.children %}
-                  <a
-                    href="{{ link.url }}"
-                    class="text-body-medium hover:text-blue"
-                  >{{ link.title }}</a>
-                {% endfor %}
+        {% if loop.index is odd %}
+          <div class="col-span-6 lg:col-span-4 flex flex-col gap-y-7.5 lg:gap-fluid-grid-gap lg:grid lg:grid-cols-subgrid">
+        {% endif %}
+          <div class="flex flex-col gap-y-7.5 col-span-6 lg:col-span-2">
+            {% for group in column.children %}
+              <div class="flex flex-col gap-y-2 5">
+                <header class="text-h5">{{ group.title }}</header>
+                <div class="flex flex-col gap-y-2.5">
+                  {% for link in group.children %}
+                    <a
+                      href="{{ link.url }}"
+                      class="text-body-medium hover:text-blue"
+                    >{{ link.title }}</a>
+                  {% endfor %}
+                </div>
               </div>
-            </div>
-          {% endfor %}
-        </div>
+            {% endfor %}
+          </div>
+        {% if loop.index is even or loop.last %}
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
     <p

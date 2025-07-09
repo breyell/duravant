@@ -5,6 +5,7 @@ if (!function_exists('timber_vite_menus')) :
 	{
 		register_nav_menus([
 			'primary' => 'Primary',
+			'utility' => 'Utility',
 			'footer' => 'Footer',
 		]);
 	}

@@ -19,16 +19,33 @@
     {
       "type": "composer",
       "url": "https://composer.deliciousbrains.com/C92E1FD54BD2ADCED9CE977348CA6176"
-    }
+    },
+		{
+			"type": "package",
+			"package": {
+					"name": "junaidbhura/acf-extended-pro",
+					"version": "0.9.1",
+					"type": "wordpress-plugin",
+					"dist": {
+							"type": "zip",
+							"url": "https://www.acf-extended.com/"
+					},
+					"require": {
+							"junaidbhura/composer-wp-pro-plugins": "*"
+					}
+			}
+		}
   ],
   "require": {
     "php": ">=8.4",
     "timber/timber": "^2.3",
     "wpengine/advanced-custom-fields-pro": "^6.3.12",
-    "wpackagist-plugin/svg-support": "^2.5",
     "wpackagist-plugin/wordpress-seo": "^24.8",
     "wpackagist-plugin/favicon-by-realfavicongenerator": "^1.3",
-    "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "^3.2"
+    "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "^3.2",
+    "wpackagist-plugin/safe-svg": "^2.3",
+    "wpackagist-plugin/query-monitor": "^3.18",
+    "junaidbhura/acf-extended-pro": "^0.9.1"
   },
   "extra": {
     "installer-paths": {
@@ -37,7 +54,8 @@
   },
   "config": {
     "allow-plugins": {
-      "composer/installers": true
+      "composer/installers": true,
+      "junaidbhura/composer-wp-pro-plugins": true
     }
   }
 }

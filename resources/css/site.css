@@ -4,11 +4,12 @@
 
 @theme {
 	--color-blue: #80D3ED;
-	--color-blue-light: #B1D9E1;
+	--color-blue-light: #BFE9F6;
 	--color-blue-dark: #2DA0C3;
-	--color-gray: #4A4453;
+	--color-blue-pale: #DFF4FB;
+	--color-gray: #3A4453;
 	--color-gray-light: #BEC8D2;
-	--color-gray-dark: #152130;
+	--color-gray-dark: #1D222A;
 
 	--font-aktiv-grotesk-extended: "aktiv-grotesk-extended", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font-aptos: "aptos", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
