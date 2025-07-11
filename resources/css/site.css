@@ -31,7 +31,7 @@
 	} */
 
 	.button-small {
-		@apply flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.5 pb-1.5 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
+		@apply flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 py-2 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
 	}
 }
 
