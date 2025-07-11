@@ -20,12 +20,20 @@
 	/* --font-weight-light: 300; */
 	--font-weight-normal: 400;
 	/* --font-weight-medium: 500; */
-	/* --font-weight-semibold: 600; */
+	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
 	/* --font-weight-extrabold: 800; */
 	/* --font-weight-black: 900; */
 }
 
+@layer components {
+	/* .button {
+	} */
+
+	.button-small {
+		@apply flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.5 pb-1.5 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
+	}
+}
 
 	/* .focus-base {
 		@apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dotted;
@@ -38,9 +46,3 @@
 	.focus-default-light {
 		@apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dotted focus-visible:outline-white;
 	} */
-
-/* @layer theme {
-	html {
-		@apply text-gray-dark;
-	}
-} */

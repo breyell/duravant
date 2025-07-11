@@ -1,0 +1,11 @@
+<header class="lg:hidden">
+  <a href="inline-block" class="">
+    <img src="{{ theme.path }}/dist/svgs/logo.svg" alt="">
+  </a>
+  {% for item in primary_menu.items %}
+    <a
+      href="{{ item.url }}"
+      class=""
+    >{{ item.title }}</a>
+  {% endfor %}
+</header>
