@@ -7,10 +7,12 @@
       <ul class="flex justify-end gap-x-3.5">
         {% for item in utility_menu.items %}
           {% if loop.last %}
-            <a
-              href="{{ item.link }}"
-              class="button-small ml-2.5"
-            >{{ item.title }}</a>
+            <li class="">
+              <a
+                href="{{ item.link }}"
+                class="button-small ml-2.5"
+              >{{ item.title }}</a>
+            </li>
           {% else %}
             <li class="">
               <a
