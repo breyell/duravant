@@ -11,9 +11,9 @@
       }) }}
     </div>
     <div class="col-span-12">
-      {# <div class="w-screen relative left-1/2 right-1/2 mx-[-50vw] px(--col-width)"> #}
-        {# mobile #}
-        <ul class="flex gap-x-6 py-12 snap-x overflow-x-auto lg:hidden">
+      {# mobile #}
+      <div class="w-screen relative left-1/2 right-1/2 mx-[-50vw]">
+        <ul class="flex gap-x-6 py-12 snap-x overflow-x-auto px-(--col-gap) scroll-pl-(--col-gap) lg:hidden">
           {% for item in 1..10 %}
             <li class="w-48 shrink-0 snap-start">
               <a
@@ -36,34 +36,34 @@
             </li>
           {% endfor %}
         </ul>
+      </div>
 
-        {# desktop #}
-        <ul class="hidden lg:grid grid-cols-5 gap-7 mt-12">
-          {% for item in 1..10 %}
-            <li class="relative w-full aspect-square overflow-hidden">
-              <a
-                href=""
-                class="group size-full"
+      {# desktop #}
+      <ul class="hidden lg:grid grid-cols-5 gap-7 mt-12">
+        {% for item in 1..10 %}
+          <li class="relative w-full aspect-square overflow-hidden">
+            <a
+              href=""
+              class="group size-full"
+            >
+              <img
+                class="size-full"
+                src="https://picsum.photos/600/400"
+                alt=""
               >
-                <img
-                  class="size-full"
-                  src="https://picsum.photos/600/400"
-                  alt=""
-                >
-                <div class="absolute z-10 inset-0 bg-linear-to-t from-gray-dark to-65% to-white/0"></div>
-                <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5 xl:text-h4">Agriculture</h3>
-                <div class="absolute z-30 top-full left-0 flex flex-col justify-end size-full p-4 bg-blue text-gray-dark transition-transform group-hover:-translate-y-full">
-                  <h3 class="text-h5 xl:text-h4">Agriculture</h3>
-                  <div class="flex gap-x-1">
-                    <p class="text-body-medium">From ingredient to impact, equipment  that boosts brand experiences</p>
-                    {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
-                  </div>
+              <div class="absolute z-10 inset-0 bg-linear-to-t from-gray-dark to-65% to-white/0"></div>
+              <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5 xl:text-h4">Agriculture</h3>
+              <div class="absolute z-30 top-full left-0 flex flex-col justify-end size-full p-4 bg-blue text-gray-dark transition-transform group-hover:-translate-y-full">
+                <h3 class="text-h5 xl:text-h4">Agriculture</h3>
+                <div class="flex gap-x-1">
+                  <p class="text-body-medium">From ingredient to impact, equipment  that boosts brand experiences</p>
+                  {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
                 </div>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {# </div> #}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
     <div class="col-span-12 lg:hidden">
       {{ include('partials/arrow-link-small.twig', {
