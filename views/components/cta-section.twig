@@ -1,0 +1,59 @@
+{# mobile #}
+<section class="fluid-grid bg-blue lg:hidden">
+  {% if image %}
+    <div class="col-start-[full-start] col-end-[content-end] sm:col-end-[col-10]">
+      {{ ResponsiveImage(image, {
+        class: 'h-96 rounded-r-full object-cover object-right',
+      }) }}
+    </div>
+  {% endif %}
+  <div class="span-content">
+    <div class="pt-12 pb-24">
+      {% if heading %}
+        <h2 class="text-h3">{{ heading }}</h2>
+      {% endif %}
+      {% if body %}
+        <p class="text-body-medium lg:text-body-large mt-3">{{ body }}</p>
+      {% endif %}
+      {% if links %}
+        <div class="mt-6">
+          {% for item in links %}
+            <a
+              class="button-tertiary"
+              href="{{ item.link.link }}"
+              target="{{ item.link.target | default('_self') }}"
+            >{{ item.link.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# desktop #}
+<section class="hidden lg:grid fluid-grid bg-blue">
+  <div class="col-start-[col-4] col-end-[full-end] row-start-1">
+    {{ ResponsiveImage(image, {
+      class: 'h-[28rem] object-cover',
+    }) }}
+  </div>
+  <div class="col-start-[content-start] col-end-[col-7] row-start-1 bg-blue rounded-r-full flex flex-col justify-center pr-36">
+    {% if heading %}
+      <h2 class="text-h3">{{ heading }}</h2>
+    {% endif %}
+    {% if body %}
+      <p class="text-body-medium lg:text-body-large mt-4">{{ body }}</p>
+    {% endif %}
+    {% if links %}
+      <div class="mt-4">
+        {% for item in links %}
+          <a
+            class="button-tertiary"
+            href="{{ item.link.link }}"
+            target="{{ item.link.target | default('_self') }}"
+          >{{ item.link.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

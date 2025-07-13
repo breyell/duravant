@@ -31,11 +31,20 @@
 }
 
 @layer components {
-	/* .button {
-	} */
+	.button-primary {
+		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+	}
+
+	.button-secondary {
+		@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
+	}
+
+	.button-tertiary {
+		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-pale hover:border-blue-pale hover:text-black;
+	}
 
 	.button-small {
-		@apply flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.25 pb-1.75 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
+		@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.25 pb-1.75 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
 	}
 }
 
