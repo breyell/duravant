@@ -31,13 +31,13 @@
 </section>
 
 {# desktop #}
-<section class="hidden lg:grid fluid-grid bg-blue">
-  <div class="col-start-[col-4] col-end-[full-end] row-start-1">
+<section class="hidden relative lg:grid fluid-grid bg-blue">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 size-full max-w-[var(--breakpoint-2xl)] overflow-hidden">
     {{ ResponsiveImage(image, {
-      class: 'h-[28rem] object-cover',
+      class: 'ml-auto w-9/12 xl:w-[70%] h-full object-cover',
     }) }}
   </div>
-  <div class="col-start-[content-start] col-end-[col-7] row-start-1 bg-blue rounded-r-full flex flex-col justify-center pr-36">
+  <div class="relative h-[28rem] col-start-[content-start] col-end-[col-7] row-start-1 bg-blue rounded-r-full flex flex-col justify-center pr-36">
     {% if heading %}
       <h2 class="text-h3">{{ heading }}</h2>
     {% endif %}
