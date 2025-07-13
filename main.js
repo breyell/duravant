@@ -6,12 +6,13 @@ import focus from '@alpinejs/focus'
 import autoAnimate from '@formkit/auto-animate'
 
 // import gaLink from './resources/js/alpine/ga-link.js'
+import countUp from './resources/js/alpine/count-up.js'
 
 Alpine.plugin([focus])
 
 window.Alpine = Alpine
 
-// Alpine.data('gaLink', gaLink)
+Alpine.data('countUp', countUp)
 
 Alpine.directive('auto-animate', (el, { expression }, { evaluate }) => {
 	autoAnimate(el, (expression && evaluate(expression)) || {})

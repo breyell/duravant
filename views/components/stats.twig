@@ -1,0 +1,28 @@
+<section class="py-24">
+    <div class="fluid-grid">
+      <div class="span-content sm:col-start-[col-2] sm:col-end-[col-12] md:col-start-[col-3] md:col-end-[col-11] lg:col-start-[content-start] lg:col-end-[content-end] xl:col-start-[col-2] xl:col-end-[col-12]">
+        <div class="flex flex-wrap gap-6 lg:gap-12">
+          {% for stat in stats %}
+            <div class="w-[calc(50%-0.75rem)] lg:w-[calc(25%-2.25rem)]">
+              <div class="text-h1">
+                {% if stat.type == 'default' %}
+                  <span
+                    x-data="countUp({{ stat.number }}, '{{ stat.prefix }}', '{{ stat.suffix }}')"
+                    class=""
+                  >{{ stat.prefix }}{{ stat.number }}{{ stat.suffix }}</span>
+                {% else %}
+                  <div class="flex">
+                    <span x-data="countUp(24, '', '')">24</span>
+                    <span>/</span>
+                    <span x-data="countUp(7, '', '')">7</span>
+                  </div>
+                {% endif %}
+              </div>
+              <p class="text-body-small lg:text-body-medium py-2.5">{{ stat.body }}</p>
+              <div class="w-full h-1 gradient-light"></div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>

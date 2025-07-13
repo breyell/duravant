@@ -26,6 +26,10 @@
 	/* --font-weight-black: 900; */
 }
 
+@utility gradient-light {
+	@apply bg-linear-to-r from-blue to-blue-dark;
+}
+
 @layer components {
 	/* .button {
 	} */

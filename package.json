@@ -9,19 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-		"@formkit/auto-animate": "^0.8.2",
-		"@tailwindcss/container-queries": "^0.1.1",
-		"@tailwindcss/forms": "^0.5.10",
-		"@tailwindcss/typography": "^0.5.16",
-		"@tailwindcss/vite": "^4.1.11",
-		"alpinejs": "^3.14.9",
-		"autoprefixer": "^10.4.21",
-		"postcss": "^8.5.6",
-		"postcss-import": "^16.1.1",
-		"tailwindcss": "^4.1.11",
-		"vite": "^6.3.5",
     "@alpinejs/focus": "^3.14.9",
-    "prettier": "^3.6.2"
+    "@formkit/auto-animate": "^0.8.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.11",
+    "alpinejs": "^3.14.9",
+    "autoprefixer": "^10.4.21",
+    "countup.js": "^2.9.0",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
   },
-	"packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
+  "packageManager": "pnpm@10.13.1"
 }
