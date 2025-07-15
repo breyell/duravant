@@ -3,13 +3,14 @@
 @import "./typography.css";
 
 @theme {
-	--color-blue: #80D3ED;
-	--color-blue-light: #BFE9F6;
 	--color-blue-dark: #2DA0C3;
+	--color-blue: #80D3ED;
+	--color-blue-light: #93DAF0;
+	--color-blue-baby: #BFE9F6;
 	--color-blue-pale: #DFF4FB;
+	--color-gray-dark: #1D222A;
 	--color-gray: #3A4453;
 	--color-gray-light: #BEC8D2;
-	--color-gray-dark: #1D222A;
 
 	--font-aktiv-grotesk-extended: "aktiv-grotesk-extended", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font-aptos: "aptos", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -26,8 +27,20 @@
 	/* --font-weight-black: 900; */
 }
 
+@utility gradient {
+	@apply from-blue-dark to-blue-dark/0;
+}
+
+@utility gradient-dark {
+	@apply from-[11%] from-blue via-[43%] via-[#1490AC] to-[89%] to-[#064758];
+}
+
 @utility gradient-light {
-	@apply bg-linear-to-r from-blue to-blue-dark;
+	@apply from-blue-baby to-blue-dark;
+}
+
+@utility gradient-gray {
+	@apply from-55% from-white/0 to-gray-dark;
 }
 
 @layer components {
@@ -40,11 +53,11 @@
 	}
 
 	.button-tertiary {
-		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-pale hover:border-blue-pale hover:text-black;
+		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
 	}
 
 	.button-small {
-		@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.25 pb-1.75 placeholder-yellow-300 rounded-full transition-colors hover:bg-blue-dark;
+		@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 pt-2.25 pb-1.75 rounded-full transition-colors hover:bg-blue-dark;
 	}
 }
 
