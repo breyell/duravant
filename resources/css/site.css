@@ -28,7 +28,7 @@
 }
 
 @utility gradient {
-	@apply from-blue-dark to-blue-dark/0;
+	@apply from-blue-dark/0 to-blue-dark;
 }
 
 @utility gradient-dark {

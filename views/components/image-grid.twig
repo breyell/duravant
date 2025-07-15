@@ -1,0 +1,37 @@
+<section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mx-auto max-w-(--breakpoint-2xl)">
+  {% if image_one %}
+    {{ ResponsiveImage(image_one, {
+      class: 'col-span-2 aspect-[2] w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_two %}
+    {{ ResponsiveImage(image_two, {
+      class: 'col-span-1 aspect-square w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_three %}
+    {{ ResponsiveImage(image_three, {
+      class: 'hidden lg:block col-span-1 lg:col-span-2 aspect-square lg:aspect-[2] w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_four %}
+    {{ ResponsiveImage(image_four, {
+      class: 'col-span-1 aspect-square w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_five %}
+    {{ ResponsiveImage(image_five, {
+      class: 'col-span-2 aspect-[2] w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_six %}
+    {{ ResponsiveImage(image_six, {
+      class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
+    }) }}
+  {% endif %}
+  {% if image_seven %}
+    {{ ResponsiveImage(image_seven, {
+      class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
+    }) }}
+  {% endif %}
+</section>
