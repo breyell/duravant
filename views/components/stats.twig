@@ -4,20 +4,7 @@
         <div class="flex flex-wrap gap-6 lg:gap-12">
           {% for stat in stats %}
             <div class="w-[calc(50%-0.75rem)] lg:w-[calc(25%-2.25rem)]">
-              <div class="text-h1">
-                {% if stat.type == 'default' %}
-                  <span
-                    x-data="countUp({{ stat.number }}, '{{ stat.prefix }}', '{{ stat.suffix }}')"
-                    class=""
-                  >{{ stat.prefix }}{{ stat.number }}{{ stat.suffix }}</span>
-                {% else %}
-                  <div class="flex">
-                    <span x-data="countUp(24, '', '')">24</span>
-                    <span>/</span>
-                    <span x-data="countUp(7, '', '')">7</span>
-                  </div>
-                {% endif %}
-              </div>
+              <div class="text-h1">{{ stat.number }}</div>
               <p class="text-body-small lg:text-body-medium py-2.5">{{ stat.body }}</p>
               <div class="w-full h-1 gradient-light bg-gradient-to-r"></div>
             </div>

@@ -1,0 +1,28 @@
+<section class="fluid-grid bg-gray text-white py-16">
+  <div class="span-content grid grid-cols-subgrid gap-y-12">
+    <div class="col-span-12 md:col-span-5">
+      <h2 class="text-h2 text-balance">{{ heading }}</h2>
+      {% if body %}
+        <p class="text-body-medium my-3">{{ body }}</p>
+      {% endif %}
+      {% if links %}
+        <div class="mt-6">
+          {% for item in links %}
+            <a
+              class="button-primary"
+              href="{{ item.link.link }}"
+              target="{{ item.link.target | default('_self') }}"
+            >{{ item.link.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-span-12 md:col-span-7 flex flex-wrap gap-x-5 gap-y-8 justify-center">
+      {% for logo in logos %}
+        {{ ResponsiveImage(logo.image, {
+          class: "",
+        }) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

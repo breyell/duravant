@@ -1,0 +1,12 @@
+<section class="fluid-grid py-11 gradient-light bg-linear-to-br">
+  <div class="span-content grid grid-cols-subgrid">
+    {% if heading %}
+      <h2 class="col-span-12 md:col-span-8 md:col-start-3 text-h3 text-gray-dark text-center mb-8">{{ heading }}</h2>
+    {% endif %}
+    <div class="col-span-12 md:col-span-10 md:col-start-2">
+      <div class="w-full aspect-video *:size-full">
+        {{ video }}
+      </div>
+    </div>
+  </div>
+</section>

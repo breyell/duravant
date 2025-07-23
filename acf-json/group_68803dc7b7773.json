@@ -1,9 +1,9 @@
 {
-    "key": "group_68766307e49ca",
-    "title": "Component - Hero (Home)",
+    "key": "group_68803dc7b7773",
+    "title": "Component - Emerging Markets Overview",
     "fields": [
         {
-            "key": "field_6876630826ab4",
+            "key": "field_68803dc8125ca",
             "label": "Heading",
             "name": "heading",
             "aria-label": "",
@@ -24,7 +24,7 @@
             "append": ""
         },
         {
-            "key": "field_6876633626ab5",
+            "key": "field_68803dfa125cb",
             "label": "Body",
             "name": "body",
             "aria-label": "",
@@ -46,9 +46,9 @@
             "new_lines": ""
         },
         {
-            "key": "field_6876634a26ab6",
-            "label": "Links",
-            "name": "links",
+            "key": "field_68803e07125cc",
+            "label": "Countries",
+            "name": "countries",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -65,11 +65,88 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
+            "button_label": "Add Country",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68803e20125cd",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68803e07125cc"
+                },
+                {
+                    "key": "field_68803e2c125ce",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "id",
+                    "library": "all",
+                    "upload_folder": "",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_68803e07125cc"
+                }
+            ]
+        },
+        {
+            "key": "field_68803e3d125cf",
+            "label": "Links",
+            "name": "links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 1,
+            "collapsed": "",
             "button_label": "Add Link",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6876635326ab7",
+                    "key": "field_68803e4f125d0",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
@@ -84,14 +161,14 @@
                     },
                     "return_format": "array",
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_6876634a26ab6"
+                    "parent_repeater": "field_68803e3d125cf"
                 }
             ]
         },
         {
-            "key": "field_687675475d544",
-            "label": "Background Image (Desktop)",
-            "name": "background_image_desktop",
+            "key": "field_68803e60125d1",
+            "label": "Image",
+            "name": "image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -116,56 +193,6 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
-        },
-        {
-            "key": "field_68803be1928d3",
-            "label": "Background Image (Mobile)",
-            "name": "background_image_mobile",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "uploader": "",
-            "return_format": "id",
-            "library": "all",
-            "upload_folder": "",
-            "acfe_thumbnail": 0,
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_687675505d545",
-            "label": "Mux Video Playback ID",
-            "name": "mux_video_playback_id",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Can be found on <a href=\"https:\/\/dashboard.mux.com\" target=\"_blank\">Mux.com<\/a> after a video is uploaded.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -193,5 +220,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753234409
+    "modified": 1753235108
 }

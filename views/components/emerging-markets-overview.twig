@@ -1,0 +1,31 @@
+<section class="fluid-grid my-8">
+  <div class="span-content grid grid-cols-subgrid gap-y-8">
+    <div class="col-span-12 md:col-span-6 lg:col-span-5">
+      {{ ResponsiveImage(image, {
+        class: 'rounded-r-full -ml-4 md:-ml-8 lg:-ml-12 w-[calc(100%+1rem)] md:w-[calc(100%+2rem)] lg:w-[calc(100%+3rem)] max-w-none aspect-[1.1]',
+      }) }}
+    </div>
+    <div class="col-span-12 md:col-span-6 lg:col-span-7 lg:self-center">
+      <h2 class="text-h2 text-balance">{{ heading }}</h2>
+      <p class="text-body-medium mt-2.5">{{ body }}</p>
+      <div class="h-1 w-full my-6 lg:my-10 gradient-light bg-gradient-to-r"></div>
+      <ul class="flex flex-col gap-y-8 lg:flex-row lg:justify-between ml-5 lg:ml-0">
+        {% for country in countries %}
+          <li class="flex gap-3 lg:flex-col lg:justify-center">
+            {{ ResponsiveImage(country.image, {
+              class: 'h-6 w-auto object-contain',
+            }) }}
+            <p class="text-h4">{{ country.name }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      {% if links %}
+        <div class="mt-8 lg:mt-12">
+          {% for item in links %}
+            {{ include('partials/arrow-link-large.twig', item.link) }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

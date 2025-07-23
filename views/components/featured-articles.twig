@@ -1,0 +1,26 @@
+<section class="fluid-grid my-12 lg:my-24">
+  <div class="span-content grid grid-cols-subgrid">
+    {# {% for article in articles %} #}
+    {% for article in 1..3 %}
+      <article class="col-span-12 md:col-span-4">
+        {# {{ ResponsiveImage(article.image, {
+          class: '',
+        }) }} #}
+        <img
+          class="w-full aspect-[1.44] object-cover"
+          src="https://picsum.photos/1200/900"
+          alt=""
+        >
+        <h2 class="text-h3 mt-6">Lorem ipsum dolor sit amet consect</h2>
+        <div class="w-full h-1 gradient-light bg-linear-to-r my-2.5"></div>
+        <p class="text-body-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum reprehenderit sapiente earum iste nobis ullam, modi eaque, ad, ducimus rerum voluptatem voluptatum cum! Ducimus esse nisi magni maxime debitis delectus?</p>
+        <div class="mt-2.5">
+          {{ include('partials/arrow-link-small.twig', {
+            title: 'Lorem ipsum',
+            link: '#',
+          }) }}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

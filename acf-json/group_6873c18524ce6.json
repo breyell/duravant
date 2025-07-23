@@ -26,120 +26,14 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6873d87af376b",
-                    "label": "Type",
-                    "name": "type",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "default": "Default",
-                        "247": "24\/7"
-                    },
-                    "default_value": false,
-                    "return_format": "value",
-                    "multiple": 0,
-                    "max": "",
-                    "allow_custom": 0,
-                    "placeholder": "",
-                    "search_placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "create_options": 0,
-                    "save_options": 0,
-                    "min": "",
-                    "parent_repeater": "field_6873c52e9814e"
-                },
-                {
-                    "key": "field_6873c5449814f",
-                    "label": "Prefix",
-                    "name": "prefix",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6873d87af376b",
-                                "operator": "!=",
-                                "value": "247"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_6873c52e9814e"
-                },
-                {
                     "key": "field_6873c57398150",
                     "label": "Number",
                     "name": "number",
                     "aria-label": "",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6873d87af376b",
-                                "operator": "!=",
-                                "value": "247"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "min": "",
-                    "max": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "step": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_6873c52e9814e"
-                },
-                {
-                    "key": "field_6873c57d98151",
-                    "label": "Suffix",
-                    "name": "suffix",
-                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6873d87af376b",
-                                "operator": "!=",
-                                "value": "247"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "33",
                         "class": "",
@@ -204,5 +98,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1752423589
+    "modified": 1753201603
 }

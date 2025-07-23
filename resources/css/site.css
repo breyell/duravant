@@ -45,7 +45,7 @@
 
 @layer components {
 	.button-primary {
-		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+		@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
 	}
 
 	.button-secondary {
