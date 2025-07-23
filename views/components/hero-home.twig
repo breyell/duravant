@@ -1,8 +1,11 @@
 <section class="relative fluid-grid text-white bg-black py-12 lg:py-20">
   <div class="absolute inset-0 mx-auto">
   {# max-w-(--breakpoint-2xl) #}
-    {{ ResponsiveImage(background_image, {
-      class: 'size-full object-cover',
+    {{ ResponsiveImage(background_image_mobile, {
+      class: 'md:hidden size-full object-cover',
+    }) }}
+    {{ ResponsiveImage(background_image_desktop, {
+      class: 'hidden md:block size-full object-cover',
     }) }}
   </div>
   <div class="relative z-10 span-content grid grid-cols-subgrid gap-y-6">
