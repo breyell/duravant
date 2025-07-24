@@ -114,11 +114,13 @@
             </div>
           {% else %}
             {% if item.is_button %}
-              <a
-                href="{{ item.link }}"
-                target="{{ item.target ?: '_self' }}"
-                class="button-primary"
-              >{{ item.title }}</a>
+              <div class="flex items-center">
+                <a
+                  href="{{ item.link }}"
+                  target="{{ item.target ?: '_self' }}"
+                  class="button-primary"
+                >{{ item.title }}</a>
+              </div>
             {% else %}
               <a
                 href="{{ item.link }}"
