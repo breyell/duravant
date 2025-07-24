@@ -71,11 +71,19 @@
                     class="text-h6 p-3 -ml-3"
                   >{{ item.title }}</a>
                 {% else %}
-                  <a
-                    class="block text-h6 p-3 -ml-3"
-                    href="{{ item.link }}"
-                    target="{{ item.target ?: '_self' }}"
-                  >{{ item.title }}</a>
+                  {% if item.is_button %}
+                    <a
+                      class="button-primary"
+                      href="{{ item.link }}"
+                      target="{{ item.target ?: '_self' }}"
+                    >{{ item.title }}</a>
+                  {% else %}
+                    <a
+                      class="block text-h6 p-3 -ml-3"
+                      href="{{ item.link }}"
+                      target="{{ item.target ?: '_self' }}"
+                    >{{ item.title }}</a>
+                  {% endif %}
                 {% endif %}
               </div>
               {% if item.children %}
@@ -87,22 +95,14 @@
         <div class="fluid-grid bg-gray text-white py-10">
           <nav class="span-content">
             <ul class="flex flex-col gap-y-3.5">
-              {% set button = utility_menu.items|last %}
-                <li class="flex mb-6.5">
-                  <a
-                    href="{{ button.link }}"
-                    class="button-primary"
-                  >{{ button.title }}</a>
-                </li>
               {% for item in utility_menu.items %}
-                {% if not loop.last %}
-                  <li class="">
-                    <a
-                      href="{{ item.link }}"
-                      class="text-body-md hover:underline"
-                    >{{ item.title }}</a>
-                  </li>
-                {% endif %}
+                <li class="">
+                  <a
+                    href="{{ item.link }}"
+                    target="{{ item.target ?: '_self' }}"
+                    class="text-body-md hover:underline"
+                  >{{ item.title }}</a>
+                </li>
               {% endfor %}
             </ul>
           </nav>

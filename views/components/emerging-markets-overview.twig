@@ -22,7 +22,10 @@
       {% if links %}
         <div class="mt-8 lg:mt-12">
           {% for item in links %}
-            {{ include('partials/arrow-link-large.twig', item.link) }}
+            {{ include('partials/arrow-link-large.twig', {
+              ...item.link,
+              link: item.link.url,
+            }) }}
           {% endfor %}
         </div>
       {% endif %}

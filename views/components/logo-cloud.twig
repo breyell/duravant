@@ -10,7 +10,7 @@
           {% for item in links %}
             <a
               class="button-primary"
-              href="{{ item.link.link }}"
+              href="{{ item.link.url }}"
               target="{{ item.link.target | default('_self') }}"
             >{{ item.link.title }}</a>
           {% endfor %}

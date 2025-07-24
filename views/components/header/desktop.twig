@@ -6,21 +6,13 @@
     <nav class="span-content">
       <ul class="flex justify-end gap-x-3.5">
         {% for item in utility_menu.items %}
-          {% if loop.last %}
-            <li class="">
-              <a
-                href="{{ item.link }}"
-                class="button-small ml-2.5"
-              >{{ item.title }}</a>
-            </li>
-          {% else %}
-            <li class="">
-              <a
-                href="{{ item.link }}"
-                class="text-body-md hover:underline"
-              >{{ item.title }}</a>
-            </li>
-          {% endif %}
+          <li class="">
+            <a
+              href="{{ item.link }}"
+              target="{{ item.target ?: '_self' }}"
+              class="text-body-md hover:underline"
+            >{{ item.title }}</a>
+          </li>
         {% endfor %}
       </ul>
     </nav>
@@ -121,10 +113,19 @@
               </div>
             </div>
           {% else %}
-            <a
-              href="{{ item.link }}"
-              class="text-h6 flex items-center py-3 px-2 hover:underline hover:decoration-4 hover:underline-offset-4 hover:decoration-gray"
-            >{{ item.title }}</a>
+            {% if item.is_button %}
+              <a
+                href="{{ item.link }}"
+                target="{{ item.target ?: '_self' }}"
+                class="button-primary"
+              >{{ item.title }}</a>
+            {% else %}
+              <a
+                href="{{ item.link }}"
+                target="{{ item.target ?: '_self' }}"
+                class="text-h6 flex items-center py-3 px-2 hover:underline hover:decoration-4 hover:underline-offset-4 hover:decoration-gray"
+              >{{ item.title }}</a>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
