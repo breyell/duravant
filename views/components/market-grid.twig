@@ -32,7 +32,7 @@
                 }) }}
                 <div class="bg-blue text-gray-dark p-2.5 min-h-36 flex gap-x-1">
                   <div class="flex flex-col justify-end">
-                    <h3 class="text-h5">{{ market.title }}</h3>
+                    <h3 class="text-h5 text-balance">{{ market.title }}</h3>
                     <p class="text-body-small">{{ market.intro }}</p>
                   </div>
                   {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
@@ -57,7 +57,7 @@
               <div class="absolute z-10 inset-0 bg-linear-to-t from-gray-dark to-65% to-white/0"></div>
               <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5 xl:text-h4">{{ market.title }}</h3>
               <div class="absolute z-30 top-full left-0 flex flex-col justify-end size-full p-4 bg-blue text-gray-dark transition-transform group-hover:-translate-y-full">
-                <h3 class="text-h5 xl:text-h4">{{ market.title }}</h3>
+                <h3 class="text-h5 xl:text-h4 text-balance">{{ market.title }}</h3>
                 <div class="flex gap-x-1">
                   <p class="text-body-medium">{{ market.intro }}</p>
                   {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
