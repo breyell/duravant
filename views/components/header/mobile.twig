@@ -1,5 +1,8 @@
 <header
-  x-data="{ mobileMenuOpen: false, activeIndex: 0 }"
+  x-data="{
+    mobileMenuOpen: true,
+    activeIndex: 0,
+  }"
   class="relative after:absolute after:z-10 after:bottom-0 after:left-0 after:h-px after:w-full after:bg-black lg:hidden"
 >
   <div class="fluid-grid">
@@ -62,12 +65,22 @@
                   -mb-3
                 {% endif %}
               ">
-                <button
-                  @click="activeIndex = {{ loop.index }}"
-                  class="text-h6 p-3 -ml-3"
-                >{{ item.title }}</a>
+                {% if item.children %}
+                  <button
+                    @click="activeIndex = {{ loop.index }}"
+                    class="text-h6 p-3 -ml-3"
+                  >{{ item.title }}</a>
+                {% else %}
+                  <a
+                    class="block text-h6 p-3 -ml-3"
+                    href="{{ item.link }}"
+                    target="{{ item.target ?: '_self' }}"
+                  >{{ item.title }}</a>
+                {% endif %}
               </div>
-              {{ include('components/header/mobile-submenu.twig') }}
+              {% if item.children %}
+                {{ include('components/header/mobile-submenu.twig') }}
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -78,7 +91,7 @@
                 <li class="flex mb-6.5">
                   <a
                     href="{{ button.link }}"
-                    class="button-small"
+                    class="button-primary"
                   >{{ button.title }}</a>
                 </li>
               {% for item in utility_menu.items %}

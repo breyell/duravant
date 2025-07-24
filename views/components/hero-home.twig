@@ -12,12 +12,12 @@
     <div class="hidden lg:block lg:col-span-5 self-center">
       <h1 class="text-h1 text-balance">{{ heading }}</h1>
       <p class="text-body-large mt-3">{{ body }}</p>
-      {% if links|length %}
+      {% if links %}
         <div class="flex flex-wrap mt-6 gap-6">
           {% for item in links %}
             <a
-              class="{{ loop.first ? 'button-tertiary' : 'button-secondary' }}"
-              href="{{ item.link.title }}"
+              class="{{ loop.first ? 'button-primary' : 'button-secondary' }}"
+              href="{{ item.link.url }}"
               target="{{ item.link.target | default('_self') }}"
             >{{ item.link.title }}</a>
           {% endfor %}
@@ -66,12 +66,12 @@
     <div class="block lg:hidden col-span-12">
       <h1 class="text-h1 text-balance">{{ heading }}</h1>
       <p class="text-body-large mt-3">{{ body }}</p>
-      {% if links|length %}
+      {% if links %}
         <div class="mt-6 flex flex-wrap gap-6">
           {% for item in links %}
             <a
-              class="{{ loop.first ? 'button-tertiary' : 'button-secondary' }}"
-              href="{{ item.link.title }}"
+              class="{{ loop.first ? 'button-primary' : 'button-secondary' }}"
+              href="{{ item.link.url }}"
               target="{{ item.link.target | default('_self') }}"
             >{{ item.link.title }}</a>
           {% endfor %}

@@ -18,7 +18,8 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0
+            "selected": 0,
+            "no_preference": 0
         },
         {
             "key": "field_686bd3722e176",
@@ -39,7 +40,8 @@
             "allow_in_bindings": 0,
             "rows": "",
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "",
+            "acfe_textarea_code": 0
         },
         {
             "key": "field_686bd3e42e177",
@@ -93,6 +95,12 @@
                     "placeholder": "",
                     "create_options": 0,
                     "save_options": 0,
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
                     "parent_repeater": "field_686bd3e42e177"
                 },
                 {
@@ -114,7 +122,53 @@
                     "placeholder": "",
                     "parent_repeater": "field_686bd3e42e177"
                 }
-            ]
+            ],
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_68812c0ad726f",
+            "label": "Page Links",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_68812c1ad7270",
+            "label": "Markets Page",
+            "name": "markets_page",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -135,5 +189,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751897192
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1753296186
 }

@@ -1,3 +1,10 @@
+{% set markets = get_posts({
+    post_type: 'market',
+    posts_per_page: -1,
+    orderby: 'title',
+    order: 'ASC',
+  }) %}
+
 <section class="fluid-grid bg-gray text-white py-24">
   <div class="span-content grid grid-cols-subgrid">
     <div class="col-span-12 lg:col-span-9">
@@ -7,28 +14,26 @@
     <div class="hidden lg:block col-span-3 self-end text-right">
       {{ include('partials/arrow-link-small.twig', {
         title: 'Explore All Markets',
-        link: '#',
+        link: global.markets_page,
       }) }}
     </div>
     <div class="col-span-12">
       {# mobile #}
       <div class="w-screen relative left-1/2 right-1/2 mx-[-50vw]">
         <ul class="flex gap-x-6 py-12 snap-x overflow-x-auto px-(--col-gap) scroll-pl-(--col-gap) lg:hidden">
-          {% for item in 1..10 %}
+          {% for market in markets %}
             <li class="w-48 shrink-0 snap-start">
               <a
-                href=""
+                href="{{ market.link }}"
                 class=""
               >
-                <img
-                  class="w-full aspect-[1.75] object-cover"
-                  src="https://picsum.photos/600/400"
-                  alt=""
-                >
+                {{ ResponsiveImage(market.image, {
+                  class: 'w-full aspect-[1.75] object-cover',
+                }) }}
                 <div class="bg-blue text-gray-dark p-2.5 min-h-36 flex gap-x-1">
                   <div class="flex flex-col justify-end">
-                    <h3 class="text-h5">Agriculture</h3>
-                    <p class="text-body-small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non ullam odio molestias laudantium blanditiis unde.</p>
+                    <h3 class="text-h5">{{ market.title }}</h3>
+                    <p class="text-body-small">{{ market.intro }}</p>
                   </div>
                   {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
                 </div>
@@ -40,23 +45,21 @@
 
       {# desktop #}
       <ul class="hidden lg:grid grid-cols-5 gap-7 mt-12">
-        {% for item in 1..10 %}
+        {% for market in markets %}
           <li class="relative w-full aspect-square overflow-hidden">
             <a
-              href=""
+              href="{{ market.link }}"
               class="group size-full"
             >
-              <img
-                class="size-full"
-                src="https://picsum.photos/600/400"
-                alt=""
-              >
+              {{ ResponsiveImage(market.image, {
+                  class: 'size-full object-cover',
+                }) }}
               <div class="absolute z-10 inset-0 bg-linear-to-t from-gray-dark to-65% to-white/0"></div>
-              <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5 xl:text-h4">Agriculture</h3>
+              <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5 xl:text-h4">{{ market.title }}</h3>
               <div class="absolute z-30 top-full left-0 flex flex-col justify-end size-full p-4 bg-blue text-gray-dark transition-transform group-hover:-translate-y-full">
-                <h3 class="text-h5 xl:text-h4">Agriculture</h3>
+                <h3 class="text-h5 xl:text-h4">{{ market.title }}</h3>
                 <div class="flex gap-x-1">
-                  <p class="text-body-medium">From ingredient to impact, equipment  that boosts brand experiences</p>
+                  <p class="text-body-medium">{{ market.intro }}</p>
                   {{ include('svgs/arrow-right.twig', { class: 'shrink-0 size-4 self-end' }) }}
                 </div>
               </div>
@@ -68,7 +71,7 @@
     <div class="col-span-12 lg:hidden">
       {{ include('partials/arrow-link-small.twig', {
         title: 'Explore All Markets',
-        link: '#',
+        link: global.markets_page,
       }) }}
     </div>
   </div>
