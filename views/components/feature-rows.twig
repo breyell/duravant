@@ -12,7 +12,10 @@
           {% if row.links|length %}
             <div class="mt-3">
               {% for item in row.links %}
-                {{ include('partials/arrow-link-large.twig', item.link) }}
+                {{ include('partials/arrow-link-large.twig', {
+                  ...item.link,
+                  link: item.link.url
+                }) }}
               {% endfor %}
             </div>
           {% endif %}
