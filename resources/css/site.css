@@ -27,6 +27,11 @@
 	/* --font-weight-black: 900; */
 }
 
+:root {
+	/* Third Party */
+	--plyr-color-main: var(--color-blue-dark);
+}
+
 @utility gradient {
 	@apply from-blue-dark/0 to-blue-dark;
 }
