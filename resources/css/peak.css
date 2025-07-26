@@ -60,6 +60,16 @@
 		--focus-form-outline-offset: 0;
 		--focus-form-outline-color: color-mix(in oklab, var(--color-primary)50%, transparent);
 		--focus-form-outline-style: solid;
+
+		--col-gap: 1rem;
+
+		@media (min-width: theme(--breakpoint-sm)) {
+			--col-gap: 2rem;
+		}
+
+		@media (min-width: theme(--breakpoint-lg)) {
+			--col-gap: 3rem;
+		}
 	}
 
 	/* :focus {
@@ -110,13 +120,6 @@
 		column-gap: var(--col-gap);
 		grid-template-columns:
 			[full-start] var(--side-width) [content-start col-1] var(--col-width) [col-2] var(--col-width) [col-3] var(--col-width) [col-4] var(--col-width) [col-5] var(--col-width) [col-6] var(--col-width) [col-7] var(--col-width) [col-8] var(--col-width) [col-9] var(--col-width) [col-10] var(--col-width) [col-11] var(--col-width) [col-12] var(--col-width) [content-end] var(--side-width) [full-end];
-		--col-gap: 1rem;
-		@media (min-width: theme(--breakpoint-sm)) {
-			--col-gap: 2rem;
-		}
-		@media (min-width: theme(--breakpoint-lg)) {
-			--col-gap: 3rem;
-		}
 	}
 
 	/* Span utilities for fluid grid. */

@@ -4,11 +4,11 @@ use Timber\Timber;
 use Timber\Post;
 
 /**
- * Class Product
+ * Class Brand
  *
  * Implements custom JSON serialization.
  */
-class Product extends Post implements JsonSerializable
+class Brand extends Post implements JsonSerializable
 {
 	/**
 	 * Defines data that is used when post is converted to JSON.
@@ -17,19 +17,23 @@ class Product extends Post implements JsonSerializable
 	 */
 	public function jsonSerialize(): mixed
 	{
-		$image = Timber::get_post($this->image());
+		$image = Timber::get_post($this->logo());
 
 		return [
 			'id' => $this->id,
 			'title' => $this->title(),
 			'link' => $this->link(),
-			'image' => [
+			'logo' => [
 				'src' => $image->src,
 				'srcset' => $image->srcset(),
 				'alt' => $image->alt,
 				'width' => $image->width,
 				'height' => $image->height,
 			],
+			'previewHeading' => $this->preview_heading,
+			'previewBody' => $this->preview_body,
+			// 'productCategories' => $this->terms('product-category'),
+			'productCategories' => array_column($this->terms('product-category'), 'id'),
 		];
 	}
 }

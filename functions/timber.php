@@ -1,6 +1,6 @@
 <?php
 
-// require_once __DIR__ . '/../src/ExampleCustomPostType.php';
+require_once __DIR__ . '/../src/Brand.php';
 
 use Timber\Timber;
 use Twig\TwigFunction;
@@ -13,6 +13,14 @@ add_filter('timber/context', function ($context) {
 	$context['utility_menu'] = Timber::get_menu('utility');
 	$context['footer_menu'] = Timber::get_menu('footer');
 	return $context;
+});
+
+add_filter('timber/post/classmap', function ($classmap) {
+	$custom_classmap = [
+		'brand' => Brand::class,
+	];
+
+	return array_merge($classmap, $custom_classmap);
 });
 
 function add_image_sizes()
