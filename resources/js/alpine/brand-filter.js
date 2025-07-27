@@ -4,7 +4,13 @@ export default function ($brands) {
 		// selectedSolution: [],
 		selectedProductCategory: [],
 		currentPage: 1,
-		perPage: 8,
+		perPage: 4,
+		width: undefined,
+		init() {
+			this.$watch('width', () => {
+				this.perPage = this.width < 768 ? 4 : 12
+			})
+		},
 		get totalPages() {
 			return Math.ceil(this.filteredBrands.length / this.perPage)
 		},

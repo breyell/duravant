@@ -14,9 +14,11 @@
 
 <section
   x-data='brandFilter({{ brands_data }})'
-  class="fluid-grid"
+  x-resize="width = $width"
+  class="fluid-grid mb-12"
 >
   <div class="span-content grid grid-cols-subgrid">
+    <div class="col-span-12 h-0.5 w-full bg-gray-light my-3"></div>
     <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
       <select
         x-model="selectedProductCategory"
@@ -31,23 +33,29 @@
   </div>
   <ul
     x-auto-animate
-    class="span-content grid grid-cols-subgrid gap-y-(--col-gap)"
+    class="span-content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
   >
     <template
       x-for="brand in displayedBrands"
       :key="brand.id"
     >
-      <li class="col-span-12 md:col-span-6 lg:col-span-3 bg-gray-light p-2">
-        <article class="w-full">
-          <div class="w-full aspect-video bg-white">
-            <img
-              :src="brand.logo.src"
-              :alt="brand.logo.alt"
-              :srcset="brand.logo.srcset"
-              :width="brand.logo.width"
-              :height="brand.logo.height"
-              class="size-full p-8 object-contain"
+      <li class="bg-bone p-2">
+        <article class="relative w-full">
+          <div class="w-full bg-white">
+            <a
+              :href="brand.link"
+              class="block w-full aspect-video"
             >
+              <span class="absolute inset-0"></span>
+              <img
+                :src="brand.logo.src"
+                :alt="brand.title"
+                :srcset="brand.logo.srcset"
+                :width="brand.logo.width"
+                :height="brand.logo.height"
+                class="size-full p-8 object-contain"
+              >
+            </a>
           </div>
           <div class="p-2 mt-2">
             <h3

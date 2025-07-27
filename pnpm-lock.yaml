@@ -11,6 +11,9 @@ importers:
       '@alpinejs/focus':
         specifier: ^3.14.9
         version: 3.14.9
+      '@alpinejs/resize':
+        specifier: ^3.14.9
+        version: 3.14.9
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
@@ -58,6 +61,9 @@ packages:
 
   '@alpinejs/focus@3.14.9':
     resolution: {integrity: sha512-+OMOcdkyEUr3gYWD0ZVqojLotI9D67F5BxGesDfZcPaGtNifXMoq0vt0UVDivGnXQXosOfNpO++GF4NzGrWE9Q==}
+
+  '@alpinejs/resize@3.14.9':
+    resolution: {integrity: sha512-UmKDn8MiuBLQxhohidze3NniMmXwFkLoul+IWnCDZO1mPCR0Q4227wjAYyj0P8pQwgARMUTiHrwdpYUId3vtnA==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -836,6 +842,8 @@ snapshots:
     dependencies:
       focus-trap: 6.9.4
       tabbable: 5.3.3
+
+  '@alpinejs/resize@3.14.9': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
