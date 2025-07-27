@@ -13,9 +13,11 @@
   </button>
   <div class="flex flex-col">
     <div class="flex flex-col md:flex-row gap-x-6 gap-y-7">
-      {{ ResponsiveImage(leader.image, {
-        class: 'w-full aspect-square md:w-40 object-cover',
-      }) }}
+      {% if show_images %}
+        {{ ResponsiveImage(leader.image, {
+          class: 'w-full aspect-square md:w-40 object-cover',
+        }) }}
+      {% endif %}
       <div class="flex flex-col justify-center gap-y-1.5 lg:pr-24">
         <h3 class="text-h2">{{ leader.title }}</h3>
         <p class="text-body-large">{{ leader.job_title }}</p>
