@@ -9,6 +9,13 @@ export default function ($brands) {
 		init() {
 			this.$watch('width', () => {
 				this.perPage = this.width < 768 ? 4 : 12
+				if (this.width < 768) {
+					this.perPage = 4
+				} else if (this.width > 1023) {
+					this.perPage = 12
+				} else {
+					this.perPage = 9
+				}
 			})
 		},
 		get totalPages() {
