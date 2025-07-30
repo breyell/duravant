@@ -39,14 +39,15 @@
       x-for="brand in displayedBrands"
       :key="brand.id"
     >
-      <li class="bg-bone p-2">
-        <article class="relative w-full">
+      <li class="relative bg-bone p-2">
+        <article class="w-full">
           <div class="w-full bg-white">
             <a
               :href="brand.link"
               class="block w-full aspect-video"
             >
               <span class="absolute inset-0"></span>
+              <span class="absolute inset-0 border-8 border-blue-dark opacity-0 transition-opacity hover:opacity-100"></span>
               <img
                 :src="brand.logo.src"
                 :alt="brand.title"

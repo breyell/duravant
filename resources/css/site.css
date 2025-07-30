@@ -49,21 +49,48 @@
 	@apply from-55% from-white/0 to-gray-dark;
 }
 
-@layer components {
-	.button-primary {
-		@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+@utility button-primary {
+	@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+}
+
+@utility button-secondary {
+	@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
+}
+
+@utility button-tertiary {
+	@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
+}
+
+@utility button-small {
+	@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 py-2 rounded-full transition-colors hover:bg-blue-dark;
+}
+
+@utility wysiwyg {
+	@apply space-y-3.5;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-balance;
 	}
 
-	.button-secondary {
-		@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
+	p {
+		@apply text-pretty max-w-[80ch];
 	}
 
-	.button-tertiary {
-		@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
+	h2 {
+		@apply text-h2;
 	}
 
-	.button-small {
-		@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 py-2 rounded-full transition-colors hover:bg-blue-dark;
+	p {
+		@apply text-body-medium;
+
+		bold {
+			font-weight: bold;
+		}
 	}
 }
 

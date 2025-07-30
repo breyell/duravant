@@ -1,0 +1,41 @@
+{% set breadcrumbs = [
+  {
+    title: 'Home',
+    link: '/',
+  },
+  {
+    title: 'Page One',
+    link: '#1',
+  },
+  {
+    title: 'Page Two',
+    link: '#2',
+  },
+  {
+    title: 'Current Page',
+  },
+] %}
+
+<nav
+  aria-label="Breadcrumb"
+  class="py-3"
+>
+  <ol class="flex flex-wrap">
+    {% for crumb in breadcrumbs %}
+      <li>
+        {% if loop.last %}
+          <span
+            class="text-body-small text-bold text-gray"
+            aria-current="page"
+          >{{ crumb.title }}</span>
+        {% else %}
+          <a
+            class="text-body-small text-gray transition-colors hover:text-blue-light"
+            href="{{ crumb.link }}"
+          >{{ crumb.title }}</a>
+          <span class="text-body-small text-gray-light px-4">/</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav>

@@ -1,13 +1,13 @@
 {
-    "key": "group_68804e7dce73c",
-    "title": "Component - Featured Articles",
+    "key": "group_688979e1a83a3",
+    "title": "Component - Hero (Simple)",
     "fields": [
         {
-            "key": "field_6889b45cedcee",
-            "label": "Layout",
-            "name": "layout",
+            "key": "field_688979e2b0e86",
+            "label": "Heading",
+            "name": "heading",
             "aria-label": "",
-            "type": "select",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,26 +16,12 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "thirds": "Thirds",
-                "sixty-forty": "Sixty Forty"
-            },
-            "default_value": "thirds",
-            "return_format": "value",
-            "multiple": 0,
-            "max": "",
-            "allow_custom": 0,
-            "placeholder": "",
-            "search_placeholder": "",
-            "prepend": "",
-            "append": "",
-            "allow_null": 0,
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "create_options": 0,
-            "save_options": 0,
-            "min": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -63,5 +49,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753855176
+    "modified": 1753840116
 }

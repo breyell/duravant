@@ -3,6 +3,87 @@
     "title": "Component - Market Grid",
     "fields": [
         {
+            "key": "field_68897413f0877",
+            "label": "Markets Shown",
+            "name": "markets_shown",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all": "All",
+                "selection": "Selection"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "max": "",
+            "allow_custom": 0,
+            "placeholder": "",
+            "search_placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "create_options": 0,
+            "save_options": 0,
+            "min": ""
+        },
+        {
+            "key": "field_68897449f0878",
+            "label": "Markets",
+            "name": "markets",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68897413f0877",
+                        "operator": "==",
+                        "value": "selection"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "market"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "id",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_6872c232ed2c1",
             "label": "Heading",
             "name": "heading",
@@ -71,5 +152,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1752351359
+    "modified": 1753838707
 }

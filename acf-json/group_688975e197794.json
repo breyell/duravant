@@ -1,0 +1,179 @@
+{
+    "key": "group_688975e197794",
+    "title": "Component - Hero (Standard)",
+    "fields": [
+        {
+            "key": "field_688975e188e28",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6889766c88e29",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "upload_folder": "",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_688976f488e2a",
+            "label": "WYSIWYG",
+            "name": "wysiwyg",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_wysiwyg_min_height": 300,
+            "acfe_wysiwyg_max_height": "",
+            "acfe_wysiwyg_valid_elements": "",
+            "acfe_wysiwyg_custom_style": "",
+            "acfe_wysiwyg_disable_wp_style": 0,
+            "acfe_wysiwyg_autoresize": 1,
+            "acfe_wysiwyg_disable_resize": 0,
+            "acfe_wysiwyg_remove_path": 0,
+            "acfe_wysiwyg_menubar": 0,
+            "acfe_wysiwyg_transparent": 0,
+            "acfe_wysiwyg_merge_toolbar": 0,
+            "acfe_wysiwyg_custom_toolbar": 1,
+            "acfe_wysiwyg_toolbar_buttons": {
+                "acfe_wysiwyg_toolbar_1": {
+                    "0": {
+                        "acfe_wysiwyg_toolbar_row": "formatselect"
+                    },
+                    "1": {
+                        "acfe_wysiwyg_toolbar_row": "bold"
+                    },
+                    "2": {
+                        "acfe_wysiwyg_toolbar_row": "italic"
+                    },
+                    "3": {
+                        "acfe_wysiwyg_toolbar_row": "bullist"
+                    },
+                    "4": {
+                        "acfe_wysiwyg_toolbar_row": "numlist"
+                    },
+                    "9": {
+                        "acfe_wysiwyg_toolbar_row": "link"
+                    },
+                    "11": {
+                        "acfe_wysiwyg_toolbar_row": "spellchecker"
+                    }
+                },
+                "acfe_wysiwyg_toolbar_2": [
+                    {
+                        "acfe_wysiwyg_toolbar_row": "strikethrough"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "hr"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "forecolor"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "pastetext"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "removeformat"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "charmap"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "outdent"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "indent"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "undo"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "redo"
+                    },
+                    {
+                        "acfe_wysiwyg_toolbar_row": "wp_help"
+                    }
+                ],
+                "acfe_wysiwyg_toolbar_3": "",
+                "acfe_wysiwyg_toolbar_4": ""
+            },
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic_enhanced",
+            "media_upload": 0,
+            "delay": 0,
+            "acfe_wysiwyg_auto_init": 0,
+            "acfe_wysiwyg_height": 300
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1753839999
+}

@@ -1,0 +1,66 @@
+<section class="fluid-grid py-10">
+  <div class="span-content grid grid-cols-subgrid">
+    <div class="col-span-12">
+      <h2 class="text-h3 mb-8">{{ heading }}</h2>
+    </div>
+    <div class="col-span-12">
+      <ul
+        class="
+          {% if stack_on_mobile %}
+            grid grid-cols-12 gap-y-10 gap-x-fluid-grid-gap
+          {% else %}
+            flex gap-x-8 overflow-x-auto snap-x px-(--col-gap) scroll-pl-(--col-gap) -mx-(--col-gap) md:overflow-visible md:grid md:grid-cols-12
+          {% endif %}
+          md:gap-fluid-grid-gap
+        "
+      >
+        {% for leader in get_posts(leaders) %}
+          <li
+            x-data="{ modalOpen: false }"
+            class="
+              {% if stack_on_mobile %}
+                col-span-12
+              {% else %}
+                w-64 shrink-0 snap-start
+              {% endif %}
+              flex md:col-span-6 lg:col-span-4 xl:col-span-3 md:w-full
+              "
+          >
+            <div class="relative">
+              {% if show_images %}
+                {{ ResponsiveImage(leader.image, {
+                  class: 'w-40 aspect-square object-cover',
+                }) }}
+              {% else %}
+                <div class="h-1 w-full gradient-light bg-linear-to-r"></div>
+              {% endif %}
+              <button
+                @click="modalOpen = true"
+                class="mt-3"
+              >
+                <div class="inline-block text-left">
+                  <h3 class="text-h5 inline">{{ leader.title }}</h3>
+                  {{ include('svgs/arrow-right.twig', {
+                    class: 'inline size-4 ml-2 -translate-y-0.5 transition-transform group-hover:translate-x-1',
+                  }) }}
+                </div>
+                <span class="absolute inset-0"></span>
+              </button>
+              <p
+                class="mt-2.5 {{ show_images ? 'text-body-large' : 'text-body-medium' }}"
+              >{{ leader.job_title }}</p>
+
+              <div
+                x-show="modalOpen"
+                x-trap.noscroll="modalOpen"
+                class="fixed z-50 inset-0 flex flex-col justify-center size-auto max-h-none max-w-none overflow-y-auto bg-black/75"
+              >
+                {{ include('components/team/modal.twig') }}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

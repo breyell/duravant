@@ -1,6 +1,6 @@
 {
     "key": "group_6885837e63fee",
-    "title": "Component - Team",
+    "title": "Component - Leaders",
     "fields": [
         {
             "key": "field_68858523e8fc6",
@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -23,6 +23,28 @@
             "ui_off_text": "",
             "ui": 1,
             "style": ""
+        },
+        {
+            "key": "field_6889332097c74",
+            "label": "Stack on Mobile",
+            "name": "stack_on_mobile",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "",
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_6885837e201d6",
@@ -108,5 +130,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753581409
+    "modified": 1753823131
 }

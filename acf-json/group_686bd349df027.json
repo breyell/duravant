@@ -169,6 +169,54 @@
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_68897ab553a9e",
+            "label": "Misc",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_68897abb53a9f",
+            "label": "Simple\/Standard Hero Background Image",
+            "name": "simple_standard_hero_background_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "upload_folder": "",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -196,5 +244,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753296186
+    "modified": 1753840351
 }

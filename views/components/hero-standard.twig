@@ -1,0 +1,36 @@
+<section class="fluid-grid pb-6 lg:pb-12">
+  <div class="span-content">
+    {{ include('partials/breadcrumbs.twig') }}
+  </div>
+  {{ include('components/hero-simple-standard/core.twig', {
+    short: image ? true : false
+  }) }}
+  <div class="span-content relative grid grid-cols-subgrid">
+    {% if image %}
+      <div class="col-span-12 mt-6 lg:hidden">
+        {{ ResponsiveImage(image, {
+          class: 'w-full aspect-[1.1] rounded-r-full',
+        }) }}
+      </div>
+    {% endif %}
+    <div
+      class="
+        col-span-12 pt-6 lg:pt-12 wysiwyg
+        {% if image %}
+          lg:col-span-7
+        {% else %}
+          lg:col-span-9
+        {% endif %}
+      "
+    >
+      {{ wysiwyg }}
+    </div>
+    {% if image %}
+      <div class="hidden lg:block lg:col-span-5 lg:-mt-20">
+        {{ ResponsiveImage(image, {
+          class: 'w-full aspect-[1.1] rounded-r-full',
+        }) }}
+      </div>
+    {% endif %}
+  </div>
+</section>

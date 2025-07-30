@@ -1,0 +1,17 @@
+<div class="span-full relative grid grid-cols-subgrid bg-blue-dark">
+  {{ ResponsiveImage(global.simple_standard_hero_background_image, {
+    class: 'span-full absolute size-full top-0 left-0 object-cover object-top-left',
+  }) }}
+  <div
+    class="
+      col-start-[col-1] relative py-12
+      {% if short %}
+        lg:col-end-[col-8]
+      {% else %}
+        lg:col-end-[col-10]
+      {% endif %}
+    "
+  >
+    <h1 class="text-h1 text-white text-balance">{{ heading }}</h1>
+  </div>
+</div>
