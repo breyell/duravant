@@ -5,7 +5,7 @@
   order: 'ASC',
 }) %}
 
-{% set brands_data = brands|escape('js')|json_encode %}
+{% set brands_data = brands|json_encode|escape('html_attr') %}
 
 {% set product_categories = get_terms({
   taxonomy: 'product-category',
@@ -13,7 +13,7 @@
 }) %}
 
 <section
-  x-data='brandFilter({{ brands_data }})'
+  x-data="brandFilter({{ brands_data }})"
   x-resize="width = $width"
   class="fluid-grid mb-12"
 >

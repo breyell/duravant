@@ -32,7 +32,6 @@ class Brand extends Post implements JsonSerializable
 			],
 			'previewHeading' => $this->preview_heading,
 			'previewBody' => $this->preview_body,
-			// 'productCategories' => $this->terms('product-category'),
 			'productCategories' => array_column($this->terms('product-category'), 'id'),
 		];
 	}
