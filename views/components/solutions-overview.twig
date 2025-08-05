@@ -14,23 +14,18 @@
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-12">
         {% for solution in solutions %}
           <li class="relative lg:p-5">
-            <div class="flex items-center gap-x-3">
-              {{ ResponsiveImage(solution.icon, {
-                class: '',
-              }) }}
-              <h3 class="">
-                <a
-                  href="{{ solution.link }}"
-                  class="group"
-                >
-                  <span class="absolute -inset-3 sm:-indent-4 lg:inset-0 group-hover:border-3 group-hover:border-blue group-hover:border-solid"></span>
-                  <span class="text-h4 text-balance">{{ solution.heading }}</span>
-                  {{ include('svgs/arrow-right.twig', {
-                    class: 'inline-block ml-1 size-4 -translate-y-0.5 transition-transform group-hover:translate-x-1',
-                  }) }}
-                </a>
-              </h3>
-            </div>
+            <h3 class="">
+              <a
+                href="{{ solution.link }}"
+                class="group"
+              >
+                <span class="absolute -inset-3 sm:-indent-4 lg:inset-0 group-hover:border-3 group-hover:border-blue group-hover:border-solid"></span>
+                <span class="text-h4 text-balance">{{ solution.heading }}</span>
+                {{ include('svgs/arrow-right.twig', {
+                  class: 'inline-block ml-1 size-4 -translate-y-0.5 transition-transform group-hover:translate-x-1',
+                }) }}
+              </a>
+            </h3>
             <p class="text-body-medium mt-4">{{ solution.body }}</p>
           </li>
         {% endfor %}

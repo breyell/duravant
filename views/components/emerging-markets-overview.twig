@@ -10,22 +10,24 @@
       <p class="text-body-medium mt-2.5">{{ body }}</p>
       <div class="h-1 w-full my-6 lg:my-10 gradient-light bg-gradient-to-r"></div>
       <ul class="flex flex-col gap-y-8 lg:flex-row lg:justify-between ml-5 lg:ml-0">
-        {% for country in countries %}
+        {% for country in global.emerging_markets %}
           <li class="flex gap-3 lg:flex-col lg:justify-center">
             {{ ResponsiveImage(country.image, {
               class: 'h-6 w-auto object-contain',
             }) }}
-            <p class="text-h4">{{ country.name }}</p>
+            <p class="text-h4">{{ country.link.title }}</p>
           </li>
         {% endfor %}
       </ul>
       {% if links %}
         <div class="mt-8 lg:mt-12">
           {% for item in links %}
-            {{ include('partials/arrow-link-large.twig', {
-              ...item.link,
-              link: item.link.url,
-            }) }}
+            {% if item.link %}
+              {{ include('partials/arrow-link-large.twig', {
+                ...item.link,
+                link: item.link.url,
+              }) }}
+            {% endif %}
           {% endfor %}
         </div>
       {% endif %}

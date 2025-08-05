@@ -14,6 +14,52 @@
             >{{ item.title }}</a>
           </li>
         {% endfor %}
+        <li
+          x-data="{ open: false }"
+          class="relative flex flex-col justify-center"
+        >
+          <button
+            @click="open = !open"
+            @click.outside="open = false"
+            :class="open && 'text-blue'"
+            class="ml-2 transition-colors"
+          >
+            {{ include('svgs/globe.twig', {
+              class: 'size-5',
+            }) }}
+          </button>
+          <div
+            x-show="open"
+            x-trap="open"
+            @keyup.escape="open = false"
+            x-transition:enter="transition"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute z-50 top-[calc(100%+0.75rem)] -right-4 bg-white w-80 p-8 text-gray-dark"
+            style="box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);"
+          >
+            <div class="absolute z-50 -top-0.75 rounded-xs right-3.5 size-6 bg-white rotate-45 rounded-"></div>
+            <header class="text-h4 mb-7">Emerging Markets</header>
+            <ul class="space-y-7">
+              {% for item in global.emerging_markets %}
+                <li class="">
+                  <a
+                    href="{{ item.link.url }}"
+                    class="inline-flex gap-x-3 hover:underline"
+                  >
+                    {{ ResponsiveImage(item.image, {
+                      class: 'w-8 h-6',
+                    }) }}
+                    <p class="text-body-lg">{{ item.link.title }}</p>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
