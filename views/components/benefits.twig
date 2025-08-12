@@ -1,0 +1,30 @@
+<section class="
+  {% if items|length is odd %}
+    py-16
+  {% else %}
+    py-24
+  {% endif %}
+">
+  <div class="fluid-grid">
+    <div class="span-xl grid grid-cols-subgrid gap-y-10 lg:gap-y-16">
+      <h2 class="
+        col-span-full pb-4
+        {% if items|length is odd %}
+          lg:col-span-5
+        {% else %}
+          text-center
+        {% endif %}
+      ">
+        <span
+          class="text-h3 relative inline-block after:absolute after:top-[calc(100%+0.75rem)] after:left-0 after:w-full after:h-1 after:gradient-light after:bg-linear-to-r"
+        >{{ heading }}</span>
+      </h2>
+      {% for item in items %}
+        <div class="col-span-full lg:col-span-5">
+          <h3 class="text-h5">{{ item.heading }}</h3>
+          <p class="text-body-medium mt-3">{{ item.body }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

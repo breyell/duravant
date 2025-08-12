@@ -1,0 +1,39 @@
+<section class="bg-bone py-16">
+  <div class="fluid-grid">
+    <div class="span-xl">
+      <h2 class="text-h3 text-center mb-7 lg:mb-15">
+        <span class="relative inline-block after:absolute after:top-[calc(100%+0.75rem)] after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:gradient-light">{{ heading }}</span>
+      </h2>
+      <div class="">
+        {% for item in items %}
+          <div
+            x-data="{ open: false }"
+            class="py-3"
+          >
+            <div class="pb-4 border-b border-b-blue">
+              <button
+                @click="open = !open"
+                :aria-expanded="open"
+                class="group w-full flex justify-between"
+              >
+                <h3 class="text-body-large font-bold text-left">{{ item.question }}</h3>
+                <div class="relative size-5 shrink-0 ml-4">
+                  <div class="absolute top-1/2 left-1/2 -translate-1/2 w-full h-0.5 bg-black"></div>
+                  <div class="absolute top-1/2 left-1/2 -translate-1/2 h-full w-0.5 bg-black transition-transform group-aria-expanded:scale-y-0"></div>
+                </div>
+              </button>
+              <div
+                x-show="open"
+                x-collapse
+                x-cloak
+                class=""
+              >
+                <p class="text-body-large pt-4">{{ item.answer }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
