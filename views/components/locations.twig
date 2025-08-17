@@ -1,0 +1,51 @@
+<section class="bg-bone fluid-grid">
+  {% for location_group in location_groups %}
+    {% if not loop.first %}
+      <div class="span-content border-b border-b-gray-light"></div>
+    {% endif %}
+    <div
+      x-data="{ open: {{ loop.first }} }"
+      class="span-content grid grid-cols-subgrid"
+    >
+      <button
+        @click="open = !open"
+        :aria-expanded="open"
+        class="col-span-12 flex justify-between py-10"
+      >
+        <h2 class="text-h4 lg:text-h3">{{ location_group.heading }}</h2>
+        <div
+          :class="open && '-scale-y-100'"
+          class="w-6.5 flex items-center transition-transform"
+        >
+          {{ include('svgs/caret-down.twig', {
+            class: 'w-full',
+          }) }}
+        </div>
+      </button>
+      <div
+        x-show="open"
+        x-collapse
+        x-cloak
+        class="col-span-12"
+      >
+        <div class="grid grid-cols-12 gap-fluid-grid-gap gap-y-8 pt-3 pb-12">
+          {% for location in get_posts(location_group.locations) %}
+            <div class="col-span-12 md:col-span-6 lg:col-span-3">
+              <div class="w-full h-1 gradient-light bg-linear-to-r mb-3"></div>
+              <address class="not-italic">
+                <span class="text-h6">{{ location.title }}</span>
+                <br>
+                <span class="text-body-medium">{{ location.address }}</span>
+                <br>
+                <a
+                  href="tel:{{ location.phone }}"
+                  class="text-body-medium underline hover:no-underline"
+                >{{ location.phone }}</a>
+              </address>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>

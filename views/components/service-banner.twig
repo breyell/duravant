@@ -1,0 +1,20 @@
+<section class="bg-gray fluid-grid gap-y-11 py-12 lg:py-0">
+  <div class="span-full grid grid-cols-subgrid gradient-light bg-gradient-to-r rounded-r-full py-16 mr-2 lg:col-end-[col-7] lg:mr-0">
+    <div class="span-content flex items-center">
+      <h2 class="text-h2 pr-24">{{ heading }}</h2>
+    </div>
+  </div>
+  <div class="span-content lg:col-start-[col-7] lg:flex lg:items-center lg:py-24">
+    <ul class="text-white space-y-8">
+      {% for item in list %}
+        <li
+          {% if not loop.last %}
+            class="text-h5 relative after:absolute after:left-0 after:top-[calc(100%+1rem)] after:-translate-y-full after:h-1 after:w-20 after:gradient-light after:bg-gradient-to-r"
+          {% else %}
+            class="text-h5"
+          {% endif %}
+        >{{ item.item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

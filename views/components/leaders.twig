@@ -34,30 +34,36 @@
               {% else %}
                 <div class="h-1 w-full gradient-light bg-linear-to-r"></div>
               {% endif %}
-              <button
-                @click="modalOpen = true"
-                class="mt-3"
-              >
-                <div class="inline-block text-left">
-                  <h3 class="text-h5 inline">{{ leader.title }}</h3>
-                  {{ include('svgs/arrow-right.twig', {
-                    class: 'inline size-4 ml-2 -translate-y-0.5 transition-transform group-hover:translate-x-1',
-                  }) }}
-                </div>
-                <span class="absolute inset-0"></span>
-              </button>
+              {% if leader.enable_description %}
+                <button
+                  @click="modalOpen = true"
+                  class="mt-3"
+                >
+                  <div class="inline-block text-left">
+                    <h3 class="text-h5 inline">{{ leader.title }}</h3>
+                    {{ include('svgs/arrow-right.twig', {
+                      class: 'inline size-4 ml-2 -translate-y-0.5 transition-transform group-hover:translate-x-1',
+                    }) }}
+                  </div>
+                  <span class="absolute inset-0"></span>
+                </button>
+              {% else %}
+                <h3 class="text-h5 mt-3">{{ leader.title }}</h3>
+              {% endif %}
               <p
                 class="mt-2.5 {{ show_images ? 'text-body-large' : 'text-body-medium' }}"
               >{{ leader.job_title }}</p>
 
-              <div
-                x-show="modalOpen"
-                x-trap.noscroll="modalOpen"
-                class="fixed z-50 inset-0 flex flex-col justify-center size-auto max-h-none max-w-none overflow-y-auto bg-black/75"
-              >
-                {{ include('components/team/modal.twig') }}
+              {% if leader.enable_description %}
+                <div
+                  x-show="modalOpen"
+                  x-trap.noscroll="modalOpen"
+                  class="fixed z-50 inset-0 flex flex-col justify-center size-auto max-h-none max-w-none overflow-y-auto bg-black/75"
+                >
+                  {{ include('components/leaders/modal.twig') }}
+                </div>
               </div>
-            </div>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>

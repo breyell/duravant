@@ -53,6 +53,28 @@
             "append": ""
         },
         {
+            "key": "field_68a177879f453",
+            "label": "Enable Description",
+            "name": "enable_description",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Shows a description when the leader is clicked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "",
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_6885703ff8c40",
             "label": "Description",
             "name": "description",
@@ -73,24 +95,6 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_68857054f8c41",
-            "label": "LinkedIn URL",
-            "name": "linkedin_url",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -121,5 +125,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753576883
+    "modified": 1755412471
 }

@@ -21,17 +21,6 @@
       <div class="flex flex-col justify-center gap-y-1.5 lg:pr-24">
         <h3 class="text-h2">{{ leader.title }}</h3>
         <p class="text-body-large">{{ leader.job_title }}</p>
-        <div class="">
-          <a
-            href="{{ leader.linkedin_url }}"
-            target="_blank"
-            class="inline-block"
-          >
-            {{ include('svgs/social/linkedin.twig', {
-              class: 'text-[#0072B1] size-7',
-            }) }}
-          </a>
-        </div>
       </div>
     </div>
     <div class="h-1 w-full gradient-light bg-linear-to-r my-6 md:my-8"></div>
