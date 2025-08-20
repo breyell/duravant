@@ -1,0 +1,28 @@
+<section class="fluid-grid">
+  <div class="span-content lg:col-start-[col-1] lg:col-end-[col-7]">
+    <h2 class="text-h4">{{ form_heading }}</h2>
+    <div class="form-embed">
+      {{ form_embed }}
+    </div>
+  </div>
+  <div class="span-content lg:col-start-[col-8] lg:col-end-[col-12]">
+    <div class="">
+      <h3 class="text-h4">{{ location_title }}</h3>
+      <address class="">{{ location_address }}</address>
+      {{ ResponsiveImage(image, {
+        class: '',
+      }) }}
+      <h3 class="text-h4">{{ heading }}</h3>
+      <p class="text-body-medium">{{ body }}</p>
+      {% if link %}
+        {{ include('partials/arrow-link-large.twig', link) }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-embed {
+    display: flex;
+  }
+</style>

@@ -1,0 +1,30 @@
+<section class="relative pt-12 pb-36 md:pt-12 lg:py-24 gradient-lighter bg-gradient-to-b">
+  <div class="fluid-grid gap-y-12">
+    <div class="span-content md:col-start-[col-1] md:col-end-[col-5] lg:self-center">
+      {{ ResponsiveImage(image, {
+        class: 'w-full',
+      }) }}
+    </div>
+    <div class="span-content md:col-start-[col-5] md:col-end-[col-12] lg:self-center">
+      <div class="space-y-3">
+        <h2 class="text-h2">{{ heading }}</h2>
+        <h3 class="text-h5">{{ subheading }}</h3>
+        <p class="text-body-medium">{{ body }}</p>
+      </div>
+      {% if links %}
+        <div class="flex flex-wrap mt-6 gap-6">
+          {% for item in links %}
+            <a
+              class="{{ loop.first ? 'button-primary' : 'button-secondary' }}"
+              href="{{ item.link.url }}"
+              target="{{ item.link.target | default('_self') }}"
+            >{{ item.link.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {{ include('svgs/lifecycle-services-shape.twig', {
+    class: 'absolute bottom-0 right-0 w-full',
+  }) }}
+</section>

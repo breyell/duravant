@@ -17,7 +17,7 @@
                 "id": ""
             },
             "acfe_repeater_stylised_button": 0,
-            "layout": "row",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -25,6 +25,60 @@
             "button_label": "Add Location Group",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_68a5e3a75d3ce",
+                    "label": "Collapsible",
+                    "name": "collapsible",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
+                    "style": "",
+                    "parent_repeater": "field_689d8e939d663"
+                },
+                {
+                    "key": "field_68a5e3da5d3cf",
+                    "label": "Default State",
+                    "name": "default_state",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_68a5e3a75d3ce",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Open",
+                    "ui_off_text": "Closed",
+                    "ui": 1,
+                    "style": "",
+                    "parent_repeater": "field_689d8e939d663"
+                },
                 {
                     "key": "field_689d8eb49d664",
                     "label": "Heading",
@@ -69,8 +123,7 @@
                     ],
                     "taxonomy": "",
                     "filters": [
-                        "search",
-                        "post_type"
+                        "search"
                     ],
                     "return_format": "object",
                     "acfe_add_post": 0,
@@ -114,5 +167,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755408819
+    "modified": 1755705063
 }

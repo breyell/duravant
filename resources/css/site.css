@@ -45,6 +45,10 @@
 	@apply from-blue-baby to-blue-dark;
 }
 
+@utility gradient-lighter {
+	@apply from-transparent to-blue-dark/20;
+}
+
 @utility gradient-gray {
 	@apply from-55% from-white/0 to-gray-dark;
 }
