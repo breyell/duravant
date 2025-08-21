@@ -3,12 +3,7 @@
     <div class="hidden lg:block span-content lg:col-end-[col-7]">
       <div
         class="
-          -mx-(--col-gap) lg:h-full
-          {% if image_side == 'left' %}
-            lg:mr-0
-          {% else %}
-            lg:ml-0
-          {% endif %}
+          -mx-(--col-gap) lg:h-full lg:-mr-[calc(0.5*var(--col-gap))]
         "
       >
         {{ ResponsiveImage(image, {
@@ -19,7 +14,7 @@
   {% endif %}
   <div
     class="
-      span-content py-16 lg:py-24 self-center
+      span-content py-16 lg:py-24 lg:px-12 self-center
       {% if image_side == 'left' %}
         lg:col-start-[col-7]
       {% else %}
@@ -41,7 +36,7 @@
       {% endif %}
     "
   >
-    <div class="-mx-(--col-gap) lg:ml-0 lg:h-full">
+    <div class="-mx-(--col-gap) lg:-ml-[calc(0.5*var(--col-gap))] lg:h-full">
       {{ ResponsiveImage(image, {
         class: 'w-full aspect-[1.4] object-cover lg:aspect-[1.74] lg:h-full',
       }) }}
