@@ -61,6 +61,10 @@
 	@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
 }
 
+@utility button-secondary-alt {
+	@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-gray-dark border border-gray-dark rounded-full transition-colors hover:bg-gray-dark hover:text-white;
+}
+
 @utility button-tertiary {
 	@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
 }
@@ -95,6 +99,10 @@
 		bold {
 			font-weight: bold;
 		}
+	}
+
+	ul {
+		@apply marker:text-blue-dark marker:text-lg list-disc pl-3.5 space-y-3 mt-4;
 	}
 }
 

@@ -1,0 +1,50 @@
+<section class="fluid-grid bg-bone">
+  {% if image_side == 'left' %}
+    <div class="hidden lg:block span-content lg:col-end-[col-7]">
+      <div
+        class="
+          -mx-(--col-gap) lg:h-full
+          {% if image_side == 'left' %}
+            lg:mr-0
+          {% else %}
+            lg:ml-0
+          {% endif %}
+        "
+      >
+        {{ ResponsiveImage(image, {
+          class: 'w-full aspect-[1.4] object-cover lg:aspect-[1.74] lg:h-full',
+        }) }}
+      </div>
+    </div>
+  {% endif %}
+  <div
+    class="
+      span-content py-16 lg:py-24 self-center
+      {% if image_side == 'left' %}
+        lg:col-start-[col-7]
+      {% else %}
+        lg:col-end-[col-7]
+      {% endif %}
+    "
+  >
+    <div class="inline-block">
+      <h2 class="text-h4 inline-block">{{ heading }}</h2>
+      <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
+    </div>
+    <div class="wysiwyg">{{ wysiwyg }}</div>
+  </div>
+  <div
+    class="
+      span-content lg:col-start-[col-7]
+      {% if image_side == 'left' %}
+        lg:hidden
+      {% endif %}
+    "
+  >
+    <div class="-mx-(--col-gap) lg:ml-0 lg:h-full">
+      {{ ResponsiveImage(image, {
+        class: 'w-full aspect-[1.4] object-cover lg:aspect-[1.74] lg:h-full',
+      }) }}
+    </div>
+  </div>
+</section>

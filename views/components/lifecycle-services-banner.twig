@@ -15,7 +15,7 @@
         <div class="flex flex-wrap mt-6 gap-6">
           {% for item in links %}
             <a
-              class="{{ loop.first ? 'button-primary' : 'button-secondary' }}"
+              class="{{ loop.first ? 'button-primary' : 'button-secondary-alt' }}"
               href="{{ item.link.url }}"
               target="{{ item.link.target | default('_self') }}"
             >{{ item.link.title }}</a>
