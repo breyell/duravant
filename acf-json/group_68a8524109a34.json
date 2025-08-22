@@ -63,7 +63,7 @@
             "layout": "block",
             "pagination": 0,
             "min": 0,
-            "max": 0,
+            "max": 5,
             "collapsed": "",
             "button_label": "Add Value",
             "rows_per_page": 20,
@@ -193,5 +193,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755861748
+    "modified": 1755862466
 }

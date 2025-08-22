@@ -1,0 +1,34 @@
+<section class="fluid-grid gap-y-8 py-16">
+  <div class="span-content lg:col-end-[col-7]">
+    {{ ResponsiveImage(image, {
+      class: 'w-full mb-10',
+    }) }}
+    <div class="space-y-2.5">
+      <h2 class="text-h3">{{ heading }}</h2>
+      <div class="text-body-large">{{ subheading }}</div>
+      <div class="wysiwyg">{{ wysiwyg }}</div>
+    </div>
+  </div>
+  <div class="span-content lg:col-start-[col-7] flex flex-col gap-y-6">
+    {% for market in markets %}
+      <div class="flex gap-x-5">
+        <div class="shrink-0">
+          {{ ResponsiveImage(market.flag, {
+            class: 'w-8',
+          }) }}
+        </div>
+        <div class="space-y-2.5">
+          <h3 class="text-h4">{{ market.name }}</h3>
+          {% if market.body %}
+            <p class="text-body-medium">{{ market.body }}</p>
+          {% endif %}
+          {% if market.link %}
+            <div class="">
+              {{ include('partials/arrow-link-small.twig', market.link) }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
