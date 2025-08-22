@@ -71,6 +71,28 @@
             "label": "Location Address",
             "name": "location_address",
             "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_68a842ba2c032",
+            "label": "Location Address Extra",
+            "name": "location_address_extra",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -81,9 +103,7 @@
                 "id": ""
             },
             "default_value": "",
-            "acfe_wysiwyg_auto_init": 0,
             "acfe_wysiwyg_height": 300,
-            "acfe_wysiwyg_max_height": "",
             "acfe_wysiwyg_valid_elements": "",
             "acfe_wysiwyg_custom_style": "",
             "acfe_wysiwyg_disable_wp_style": 0,
@@ -99,7 +119,9 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 0,
+            "acfe_wysiwyg_auto_init": 0,
             "acfe_wysiwyg_min_height": 300,
+            "acfe_wysiwyg_max_height": "",
             "acfe_wysiwyg_toolbar_buttons": []
         },
         {
@@ -217,5 +239,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755685899
+    "modified": 1755857612
 }

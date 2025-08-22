@@ -1,28 +1,25 @@
-<section class="fluid-grid">
-  <div class="span-content lg:col-start-[col-1] lg:col-end-[col-7]">
+<section class="fluid-grid py-12 gap-y-12">
+  <div class="span-content lg:col-start-[col-1] lg:col-end-[col-8] xl:lg:col-end-[col-7]">
     <h2 class="text-h4">{{ form_heading }}</h2>
-    <div class="form-embed">
+    <div class="form-embed mt-5">
       {{ form_embed }}
     </div>
   </div>
-  <div class="span-content lg:col-start-[col-8] lg:col-end-[col-12]">
+  <div class="span-content lg:col-start-[col-8] lg:col-end-[col-12] py-12">
     <div class="">
-      <h3 class="text-h4">{{ location_title }}</h3>
-      <address class="">{{ location_address }}</address>
+      <h3 class="text-h4 mb-1">{{ location_title }}</h3>
+      <address class="text-body-medium not-italic leading-7">{{ location_address }}</address>
+      <div class="wysiwyg *:!leading-7">{{ location_address_extra }}</div>
       {{ ResponsiveImage(image, {
-        class: '',
+        class: 'w-full mt-10 mb-6',
       }) }}
-      <h3 class="text-h4">{{ heading }}</h3>
-      <p class="text-body-medium">{{ body }}</p>
-      {% if link %}
-        {{ include('partials/arrow-link-large.twig', link) }}
-      {% endif %}
+      <div class="space-y-2.5">
+        <h3 class="text-h4 text-balance">{{ heading }}</h3>
+        <p class="text-body-medium">{{ body }}</p>
+        {% if link %}
+          {{ include('partials/arrow-link-small.twig', link) }}
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .form-embed {
-    display: flex;
-  }
-</style>

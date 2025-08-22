@@ -104,6 +104,74 @@
 	ul {
 		@apply marker:text-blue-dark marker:text-lg list-disc pl-3.5 space-y-3 mt-4;
 	}
+
+	a {
+		@apply underline hover:no-underline;
+	}
+}
+
+@utility form-embed {
+	.mktoForm {
+		@apply !w-full flex flex-col gap-y-5;
+	}
+
+	.mktoFormCol:has(#MktoPersonNotes),
+	.mktoFormCol:has(.mktoHtmlText) {
+		@apply sm:col-span-2;
+	}
+
+	label {
+		@apply !text-body-medium !font-normal !w-auto !flex !flex-row-reverse !justify-end !pt-0;
+	}
+
+	input,
+	textarea,
+	select {
+		@apply !w-full !text-body-medium !rounded-md !px-5 !py-3 !shadow-none !border-gray-light;
+	}
+
+	input,
+	select {
+		@apply !h-12;
+	}
+
+	textarea {
+		@apply !h-36
+	}
+
+	.mktoClear,
+	.mktoOffset,
+	.mktoGutter {
+		@apply !hidden;
+	}
+
+	.mktoAsterix {
+		@apply !text-black;
+	}
+
+	.mktoFormRow {
+		@apply !grid sm:grid-cols-2 gap-x-(--col-gap) gap-y-5;
+	}
+
+	.mktoFormCol {
+		@apply !w-full !mb-0;
+	}
+
+	.mktoFieldWrap {
+		@apply !flex !flex-col gap-y-2.5 !w-full;
+	}
+
+	.mktoHtmlText {
+		@apply !w-full;
+	}
+
+	.mktoButtonWrap {
+		@apply !ml-0;
+	}
+
+	.mktoButton {
+		@apply !button-primary !bg-none !shadow-none !normal-case;
+	}
 }
 
 	/* .focus-base {
