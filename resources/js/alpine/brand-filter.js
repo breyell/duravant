@@ -3,6 +3,7 @@ export default function ($brands) {
 		brands: $brands,
 		// selectedSolution: [],
 		selectedProductCategory: [],
+		selectedSolution: [],
 		currentPage: 1,
 		perPage: 4,
 		width: undefined,
@@ -30,13 +31,11 @@ export default function ($brands) {
 				})
 			}
 
-			// if (this.selectedMarkets.length) {
-			// 	const selectedMarketsSet = new Set(this.selectedMarkets)
-			// 	filteredBrands = filteredBrands.filter((product) => {
-			// 		const set1 = new Set(product.markets)
-			// 		return !!set1.intersection(selectedMarketsSet).size
-			// 	})
-			// }
+			if (this.selectedSolution.length) {
+				filteredBrands = filteredBrands.filter((brand) => {
+					return brand.solutions.includes(parseInt(this.selectedSolution))
+				})
+			}
 
 			return filteredBrands
 		},

@@ -5,21 +5,19 @@
   <template x-if="currentPage !== 1">
     <button
       @click.prevent="currentPage = currentPage - 1"
-      class="group cursor-pointer text-blue-navy size-10 py-2 focus-default transition-transform"
+      class="group cursor-pointer text-blue-navy size-10 py-3 focus-default transition-transform"
     >
       <div class="sr-only">Previous Brands Page</div>
-      {# {{ include('svgs/right-caret.twig', {
+      {{ include('svgs/caret-right.twig', {
         class: 'size-full text-blue-navy -scale-x-100 transition-transform group-hover:-translate-x-1.5',
-      }) }} #}
-      <
+      }) }}
     </button>
   </template>
   <template x-if="currentPage === 1">
-    <span class="text-blue-navy size-10 py-2 transition-transform opacity-25">
-      {# {{ include('svgs/right-caret.twig', {
+    <span class="text-blue-navy size-10 py-3 transition-transform opacity-25">
+      {{ include('svgs/caret-right.twig', {
         class: 'size-full -scale-x-100',
-      }) }} #}
-      <
+      }) }}
     </span>
   </template>
 
@@ -31,23 +29,21 @@
   <template x-if="currentPage !== totalPages">
     <button
       @click.prevent="currentPage = currentPage + 1"
-      class="group cursor-pointer text-blue-navy size-10 py-2 focus-default transition-transform"
+      class="group cursor-pointer text-blue-navy size-10 py-3 focus-default transition-transform"
     >
       <div class="sr-only">Next Brands Page</div>
-      {# {{ include('svgs/right-caret.twig', {
+      {{ include('svgs/caret-right.twig', {
         class: 'size-full transition-transform group-hover:translate-x-1.5',
-      }) }} #}
-      >
+      }) }}
     </button>
   </template>
   <template x-if="currentPage === totalPages">
     <span
-      class="text-blue-navy size-10 py-2 transition-transform opacity-25"
+      class="text-blue-navy size-10 py-3 transition-transform opacity-25"
     >
-      {# {{ include('svgs/right-caret.twig', {
+      {{ include('svgs/caret-right.twig', {
         class: 'size-full',
-      }) }} #}
-      >
+      }) }}
     </span>
   </template>
 </div>

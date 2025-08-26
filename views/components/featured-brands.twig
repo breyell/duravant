@@ -1,0 +1,59 @@
+<section class="fluid-grid py-12">
+  {% for brand in get_posts(brands) %}
+    {% if not loop.first %}
+      <div class="span-content">
+        <div class="w-full h-px bg-gray-light my-12"></div>
+      </div>
+    {% endif %}
+    <article class="span-content grid grid-cols-subgrid gap-y-12">
+      <div
+        class="
+          col-span-12 lg:col-span-6
+          {% if loop.index0 is odd %}
+            lg:hidden
+          {% endif %}
+        "
+      >
+        {{ ResponsiveImage(brand.image, {
+          class: 'w-full',
+        }) }}
+      </div>
+      <div class="col-span-12 lg:col-span-6 space-y-6">
+        {{ ResponsiveImage(brand.logo, {
+          class: 'mb-12 w-5/6 max-w-60 mx-auto lg:ml-0 lg:w-auto lg:max-w-full lg:h-48',
+        }) }}
+        <h3 class="text-h4">{{ brand.featured_heading }}</h3>
+        {% if brand.featured_body %}
+          <p class="text-body-medium">{{ brand.featured_body }}</p>
+        {% endif %}
+        {% if brand.featured_quote %}
+          <figure class="relative">
+            <div class="absolute top-0 left-0 size-full gradient-light bg-linear-to-r opacity-40">
+            </div>
+            {{ include('svgs/quote.twig', {
+              class: 'absolute top-2.5 left-5 w-14 text-blue-light opacity-40',
+            }) }}
+            <div class="relative p-5 space-y-3.5">
+              <blockquote class="text-body-large">"{{ brand.featured_quote }}"</blockquote>
+              {% if brand.featured_quote_author %}
+                <figcaption class="text-body-medium text-right">- {{ brand.featured_quote_author }}</figcaption>
+              {% endif %}
+            </div>
+          </figure>
+        {% endif %}
+        {% if brand.featured_link %}
+          <div class="">
+            {{ include('partials/arrow-link-large.twig', brand.featured_link) }}
+          </div>
+        {% endif %}
+      </div>
+      {% if loop.index is even %}
+        <div class="hidden lg:block col-span-12 lg:col-span-6">
+          {{ ResponsiveImage(brand.image, {
+            class: 'w-full',
+          }) }}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>
