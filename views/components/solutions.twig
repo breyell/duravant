@@ -1,12 +1,71 @@
 <section class="fluid-grid">
-  {% for brand in get_posts(brands) %}
+  {% for solution in solutions %}
     {% if not loop.first %}
       <div class="span-content">
         <div class="w-full h-px bg-gray-light my-12"></div>
       </div>
     {% endif %}
-    <article class="span-content grid grid-cols-subgrid">
-      {{ brand.title }}
+    <article
+      x-data="{ activeTab: 1 }"
+      class="span-content grid grid-cols-subgrid gap-y-10 py-16"
+    >
+      <div class="col-span-12 lg:col-span-5">
+        <h2 class="text-h3">{{ solution.heading }}</h2>
+        <div class="wysiwyg mt-3.5">{{ solution.wysiwyg }}</div>
+        <div class="mt-8">
+          <div class="lg:hidden relative">
+            <select
+              x-model="activeTab"
+              class="w-full"
+            >
+              {% for tab in solution.tabs %}
+                <option value="{{ loop.index }}">{{ tab.heading }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="hidden lg:flex lg:flex-col">
+            {% for tab in solution.tabs %}
+              <button
+                @click="activeTab = {{ loop.index }}"
+                :class="activeTab == {{ loop.index }} && 'bg-blue-baby hover:!bg-blue-baby'"
+                class="
+                  py-6 px-3 border-gray-light hover:bg-blue-pale transition-colors
+                  {% if loop.first %}
+                    border-t-2 border-b
+                  {% elseif loop.last %}
+                    border-b-2 border-t
+                  {% else %}
+                    border-y
+                  {% endif %}
+                "
+              >
+                <h3 class="text-h6 text-left">{{ tab.heading }}</h3>
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-6 lg:col-start-[col-7]">
+        {% for tab in solution.tabs %}
+          <div
+            x-show="activeTab == {{ loop.index }}"
+            class="space-y-4"
+          >
+            {{ ResponsiveImage(get_post(tab.brand).logo, {
+              class: '',
+            }) }}
+            <p class="text-body-large">{{ tab.primary_body }}</p>
+            <div class="h-1 w-full gradient-light bg-linear-to-l"></div>
+            <p class="text-body-medium">{{ tab.secondary_body }}</p>
+            <div class="">
+              {{ include('partials/arrow-link-small.twig', tab.link) }}
+            </div>
+            {{ ResponsiveImage(tab.image, {
+              class: 'w-full h-72 object-contain',
+            }) }}
+          </div>
+        {% endfor %}
+      </div>
     </article>
   {% endfor %}
 </section>
