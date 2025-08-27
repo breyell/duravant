@@ -3,11 +3,11 @@
     "title": "Component - Featured Brands",
     "fields": [
         {
-            "key": "field_68ad6154a210e",
+            "key": "field_68aef7b76f0c7",
             "label": "Brands",
             "name": "brands",
             "aria-label": "",
-            "type": "relationship",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,28 +16,194 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "brand"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0,
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "0"
-            },
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Brand",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68aef7c76f0c8",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "id",
+                    "library": "all",
+                    "upload_folder": "",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef7d26f0c9",
+                    "label": "Brand",
+                    "name": "brand",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "brand"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "max": "",
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_add_post": 0,
+                    "acfe_edit_post": 0,
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_post_type": "",
+                    "min": "",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef7fb6f0ca",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef8036f0cb",
+                    "label": "Body",
+                    "name": "body",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "acfe_textarea_code": 0,
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef8186f0cc",
+                    "label": "Quote",
+                    "name": "quote",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "acfe_textarea_code": 0,
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef82a6f0cd",
+                    "label": "Quote Author",
+                    "name": "quote_author",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68aef7b76f0c7"
+                },
+                {
+                    "key": "field_68aef8326f0ce",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_68aef7b76f0c7"
+                }
+            ]
         }
     ],
     "location": [
@@ -49,7 +215,7 @@
             }
         ]
     ],
-    "menu_order": 8,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -65,5 +231,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756193158
+    "modified": 1756297290
 }
