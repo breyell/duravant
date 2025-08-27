@@ -11,7 +11,9 @@
     >
       <div class="col-span-12 lg:col-span-5">
         <h2 class="text-h3">{{ solution.heading }}</h2>
-        <div class="wysiwyg mt-3.5">{{ solution.wysiwyg }}</div>
+        {% if solution.wysiwyg %}
+          <div class="wysiwyg mt-3.5">{{ solution.wysiwyg }}</div>
+        {% endif %}
         <div class="mt-8">
           <div class="lg:hidden relative">
             <select
@@ -51,18 +53,26 @@
             x-show="activeTab == {{ loop.index }}"
             class="space-y-4"
           >
-            {{ ResponsiveImage(get_post(tab.brand).logo, {
-              class: '',
-            }) }}
+            {% if tab.brand %}
+              {{ ResponsiveImage(get_post(tab.brand).logo, {
+                class: '',
+              }) }}
+            {% endif %}
             <p class="text-body-large">{{ tab.primary_body }}</p>
-            <div class="h-1 w-full gradient-light bg-linear-to-l"></div>
-            <p class="text-body-medium">{{ tab.secondary_body }}</p>
-            <div class="">
-              {{ include('partials/arrow-link-small.twig', tab.link) }}
-            </div>
-            {{ ResponsiveImage(tab.image, {
-              class: 'w-full h-72 object-contain',
-            }) }}
+            {% if tab.secondary_body %}
+              <div class="h-1 w-full gradient-light bg-linear-to-l"></div>
+              <p class="text-body-medium">{{ tab.secondary_body }}</p>
+            {% endif %}
+            {% if tab.link %}
+              <div class="">
+                {{ include('partials/arrow-link-small.twig', tab.link) }}
+              </div>
+            {% endif %}
+            {% if tab.image %}
+              {{ ResponsiveImage(tab.image, {
+                class: 'w-full h-72 object-contain',
+              }) }}
+            {% endif %}
           </div>
         {% endfor %}
       </div>
