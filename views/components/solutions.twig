@@ -1,0 +1,12 @@
+<section class="fluid-grid">
+  {% for brand in get_posts(brands) %}
+    {% if not loop.first %}
+      <div class="span-content">
+        <div class="w-full h-px bg-gray-light my-12"></div>
+      </div>
+    {% endif %}
+    <article class="span-content grid grid-cols-subgrid">
+      {{ brand.title }}
+    </article>
+  {% endfor %}
+</section>

@@ -1,28 +1,35 @@
-<section class="fluid-grid">
-  <div class="span-content">
-    {{ include('partials/breadcrumbs.twig') }}
-  </div>
-  <div class="span-content grid grid-cols-subgrid py-8 lg:py-16">
-    {{ ResponsiveImage(image, {
-      class: 'span-content w-full aspect-[1.1] rounded-r-full lg:hidden',
-    }) }}
-    <div class="span-content lg:col-end-[col-7] lg:self-center">
-      <h1 class="text-h1">{{ heading }}</h1>
-      {% if wysiwyg %}
-        <div class="wysiwyg mt-6">{{ wysiwyg }}</div>
-      {% endif %}
-      {% if secondary_heading or secondary_wysiwyg %}
-        <div class="w-full h-1 gradient-light bg-gradient-to-r my-6"></div>
-      {% endif %}
-      {% if secondary_heading %}
-        <h2 class="text-h4">{{ secondary_heading }}</h2>
-      {% endif %}
-      {% if secondary_wysiwyg %}
-        <div class="wysiwyg mt-3.5">{{ secondary_wysiwyg }}</div>
-      {% endif %}
+<section class="">
+  <div class="fluid-grid">
+    <div class="span-content">
+      {{ include('partials/breadcrumbs.twig') }}
     </div>
-    {{ ResponsiveImage(image, {
-      class: 'hidden lg:block col-start-[col-7] col-end-[col-13] w-full aspect-[1.1] rounded-r-full object-cover',
-    }) }}
+  </div>
+  <div class="relative fluid-grid">
+    {% if background == 'gradient' %}
+      <div class="absolute top-0 left-0 size-full gradient-lighter bg-linear-to-b"></div>
+    {% endif %}
+    <div class="span-content relative grid grid-cols-subgrid gap-y-8 py-8 lg:py-16">
+      {{ ResponsiveImage(image, {
+        class: 'span-content w-full aspect-[1.1] rounded-r-full lg:hidden',
+      }) }}
+      <div class="span-content lg:col-end-[col-7] lg:self-center">
+        <h1 class="text-h1">{{ heading }}</h1>
+        {% if wysiwyg %}
+          <div class="wysiwyg mt-6">{{ wysiwyg }}</div>
+        {% endif %}
+        {% if secondary_heading or secondary_wysiwyg %}
+          <div class="w-full h-1 gradient-light bg-gradient-to-r my-6"></div>
+        {% endif %}
+        {% if secondary_heading %}
+          <h2 class="text-h4">{{ secondary_heading }}</h2>
+        {% endif %}
+        {% if secondary_wysiwyg %}
+          <div class="wysiwyg mt-3.5">{{ secondary_wysiwyg }}</div>
+        {% endif %}
+      </div>
+      {{ ResponsiveImage(image, {
+        class: 'hidden lg:block col-start-[col-7] col-end-[col-13] w-full aspect-[1.1] rounded-r-full object-cover',
+      }) }}
+    </div>
   </div>
 </section>

@@ -3,6 +3,11 @@
 use Timber\Timber;
 
 $context = Timber::context();
+
+if (is_404()) {
+	return Timber::render('templates/404.twig', Timber::context());
+}
+
 $context['breadcrumbs'] = [$context['post']];
 
 if ($context['post']->post_parent !== 0) {
@@ -15,8 +20,14 @@ if ($context['post']->post_parent !== 0) {
 }
 array_unshift($context['breadcrumbs'], Timber::get_post(get_option('page_on_front')));
 
-// if (is_404()) {
-//     Timber::render('templates/404.twig', Timber::context());
-// }
+$post_type = get_post_type();
+
+if ($post_type === 'solution') {
+	if (wp_get_post_parent_id() === 0) {
+		return Timber::render('templates/solution.twig', $context);
+	}
+} elseif ($post_type === 'market') {
+	return Timber::render('templates/market.twig', $context);
+}
 
 return Timber::render('templates/page-builder.twig', $context);

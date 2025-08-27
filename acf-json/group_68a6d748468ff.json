@@ -3,6 +3,32 @@
     "title": "Component - Hero (Double Text)",
     "fields": [
         {
+            "key": "field_68ada2df79e97",
+            "label": "Background",
+            "name": "background",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "gradient": "Gradient"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_68a6d7729ad4c",
             "label": "Image",
             "name": "image",
@@ -155,7 +181,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 11,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -171,5 +197,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755764612
+    "modified": 1756209905
 }

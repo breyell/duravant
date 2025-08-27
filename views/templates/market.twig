@@ -1,0 +1,9 @@
+{% extends 'layouts/default.twig' %}
+
+{% block main %}
+  {{ include('components/hero-double-text.twig', post.hero) }}
+  {{ include('components/jump-links.twig', post.jump_links) }}
+  {{ include('components/solutions.twig', post.solutions) }}
+  {{ include('components/featured-articles.twig', post.featured_articles) }}
+  {{ include('components/cta-section.twig', post.cta_section) }}
+{% endblock %}

@@ -8,20 +8,22 @@
 	--color-blue-light: #93DAF0;
 	--color-blue-baby: #BFE9F6;
 	--color-blue-pale: #DFF4FB;
+	--color-blue-deep: #1B7A96;
 	--color-gray-dark: #1D222A;
 	--color-gray: #3A4453;
 	--color-gray-light: #BEC8D2;
 	--color-bone: #F2F2F2;
 
 	--font-aktiv-grotesk-extended: "aktiv-grotesk-extended", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-aptos: "aptos", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-aktiv-grotesk: "aktiv-grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	/* --font-aptos: "aptos", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
 
 	--font-weight-*: initial;
 	/* --font-weight-hairline: 100; */
 	/* --font-weight-thin: 200; */
 	/* --font-weight-light: 300; */
 	--font-weight-normal: 400;
-	/* --font-weight-medium: 500; */
+	--font-weight-medium: 500;
 	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
 	/* --font-weight-extrabold: 800; */
@@ -34,11 +36,11 @@
 }
 
 @utility gradient {
-	@apply from-blue-dark/0 to-blue-dark;
+	@apply from-white to-blue-dark;
 }
 
 @utility gradient-dark {
-	@apply from-[11%] from-blue via-[43%] via-[#1490AC] to-[89%] to-[#064758];
+	@apply from-blue-light via-60% via-blue-deep to-gray-dark;
 }
 
 @utility gradient-light {
@@ -46,15 +48,15 @@
 }
 
 @utility gradient-lighter {
-	@apply from-transparent to-blue-dark/20;
+	@apply from-white via-75% via-blue-pale to-blue-baby;
 }
 
 @utility gradient-gray {
-	@apply from-55% from-white/0 to-gray-dark;
+	@apply from-55% from-white to-gray-dark;
 }
 
 @utility button-primary {
-	@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+	@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark !leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
 }
 
 @utility button-secondary {
@@ -85,15 +87,31 @@
 		@apply text-balance;
 	}
 
-	p {
-		@apply text-pretty max-w-[80ch];
-	}
-
 	h2 {
 		@apply text-h2;
 	}
 
+	h3 {
+		@apply text-h3;
+	}
+
+	h4 {
+		@apply text-h4;
+	}
+
+	h5 {
+		@apply text-h5;
+	}
+
+	h6 {
+		@apply text-h6;
+	}
+
 	p {
+		@apply text-pretty max-w-[80ch] my-4;
+	}
+
+	p:not(.lead) {
 		@apply text-body-medium;
 
 		bold {
@@ -101,12 +119,59 @@
 		}
 	}
 
+	p.lead {
+		@apply text-body-large font-bold;
+	}
+
 	ul {
-		@apply marker:text-blue-dark marker:text-lg list-disc pl-3.5 space-y-3 mt-4;
+		@apply marker:text-blue-dark marker:text-lg list-disc pl-8 space-y-3 my-4;
+	}
+
+	ol {
+		@apply list-decimal pl-8 space-y-3 my-4;
+	}
+
+	li {
+		@apply text-body-medium;
 	}
 
 	a {
-		@apply underline hover:no-underline;
+		@apply text-blue-dark hover:underline;
+	}
+
+	.alignleft {
+		@apply float-left;
+	}
+	.alignright {
+		@apply float-right;
+	}
+
+	.aligncenter {
+		@apply text-center mx-auto;
+	}
+
+	img {
+	/*  */
+	}
+
+	img.alignleft {
+		@apply mr-4 mb-4;
+	}
+
+	img.alignright {
+		@apply ml-4 mb-4;
+	}
+
+	blockquote {
+		@apply relative before:absolute before:-z-10 before:top-0 before:left-0 before:size-full before:gradient-lighter before:bg-linear-to-b py-6 px-7 max-w-2xl;
+		background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 59 37" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath opacity="0.4" d="M22.7106 36.9894H0.88501L10.9993 0.790771H28.1671L22.7106 36.9894ZM53.0536 36.9894H31.228L41.3423 0.790771H58.51L53.0536 36.9894Z" fill="%2393DAF0" /%3E%3C/svg%3E');
+		background-size: 50px;
+		background-repeat: no-repeat;
+		background-position: 29px 10px;
+	}
+
+	blockquote p {
+		@apply !my-0;
 	}
 }
 
