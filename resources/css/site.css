@@ -56,24 +56,24 @@
 }
 
 @utility button-primary {
-	@apply inline-flex items-center px-7 py-4 text-h6 text-gray-dark !leading-none border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
+	@apply inline-flex items-center px-7 py-4 font-aktiv-grotesk-extended font-bold text-sm !leading-none uppercase text-gray-dark border border-blue bg-blue rounded-full transition-colors hover:bg-blue-dark hover:border-blue-dark;
 }
 
 @utility button-secondary {
-	@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
+	@apply inline-flex items-center px-7 py-4 font-aktiv-grotesk-extended font-bold text-sm !leading-none uppercase text-white border border-white rounded-full transition-colors hover:bg-white hover:text-gray-dark;
 }
 
 @utility button-secondary-alt {
-	@apply inline-flex items-center px-7 py-4 text-h6 leading-none text-gray-dark border border-gray-dark rounded-full transition-colors hover:bg-gray-dark hover:text-white;
+	@apply inline-flex items-center px-7 py-4 font-aktiv-grotesk-extended font-bold text-sm !leading-none uppercase text-gray-dark border border-gray-dark rounded-full transition-colors hover:bg-gray-dark hover:text-white;
 }
 
 @utility button-tertiary {
-	@apply inline-flex items-center px-7 py-4 text-h6 leading-none border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
+	@apply inline-flex items-center px-7 py-4 font-aktiv-grotesk-extended font-bold text-sm !leading-none uppercase border text-white border-gray-dark bg-gray-dark rounded-full transition-colors hover:bg-blue-baby hover:border-blue-baby hover:text-black;
 }
 
-@utility button-small {
+/* @utility button-small {
 	@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 py-2 rounded-full transition-colors hover:bg-blue-dark;
-}
+} */
 
 @utility wysiwyg {
 	@apply space-y-3.5;
