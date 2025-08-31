@@ -20,7 +20,7 @@
                 "2": "2",
                 "4": "4"
             },
-            "default_value": 4,
+            "default_value": 2,
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
@@ -284,5 +284,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756631103
+    "modified": 1756631850
 }
