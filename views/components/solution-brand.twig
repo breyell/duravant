@@ -1,0 +1,45 @@
+<section class="fluid-grid gap-y-8 py-8 lg:py-12">
+  <div
+    class="
+      span-content lg:col-end-[col-7] self-center
+      {% if image_side == 'right' %}
+        lg:hidden
+      {% endif %}
+    "
+  >
+    {{ ResponsiveImage(image, {
+      class: 'w-full',
+    }) }}
+  </div>
+  <div
+    class="
+      span-content space-y-6
+      {% if image_side == 'right' %}
+        lg:col-end-[col-7]
+      {% else %}
+        lg:col-start-[col-7]
+      {% endif %}
+    "
+
+  >
+    {% if brand %}
+      {{ ResponsiveImage(get_post(brand).logo, {
+        class: '',
+      }) }}
+    {% endif %}
+    <h2 class="text-h4">{{ heading }}</h2>
+    <div class="wysiwyg">{{ wysiwyg }}</div>
+    {% if link %}
+      <div class="">
+        {{ include('partials/arrow-link-large.twig', link) }}
+      </div>
+    {% endif %}
+  </div>
+  {% if image_side == 'right' %}
+    <div class="span-content lg:col-start-[col-7] self-center">
+      {{ ResponsiveImage(image, {
+        class: 'w-full',
+      }) }}
+    </div>
+  {% endif %}
+</section>

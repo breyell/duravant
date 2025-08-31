@@ -1240,14 +1240,14 @@
                 },
                 "layout_68af29dd18f85": {
                     "key": "layout_68af29dd18f85",
-                    "name": "solution_brands",
-                    "label": "Solution Brands",
+                    "name": "solution_brand",
+                    "label": "Solution Brand",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_68af29e318f88",
-                            "label": "Solution Brands",
-                            "name": "solution_brands",
+                            "label": "Solution Brand",
+                            "name": "solution_brand",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -1259,7 +1259,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_68af29be07ca0"
+                                "group_68b403c942afe"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1595,5 +1595,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756621420
+    "modified": 1756628210
 }
