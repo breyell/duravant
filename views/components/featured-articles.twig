@@ -1,45 +1,15 @@
-{% set articles = [
-  {
-    heading: 'Lorem ipsum dolor sit amet consect',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum reprehenderit sapiente earum iste nobis ullam, modi eaque, ad, ducimus rerum voluptatem voluptatum cum! Ducimus esse nisi magni maxime debitis delectus?',
-    link: {
-      title: 'Lorem ipsum',
-      url: '#',
-    },
-    image: {
-      src: 'https://picsum.photos/1200/900',
-      alt: '',
-    },
-  },
-  {
-    heading: 'Lorem ipsum dolor sit amet consect',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum reprehenderit sapiente earum iste nobis ullam, modi eaque, ad, ducimus rerum voluptatem voluptatum cum! Ducimus esse nisi magni maxime debitis delectus?',
-    link: {
-      title: 'Lorem ipsum',
-      url: '#',
-    },
-    image: {
-      src: 'https://picsum.photos/1200/900',
-      alt: '',
-    },
-  },
-  {
-    heading: 'Lorem ipsum dolor sit amet consect',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum reprehenderit sapiente earum iste nobis ullam, modi eaque, ad, ducimus rerum voluptatem voluptatum cum! Ducimus esse nisi magni maxime debitis delectus?',
-    link: {
-      title: 'Lorem ipsum',
-      url: '#',
-    },
-    image: {
-      src: 'https://picsum.photos/1200/900',
-      alt: '',
-    },
-  },
-] %}
-
 <section class="fluid-grid my-12 lg:my-24">
   <div class="span-content grid grid-cols-subgrid gap-y-8">
     {% for article in articles %}
+      {% if article.type == 'page' %}
+        {% set article_page = get_post(article.page) %}
+        {% set article = {
+          image: article_page.featured_image,
+          heading: article_page.featured_article_content.heading,
+          body: article_page.featured_article_content.body,
+          link: article_page.featured_article_content.link,
+        } %}
+      {% endif %}
       <article
         class="
           relative col-span-12
@@ -56,32 +26,13 @@
           {% endif %}
         "
       >
-        {# {{ ResponsiveImage(article.image, {
-          class: '',
-        }) }} #}
-
-        <img
-          class="
-            w-full object-cover aspect-[1.44]
-            {% if layout == 'sixty-forty' %}
-              {% if loop.first %}
-                md:aspect-[1.4384] lg:aspect-[1.4412]
-              {% elseif loop.index == 2 %}
-                md:aspect-square
-              {% endif %}
-            {% endif %}
-          "
-          src="{{ article.image.src }}"
-          alt="{{ article.image.alt }}"
-        >
+        {{ ResponsiveImage(article.image, {
+          class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and loop.first ? '' : 'md:aspect-square'),
+        }) }}
         <h2 class="text-h3 mt-6">{{ article.heading }}</h2>
         <div class="w-full h-1 gradient-light bg-linear-to-r my-2.5"></div>
         <p class="text-body-medium">{{ article.body }}</p>
         <div class="mt-2.5">
-          {# {{ include('partials/arrow-link-small.twig', {
-            title: article.link.title,
-            link: article.link.url,
-          }) }} #}
           <a
             class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
             href="{{ article.link.url }}"
@@ -91,7 +42,6 @@
             <span class="absolute inset-0"></span>
             {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
           </a>
-
         </div>
       </article>
     {% endfor %}
