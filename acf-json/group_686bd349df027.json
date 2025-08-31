@@ -707,6 +707,23 @@
                     "rows": 3,
                     "placeholder": "",
                     "new_lines": "br"
+                },
+                {
+                    "key": "field_68b3f93c690a2",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -785,5 +802,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756621504
+    "modified": 1756625223
 }
