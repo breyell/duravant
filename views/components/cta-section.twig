@@ -1,23 +1,23 @@
 {# mobile #}
 <section class="fluid-grid bg-blue lg:hidden">
-  {% if image %}
+  {% if global.cta_section.image %}
     <div class="col-start-[full-start] col-end-[content-end] sm:col-end-[col-10]">
-      {{ ResponsiveImage(image, {
+      {{ Responsiveglobal.cta_section.Image(global.cta_section.image, {
         class: 'h-96 rounded-r-full object-cover object-right',
       }) }}
     </div>
   {% endif %}
   <div class="span-content">
     <div class="py-12">
-      {% if heading %}
-        <h2 class="text-h3">{{ heading }}</h2>
+      {% if global.cta_section.heading %}
+        <h2 class="text-h3">{{ global.cta_section.heading }}</h2>
       {% endif %}
-      {% if body %}
-        <p class="text-body-medium lg:text-body-large mt-3">{{ body }}</p>
+      {% if global.cta_section.body %}
+        <p class="text-body-medium lg:text-body-large mt-3">{{ global.cta_section.body }}</p>
       {% endif %}
-      {% if links %}
+      {% if global.cta_section.links %}
         <div class="mt-6">
-          {% for item in links %}
+          {% for item in global.cta_section.links %}
             <a
               class="button-tertiary"
               href="{{ item.link.link }}"
@@ -33,20 +33,20 @@
 {# desktop #}
 <section class="hidden relative lg:grid fluid-grid bg-blue">
   <div class="absolute top-0 left-1/2 -translate-x-1/2 size-full max-w-[var(--breakpoint-2xl)] overflow-hidden">
-    {{ ResponsiveImage(image, {
+    {{ ResponsiveImage(global.cta_section.image, {
       class: 'ml-auto w-9/12 xl:w-[70%] h-full object-cover',
     }) }}
   </div>
   <div class="relative h-[28rem] col-start-[content-start] col-end-[col-7] row-start-1 bg-blue rounded-r-full flex flex-col justify-center pr-36">
-    {% if heading %}
-      <h2 class="text-h3">{{ heading }}</h2>
+    {% if global.cta_section.heading %}
+      <h2 class="text-h3">{{ global.cta_section.heading }}</h2>
     {% endif %}
-    {% if body %}
-      <p class="text-body-medium lg:text-body-large mt-4">{{ body }}</p>
+    {% if global.cta_section.body %}
+      <p class="text-body-medium lg:text-body-large mt-4">{{ global.cta_section.body }}</p>
     {% endif %}
-    {% if links %}
+    {% if global.cta_section.links %}
       <div class="mt-4">
-        {% for item in links %}
+        {% for item in global.cta_section.links %}
           <a
             class="button-tertiary"
             href="{{ item.link.url }}"
