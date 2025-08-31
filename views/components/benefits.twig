@@ -6,28 +6,58 @@
   {% endif %}
 ">
   <div class="fluid-grid">
-    <div class="span-xl grid grid-cols-subgrid gap-y-10 lg:gap-y-16">
-      <h2 class="
-        col-span-full pb-4
-        {% if items|length is odd %}
-          lg:col-span-5
+    <div
+      class="
+        grid grid-cols-subgrid gap-y-10 lg:gap-y-16
+        {% if items_per_row == 2 %}
+          span-xl
         {% else %}
-          text-center
+          span-content
         {% endif %}
-      ">
-        <span
-          class="text-h3 relative inline-block after:absolute after:top-[calc(100%+0.75rem)] after:left-0 after:w-full after:h-1 after:gradient-light after:bg-linear-to-r"
-        >{{ heading }}</span>
-      </h2>
+      "
+    >
+      <div
+        class="
+          col-span-full pb-4
+          {% if items|length is odd %}
+            lg:col-span-5
+          {% else %}
+            text-center lg:w-1/2 lg:mx-auto
+          {% endif %}
+        "
+      >
+        <div class="inline-block">
+          <h2 class="text-h3">
+            {{ heading }}
+          </h2>
+          <div class="inline-block w-full h-1 gradient-light bg-linear-to-r my-3"></div>
+        </div>
+        {% if body %}
+          <p class="text-body-large">{{ body }}</p>
+        {% endif %}
+      </div>
       {% for item in items %}
-        <div class="col-span-full lg:col-span-5 flex gap-x-5">
+        <div
+          class="
+            col-span-full flex gap-x-5
+            {% if items_per_row == 2 %}
+              lg:col-span-5
+            {% else %}
+              lg:col-span-3
+            {% endif %}
+          "
+        >
           {% if icons %}
             {{ ResponsiveImage(item.icon, {
               class: 'size-10',
             }) }}
           {% endif %}
           <div class="">
-            <h3 class="text-h5">{{ item.heading }}</h3>
+            {% if item.heading_is_link %}
+              {{ include('partials/arrow-link-large.twig', item.heading_link) }}
+            {% else %}
+              <h3 class="text-h5">{{ item.heading }}</h3>
+            {% endif %}
             <p class="text-body-medium mt-3">{{ item.body }}</p>
           </div>
         </div>
