@@ -1,6 +1,6 @@
 {% if brands %}
   <section class="fluid-grid py-12">
-    {% for brand in brands %}
+    {% for brand in get_posts(brands) %}
       {% if not loop.first %}
         <div class="span-content">
           <div class="w-full h-px bg-gray-light my-12"></div>
@@ -20,16 +20,16 @@
           }) }}
         </div>
         <div class="col-span-12 lg:col-span-6 space-y-6">
-          {% if brand.brand %}
-            {{ ResponsiveImage(get_post(brand.brand).logo, {
+          {% if brand.featured_logo %}
+            {{ ResponsiveImage(brand.featured_logo, {
               class: 'mb-12 w-5/6 max-w-60 mx-auto lg:ml-0 lg:w-auto lg:max-w-full lg:h-48',
             }) }}
           {% endif %}
-          <h3 class="text-h4">{{ brand.heading }}</h3>
-          {% if brand.body %}
-            <p class="text-body-medium">{{ brand.body }}</p>
+          <h3 class="text-h4">{{ brand.featured_heading }}</h3>
+          {% if brand.featured_wysiwyg %}
+            <div class="wysiwyg">{{ brand.featured_wysiwyg }}</div>
           {% endif %}
-          {% if brand.quote %}
+          {% if brand.featured_quote %}
             <figure class="relative">
               <div class="absolute top-0 left-0 size-full gradient-light bg-linear-to-r opacity-40">
               </div>
@@ -37,20 +37,20 @@
                 class: 'absolute top-2.5 left-5 w-14 text-blue-light opacity-40',
               }) }}
               <div class="relative p-5 space-y-3.5">
-                <blockquote class="text-body-large">"{{ brand.quote }}"</blockquote>
-                {% if brand.quote_author %}
-                  <figcaption class="text-body-medium text-right">- {{ brand.quote_author }}</figcaption>
+                <blockquote class="text-body-large">"{{ brand.featured_quote }}"</blockquote>
+                {% if brand.featured_quote_author %}
+                  <figcaption class="text-body-medium text-right">- {{ brand.featured_quote_author }}</figcaption>
                 {% endif %}
               </div>
             </figure>
           {% endif %}
-          {% if brand.link %}
+          {% if brand.featured_link %}
             <div class="">
-              {{ include('partials/arrow-link-large.twig', brand.link) }}
+              {{ include('partials/arrow-link-large.twig', brand.featured_link) }}
             </div>
           {% endif %}
         </div>
-        {% if loop.index is even and brand.brand %}
+        {% if loop.index is even and brand.image %}
           <div class="hidden lg:block col-span-12 lg:col-span-6">
             {{ ResponsiveImage(brand.image, {
               class: 'w-full',

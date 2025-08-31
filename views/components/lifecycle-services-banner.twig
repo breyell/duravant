@@ -1,19 +1,19 @@
 <section class="relative pt-12 pb-36 md:pt-12 lg:py-24 gradient-lighter bg-gradient-to-b">
   <div class="fluid-grid gap-y-12">
     <div class="span-content md:col-start-[col-1] md:col-end-[col-5] lg:self-center">
-      {{ ResponsiveImage(image, {
+      {{ ResponsiveImage(global.lifecycle_services_banner.image, {
         class: 'w-full',
       }) }}
     </div>
     <div class="span-content md:col-start-[col-5] md:col-end-[col-12] lg:self-center">
       <div class="space-y-3">
-        <h2 class="text-h2">{{ heading }}</h2>
-        <h3 class="text-h5">{{ subheading }}</h3>
-        <p class="text-body-medium">{{ body }}</p>
+        <h2 class="text-h2">{{ global.lifecycle_services_banner.heading }}</h2>
+        <h3 class="text-h5">{{ global.lifecycle_services_banner.subheading }}</h3>
+        <p class="text-body-medium">{{ global.lifecycle_services_banner.body }}</p>
       </div>
-      {% if links %}
+      {% if global.lifecycle_services_banner.links %}
         <div class="flex flex-wrap mt-6 gap-6">
-          {% for item in links %}
+          {% for item in global.lifecycle_services_banner.links %}
             <a
               class="{{ loop.first ? 'button-primary' : 'button-secondary-alt' }}"
               href="{{ item.link.url }}"
@@ -25,6 +25,6 @@
     </div>
   </div>
   {{ include('svgs/lifecycle-services-shape.twig', {
-    class: 'absolute bottom-0 right-0 w-full',
+    class: 'absolute bottom-0 right-0 w-full pointer-events-none',
   }) }}
 </section>

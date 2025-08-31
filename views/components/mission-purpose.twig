@@ -2,30 +2,30 @@
   <div class="fluid-grid">
     <div class="span-content relative py-28 bg-blue-dark text-white lg:col-end-[col-7] lg:flex lg:flex-col lg:justify-center lg:px-16">
       <div class="absolute top-0 -left-(--col-gap) w-[calc(100%+2*var(--col-gap))] h-full lg:w-[calc(100%+1.5*var(--col-gap))]">
-        {{ ResponsiveImage(global.mission_background, {
+        {{ ResponsiveImage(global.mission_purpose.mission_background, {
           class: 'size-full object-cover',
         }) }}
       <div class="absolute top-0 left-0 size-full from-[#016373] to-transparent bg-linear-to-r"></div>
       </div>
       <div class="relative text-center lg:translate-x-[calc(-0.25*var(--col-gap))]">
         <div class="inline-flex flex-col">
-          <h2 class="text-h3 inline-block">{{ mission_heading }}</h2>
+          <h2 class="text-h3 inline-block">{{ global.mission_purpose.mission_heading }}</h2>
           <div class="w-full h-1 gradient-light bg-linear-to-r mt-3 mb-6"></div>
         </div>
-        <p class="relative text-body-large text-center">{{ mission_body }}</p>
+        <p class="relative text-body-large text-center">{{ global.mission_purpose.mission_body }}</p>
       </div>
     </div>
     <div class="span-content py-16 lg:col-start-[col-7] lg:px-8">
-      {{ ResponsiveImage(purpose_image, {
+      {{ ResponsiveImage(global.mission_purpose.purpose_image, {
         class: 'w-full aspect-[1.9] object-cover',
       }) }}
       <div class="mt-10 text-center">
         <div class="inline-flex flex-col">
-          <h2 class="text-h3 inline-block">{{ purpose_heading }}</h2>
+          <h2 class="text-h3 inline-block">{{ global.mission_purpose.purpose_heading }}</h2>
           <div class="w-full h-1 gradient-light bg-linear-to-r mt-3 mb-2.5"></div>
         </div>
       </div>
-      <p class="text-body-large text-center">{{ purpose_body }}</p>
+      <p class="text-body-large text-center">{{ global.mission_purpose.purpose_body }}</p>
     </div>
   </div>
 </section>

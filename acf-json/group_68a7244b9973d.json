@@ -3,6 +3,35 @@
     "title": "Component - Mission & Purpose",
     "fields": [
         {
+            "key": "field_68b3eac5d1b15",
+            "label": "Mission Background",
+            "name": "mission_background",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "upload_folder": "",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_68a7244be92cd",
             "label": "Mission Heading",
             "name": "mission_heading",
@@ -60,7 +89,7 @@
                 "id": ""
             },
             "uploader": "",
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "upload_folder": "",
             "acfe_thumbnail": 0,
@@ -127,7 +156,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 24,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -143,5 +172,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755784341
+    "modified": 1756621531
 }

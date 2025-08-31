@@ -82,49 +82,6 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
-        },
-        {
-            "key": "field_6872c232ed2c1",
-            "label": "Heading",
-            "name": "heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6872c257ed2c2",
-            "label": "Body",
-            "name": "body",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "acfe_textarea_code": 0,
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 2,
-            "placeholder": "",
-            "new_lines": ""
         }
     ],
     "location": [
@@ -136,7 +93,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 23,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -152,5 +109,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753838707
+    "modified": 1756620766
 }

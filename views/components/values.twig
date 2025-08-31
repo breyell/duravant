@@ -2,16 +2,16 @@
   <div class="fluid-grid">
     <div class="span-content text-center">
       <div class="inline-block">
-        <h2 class="text-h4 inline-block">{{ heading }}</h2>
+        <h2 class="text-h4 inline-block">{{ global.values.heading }}</h2>
         <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
       </div>
-      <p class="text-body-large">{{ body }}</p>
+      <p class="text-body-large">{{ global.values.body }}</p>
     </div>
     <div class="span-content grid grid-cols-1 lg:grid-cols-5 gap-x-fluid-grid-gap mt-8 lg:mt-12 text-center lg:text-left gap-y-8">
-      {% for value in values %}
+      {% for value in global.values.values %}
         <div class="">
           {{ ResponsiveImage(value.image, {
-            class: 'size-[7.8125rem] rounded-full mx-auto lg:ml-0 object-cover',
+            class: 'size-[7.8125rem] mx-auto lg:ml-0 object-cover',
           }) }}
           <h3 class="text-h5 mt-4">{{ value.heading }}</h3>
           <div class="text-body-large mt-4">{{ value.subheading }}</div>

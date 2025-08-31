@@ -774,11 +774,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_68764a8095442",
-                            "label": "Image Grid",
-                            "name": "image_grid",
+                            "key": "field_68b3dea1464f3",
+                            "label": "Rows",
+                            "name": "rows",
                             "aria-label": "",
-                            "type": "clone",
+                            "type": "radio",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -787,18 +787,17 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "group_6876495700777"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "acfe_seamless_style": 0,
-                            "acfe_clone_modal": 0,
-                            "acfe_clone_modal_close": 0,
-                            "acfe_clone_modal_button": "",
-                            "acfe_clone_modal_size": "large"
+                            "choices": {
+                                "1": "1",
+                                "2": "2"
+                            },
+                            "default_value": 2,
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "vertical",
+                            "save_other_choice": 0
                         }
                     ],
                     "min": "",
@@ -916,35 +915,7 @@
                     "name": "lifecycle_services_banner",
                     "label": "Lifecycle Services Banner",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_68a5b1b0d73e0",
-                            "label": "Lifecycle Service Banner",
-                            "name": "lifecycle_service_banner",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_68a5b1417da33"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "acfe_seamless_style": 0,
-                            "acfe_clone_modal": 0,
-                            "acfe_clone_modal_close": 0,
-                            "acfe_clone_modal_button": "",
-                            "acfe_clone_modal_size": "large"
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": "",
                     "acfe_flexible_thumbnail": "",
@@ -1156,35 +1127,7 @@
                     "name": "mission_purpose",
                     "label": "Mission & Purpose",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_68a724ab1163c",
-                            "label": "Mission & Purpose",
-                            "name": "mission_purpose",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_68a7244b9973d"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "acfe_seamless_style": 0,
-                            "acfe_clone_modal": 0,
-                            "acfe_clone_modal_close": 0,
-                            "acfe_clone_modal_button": "",
-                            "acfe_clone_modal_size": "large"
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": "",
                     "acfe_flexible_thumbnail": "",
@@ -1269,6 +1212,54 @@
                             },
                             "clone": [
                                 "group_68a1883b08491"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_layout_locations": [],
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false,
+                    "acfe_layout_col": "auto",
+                    "acfe_layout_allowed_col": false
+                },
+                "layout_68af29dd18f85": {
+                    "key": "layout_68af29dd18f85",
+                    "name": "solution_brands",
+                    "label": "Solution Brands",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68af29e318f88",
+                            "label": "Solution Brands",
+                            "name": "solution_brands",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68af29be07ca0"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1444,35 +1435,7 @@
                     "name": "values",
                     "label": "Values",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_68a852bd2aeab",
-                            "label": "Values",
-                            "name": "values",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_68a8524109a34"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "acfe_seamless_style": 0,
-                            "acfe_clone_modal": 0,
-                            "acfe_clone_modal_close": 0,
-                            "acfe_clone_modal_button": "",
-                            "acfe_clone_modal_size": "large"
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": "",
                     "acfe_flexible_thumbnail": "",
@@ -1632,5 +1595,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756277970
+    "modified": 1756621420
 }
