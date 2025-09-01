@@ -1,5 +1,7 @@
 {% extends 'layouts/default.twig' %}
 
 {% block main %}
-  <h1>404</h1>
+  {% for component in global.four_oh_four_page_builder.page_builder %}
+		{% include "components/" ~ component.acf_fc_layout | replace({'_': '-'}) ~ ".twig" with component %}
+	{% endfor %}
 {% endblock %}
