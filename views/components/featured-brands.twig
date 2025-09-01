@@ -1,6 +1,30 @@
+{% if type == 'quote' %}
+  {% set brands = get_posts(brands) %}
+  {# featured_logo #}
+  {# featured_heading #}
+  {# featured_wysiwyg #}
+  {# featured_link #}
+{% else %}
+  {% set brands = custom_brands %}
+{% endif %}
+
 {% if brands %}
   <section class="fluid-grid py-12">
-    {% for brand in get_posts(brands) %}
+    {% for brand in brands %}
+      {% if type == 'quote' %}
+        {% set logo = brand.logo %}
+        {% set heading = brand.featured_heading %}
+        {% set wysiwyg = brand.featured_wysiwyg %}
+        {% set quote = brand.featured_quote %}
+        {% set quote_author = brand.featured_quote_author %}
+        {% set link = brand.featured_link %}
+      {% else %}
+        {% set logo = get_post(brand.brand).logo %}
+        {% set heading = brand.heading %}
+        {% set wysiwyg = brand.wysiwyg %}
+        {% set link = brand.link %}
+      {% endif %}
+
       {% if not loop.first %}
         <div class="span-content">
           <div class="w-full h-px bg-gray-light my-12"></div>
@@ -15,21 +39,23 @@
             {% endif %}
           "
         >
-          {{ ResponsiveImage(brand.image, {
-            class: 'w-full',
-          }) }}
+          {% if brand.image %}
+            {{ ResponsiveImage(brand.image, {
+              class: 'w-full',
+            }) }}
+          {% endif %}
         </div>
         <div class="col-span-12 lg:col-span-6 space-y-6">
-          {% if brand.featured_logo %}
-            {{ ResponsiveImage(brand.featured_logo, {
+          {% if logo %}
+            {{ ResponsiveImage(logo, {
               class: 'mb-12 w-5/6 max-w-60 mx-auto lg:ml-0 lg:w-auto lg:max-w-full lg:h-48',
             }) }}
           {% endif %}
-          <h3 class="text-h4">{{ brand.featured_heading }}</h3>
-          {% if brand.featured_wysiwyg %}
-            <div class="wysiwyg">{{ brand.featured_wysiwyg }}</div>
+          <h3 class="text-h4">{{ heading }}</h3>
+          {% if wysiwyg %}
+            <div class="wysiwyg">{{ wysiwyg }}</div>
           {% endif %}
-          {% if brand.featured_quote %}
+          {% if quote %}
             <figure class="relative">
               <div class="absolute top-0 left-0 size-full gradient-light bg-linear-to-r opacity-40">
               </div>
@@ -37,16 +63,16 @@
                 class: 'absolute top-2.5 left-5 w-14 text-blue-light opacity-40',
               }) }}
               <div class="relative p-5 space-y-3.5">
-                <blockquote class="text-body-large">"{{ brand.featured_quote }}"</blockquote>
-                {% if brand.featured_quote_author %}
-                  <figcaption class="text-body-medium text-right">- {{ brand.featured_quote_author }}</figcaption>
+                <blockquote class="text-body-large">"{{ quote }}"</blockquote>
+                {% if quote_author %}
+                  <figcaption class="text-body-medium text-right">- {{ quote_author }}</figcaption>
                 {% endif %}
               </div>
             </figure>
           {% endif %}
-          {% if brand.featured_link %}
+          {% if link %}
             <div class="">
-              {{ include('partials/arrow-link-large.twig', brand.featured_link) }}
+              {{ include('partials/arrow-link-large.twig', link) }}
             </div>
           {% endif %}
         </div>

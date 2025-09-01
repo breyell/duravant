@@ -1,23 +1,29 @@
 {# mobile #}
+{% if content_source == 'custom' %}
+  {% set component_content = custom_content %}
+{% else %}
+  {% set component_content = global.cta_section %}
+{% endif %}
+
 <section class="fluid-grid bg-blue lg:hidden">
-  {% if global.cta_section.image %}
+  {% if component_content.image %}
     <div class="col-start-[full-start] col-end-[content-end] sm:col-end-[col-10]">
-      {{ Responsiveglobal.cta_section.Image(global.cta_section.image, {
+      {{ ResponsiveImage(component_content.image, {
         class: 'h-96 rounded-r-full object-cover object-right',
       }) }}
     </div>
   {% endif %}
   <div class="span-content">
     <div class="py-12">
-      {% if global.cta_section.heading %}
-        <h2 class="text-h3">{{ global.cta_section.heading }}</h2>
+      {% if component_content.heading %}
+        <h2 class="text-h3">{{ component_content.heading }}</h2>
       {% endif %}
-      {% if global.cta_section.body %}
-        <p class="text-body-medium lg:text-body-large mt-3">{{ global.cta_section.body }}</p>
+      {% if component_content.body %}
+        <p class="text-body-medium lg:text-body-large mt-3">{{ component_content.body }}</p>
       {% endif %}
-      {% if global.cta_section.links %}
+      {% if component_content.links %}
         <div class="mt-6">
-          {% for item in global.cta_section.links %}
+          {% for item in component_content.links %}
             <a
               class="button-tertiary"
               href="{{ item.link.link }}"
@@ -33,20 +39,20 @@
 {# desktop #}
 <section class="hidden relative lg:grid fluid-grid bg-blue">
   <div class="absolute top-0 left-1/2 -translate-x-1/2 size-full max-w-[var(--breakpoint-2xl)] overflow-hidden">
-    {{ ResponsiveImage(global.cta_section.image, {
+    {{ ResponsiveImage(component_content.image, {
       class: 'ml-auto w-9/12 xl:w-[70%] h-full object-cover',
     }) }}
   </div>
   <div class="relative h-[28rem] col-start-[content-start] col-end-[col-7] row-start-1 bg-blue rounded-r-full flex flex-col justify-center pr-36">
-    {% if global.cta_section.heading %}
-      <h2 class="text-h3">{{ global.cta_section.heading }}</h2>
+    {% if component_content.heading %}
+      <h2 class="text-h3">{{ component_content.heading }}</h2>
     {% endif %}
-    {% if global.cta_section.body %}
-      <p class="text-body-medium lg:text-body-large mt-4">{{ global.cta_section.body }}</p>
+    {% if component_content.body %}
+      <p class="text-body-medium lg:text-body-large mt-4">{{ component_content.body }}</p>
     {% endif %}
-    {% if global.cta_section.links %}
+    {% if component_content.links %}
       <div class="mt-4">
-        {% for item in global.cta_section.links %}
+        {% for item in component_content.links %}
           <a
             class="button-tertiary"
             href="{{ item.link.url }}"
