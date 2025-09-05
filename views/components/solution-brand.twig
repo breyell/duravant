@@ -31,7 +31,11 @@
     <div class="wysiwyg">{{ wysiwyg }}</div>
     {% if link %}
       <div class="">
-        {{ include('partials/arrow-link-large.twig', link) }}
+        {{ link|json_encode }}
+        {{ include('partials/arrow-link-large.twig', {
+          ...link,
+          link: link.url,
+        }) }}
       </div>
     {% endif %}
   </div>

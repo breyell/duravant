@@ -1,10 +1,10 @@
 <section class="fluid-grid pt-16 lg:pb-12">
   <div class="span-content grid grid-cols-subgrid gap-y-7">
     <div class="col-span-12 md:col-span-9 lg:col-span-5 flex flex-col">
-      <h2 class="text-h2 text-balance">{{ heading }}</h2>
+      <h2 class="text-h3 text-balance">{{ heading }}</h2>
       <div class="w-full mt-4 h-1 gradient-light bg-linear-to-r"></div>
       {% if body %}
-        <p class="text-body-large mt-4 mb-12">{{ body }}</p>
+        <p class="text-body-medium mt-4 mb-12">{{ body }}</p>
       {% endif %}
       {{ ResponsiveImage(image, {
         class: 'hidden lg:block -ml-12 mt-auto -mb-12 w-[calc(100%+3rem)] max-w-none h-60 rounded-tr-full object-cover',
@@ -20,7 +20,7 @@
                 class="group"
               >
                 <span class="absolute -inset-3 sm:-indent-4 lg:inset-0 group-hover:border-3 group-hover:border-blue group-hover:border-solid"></span>
-                <span class="text-h4 text-balance">{{ solution.heading }}</span>
+                <span class="text-h5 text-balance">{{ solution.heading }}</span>
                 {{ include('svgs/arrow-right.twig', {
                   class: 'inline-block ml-1 size-4 -translate-y-0.5 transition-transform group-hover:translate-x-1',
                 }) }}
