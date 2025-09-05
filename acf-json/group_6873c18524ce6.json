@@ -3,6 +3,27 @@
     "title": "Component - Stats",
     "fields": [
         {
+            "key": "field_68bb2680de8a0",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6873c52e9814e",
             "label": "Stats",
             "name": "stats",
@@ -82,7 +103,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 30,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -98,5 +119,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753201603
+    "modified": 1757095559
 }

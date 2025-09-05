@@ -24,6 +24,23 @@
             "append": ""
         },
         {
+            "key": "field_68bb27b0e251d",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_68a188988ea95",
             "label": "List",
             "name": "list",
@@ -80,7 +97,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 26,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -96,5 +113,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755416788
+    "modified": 1757095862
 }

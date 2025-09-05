@@ -1,7 +1,15 @@
 <section class="bg-gray fluid-grid gap-y-11 py-12 lg:py-0">
   <div class="span-full grid grid-cols-subgrid gradient-light bg-gradient-to-r rounded-r-full py-16 mr-2 lg:col-end-[col-7] lg:mr-0">
-    <div class="span-content flex items-center">
+    <div class="span-content flex flex-col justify-center">
       <h2 class="text-h2 pr-24">{{ heading }}</h2>
+      {% if link %}
+        <div class="mt-1.5">
+          {{ include('partials/arrow-link-large.twig', {
+            ...link,
+            link: link.url
+          }) }}
+        </div>
+      {% endif %}
     </div>
   </div>
   <div class="span-content lg:col-start-[col-7] lg:flex lg:items-center lg:py-24">
