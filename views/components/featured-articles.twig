@@ -1,4 +1,7 @@
 <section class="fluid-grid my-12 lg:my-24">
+  {% if heading %}
+    <h2 class="span-lg text-h3 text-center text-balance mb-8">{{ heading }}</h2>
+  {% endif %}
   <div class="span-content grid grid-cols-subgrid gap-y-8">
     {% for article in articles %}
       {% if article.type == 'page' %}
