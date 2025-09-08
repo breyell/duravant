@@ -26,6 +26,17 @@
         {% if secondary_wysiwyg %}
           <div class="wysiwyg mt-3.5">{{ secondary_wysiwyg }}</div>
         {% endif %}
+        {% if links %}
+          <div class="mt-6 flex gap-6">
+            {% for item in links %}
+              <a
+                class="{{ loop.first ? 'button-primary' : 'button-secondary-alt' }}"
+                href="{{ item.link.url }}"
+                target="{{ item.link.target | default('_self') }}"
+              >{{ item.link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
       {{ ResponsiveImage(image, {
         class: 'hidden lg:block col-start-[col-7] col-end-[col-13] w-full aspect-[1.1] rounded-r-full object-cover',
