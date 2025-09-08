@@ -1,4 +1,4 @@
-<section class="fluid-grid my-12 lg:my-24">
+<section class="fluid-grid my-16 lg:my-24">
   {% if heading %}
     <h2 class="span-lg text-h3 text-center text-balance mb-8">{{ heading }}</h2>
   {% endif %}
@@ -30,7 +30,7 @@
         "
       >
         {{ ResponsiveImage(article.image, {
-          class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and loop.first ? '' : 'md:aspect-square'),
+          class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
         }) }}
         <h2 class="text-h3 mt-6">{{ article.heading }}</h2>
         <div class="w-full h-1 gradient-light bg-linear-to-r my-2.5"></div>

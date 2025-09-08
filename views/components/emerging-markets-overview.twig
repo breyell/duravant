@@ -1,4 +1,4 @@
-<section class="fluid-grid my-8">
+<section class="fluid-grid my-16">
   <div class="span-content grid grid-cols-subgrid gap-y-8">
     <div class="col-span-12 md:col-span-6 lg:col-span-5">
       {{ ResponsiveImage(image, {
@@ -15,7 +15,7 @@
             {{ ResponsiveImage(country.image, {
               class: 'h-6 w-auto object-contain',
             }) }}
-            <p class="text-h4">{{ country.link.title }}</p>
+            <p class="text-h5">{{ country.link.title }}</p>
           </li>
         {% endfor %}
       </ul>
