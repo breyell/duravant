@@ -32,7 +32,7 @@
         {{ ResponsiveImage(article.image, {
           class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
         }) }}
-        <h2 class="text-h3 mt-6">{{ article.heading }}</h2>
+        <h2 class="text-h4 mt-6">{{ article.heading }}</h2>
         <div class="w-full h-1 gradient-light bg-linear-to-r my-2.5"></div>
         <p class="text-body-medium">{{ article.body }}</p>
         <div class="mt-2.5">
