@@ -32,6 +32,29 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_68bf7091bad66",
+            "label": "Logo Max Height (px)",
+            "name": "logo_max_height",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68ad628de8ca2",
             "label": "Image",
             "name": "image",
@@ -250,5 +273,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1756623897
+    "modified": 1757376998
 }

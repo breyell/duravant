@@ -9,6 +9,7 @@
     {% for brand in brands %}
       {% if type == 'quote' %}
         {% set logo = brand.logo %}
+        {% set logo_max_height = brand.logo_max_height %}
         {% set heading = brand.featured_heading %}
         {% set wysiwyg = brand.featured_wysiwyg %}
         {% set quote = brand.featured_quote %}
@@ -16,6 +17,7 @@
         {% set link = brand.featured_link %}
       {% else %}
         {% set logo = get_post(brand.brand).logo %}
+        {% set logo_max_height = get_post(brand.brand).logo_max_height %}
         {% set heading = brand.heading %}
         {% set wysiwyg = brand.wysiwyg %}
         {% set link = brand.link %}
@@ -43,9 +45,14 @@
         </div>
         <div class="col-span-12 lg:col-span-6 space-y-6">
           {% if logo %}
-            {{ ResponsiveImage(logo, {
-              class: 'mb-12 w-5/6 max-w-60 mx-auto lg:ml-0 lg:w-auto lg:max-w-full lg:h-48',
-            }) }}
+            <div
+              style="max-height: {{ logo_max_height|default(9999) }}px;"
+              class="mb-12 max-w-5/6"
+            >
+              {{ ResponsiveImage(logo, {
+                class: 'mx-auto lg:ml-0',
+              }) }}
+            </div>
           {% endif %}
           <h3 class="text-h4">{{ heading }}</h3>
           {% if wysiwyg %}
