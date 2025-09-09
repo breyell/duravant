@@ -19,17 +19,15 @@
     </div>
     <div class="col-span-12 md:col-span-7 flex flex-wrap gap-x-5 gap-y-8 justify-center">
       {% for logo in logos %}
-        {% if logo.width %}
-          <div style="width: {{ logo.width }}px;">
+          <div
+            {% if logo.width %}
+              style="width: {{ logo.width }}px;"
+            {% endif %}
+          >
             {{ ResponsiveImage(logo.image, {
               class: "",
             }) }}
           </div>
-        {% else %}
-          {{ ResponsiveImage(logo.image, {
-            class: "",
-          }) }}
-        {% endif %}
       {% endfor %}
     </div>
   </div>
