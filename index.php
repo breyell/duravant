@@ -23,10 +23,13 @@ array_unshift($context['breadcrumbs'], Timber::get_post(get_option('page_on_fron
 $post_type = get_post_type();
 
 if ($post_type === 'solution') {
+	array_splice($context['breadcrumbs'], 1, 0, [Timber::get_post($context['global']['solutions_page'])]);
 	if (wp_get_post_parent_id() === 0) {
 		return Timber::render('templates/solution.twig', $context);
 	}
 } elseif ($post_type === 'market') {
+	array_splice($context['breadcrumbs'], 1, 0, [Timber::get_post($context['global']['markets_page'])]);
+
 	return Timber::render('templates/market.twig', $context);
 }
 
