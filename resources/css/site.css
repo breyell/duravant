@@ -136,7 +136,7 @@
 	}
 
 	a {
-		@apply text-blue-dark hover:underline;
+		@apply text-blue-deep hover:underline;
 	}
 
 	.alignleft {
