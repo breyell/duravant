@@ -112,7 +112,8 @@
                         "id": ""
                     },
                     "post_type": [
-                        "page"
+                        "page",
+                        "solution"
                     ],
                     "post_status": [
                         "publish"
@@ -197,5 +198,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757366018
+    "modified": 1757515121
 }

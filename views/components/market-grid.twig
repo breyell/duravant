@@ -16,10 +16,12 @@
       <p class="text-body-medium mt-2.5">{{ global.market_grid.body }}</p>
     </div>
     <div class="hidden lg:block col-span-3 self-end text-right">
-      {{ include('partials/arrow-link-small.twig', {
-        title: 'Explore All Markets',
-        link: global.markets_page,
-      }) }}
+      {% if global.market_grid.link %}
+        {{ include('partials/arrow-link-small.twig', {
+          ...global.market_grid.link,
+          link: global.market_grid.link.url,
+        }) }}
+      {% endif %}
     </div>
     <div class="col-span-12">
       {# mobile #}
@@ -83,10 +85,12 @@
       </ul>
     </div>
     <div class="col-span-12 lg:hidden">
-      {{ include('partials/arrow-link-small.twig', {
-        title: 'Explore All Markets',
-        link: global.markets_page,
-      }) }}
+      {% if global.market_grid.link %}
+        {{ include('partials/arrow-link-small.twig', {
+          ...global.market_grid.link,
+          link: global.market_grid.link.url,
+        }) }}
+      {% endif %}
     </div>
   </div>
 </section>
