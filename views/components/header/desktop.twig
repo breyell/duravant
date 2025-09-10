@@ -22,7 +22,7 @@
             @click="open = !open"
             @click.outside="open = false"
             :class="open && 'text-blue'"
-            class="ml-2 transition-colors"
+            class="ml-2 transition-colors hover:text-blue/80"
             :aria-label="open ? 'Close emerging markets menu' : 'Open emerging markets menu'"
           >
             {{ include('svgs/globe.twig', {

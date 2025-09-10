@@ -37,20 +37,22 @@
       <div class="relative flex w-full aspect-[1.1] overflow-hidden rounded-r-full">
         <button
           @click="togglePlay()"
-          class="absolute z-10 bottom-3 left-3 size-6 border-white border-2 rounded-full"
+          class="group absolute z-10 bottom-3 left-3 size-6 border-current border-2 rounded-full text-white transition-colors hover:bg-white"
         >
           <div class="flex justify-center items-center">
             <div
               x-text="playing ? 'Pause' : 'Play'"
-              class="sr-only"
+              class="sr-only text-black"
             ></div>
             <div
               x-show="playing"
-              class="border-white border-l-2 border-r-2 size-2"
+              x-cloak
+              class="border-current border-l-2 border-r-2 size-2  group-hover:text-black"
             ></div>
             <div
               x-show="!playing"
-              class="size-0 border-solid border-t-4 border-t-transparent border-b-4 border-b-transparent border-l-6 border-l-white translate-x-0.25"
+              x-cloak
+              class="size-0 border-solid border-t-4 border-t-transparent border-b-4 border-b-transparent border-l-6 border-l-current translate-x-0.25 group-hover:text-black"
             ></div>
           </div>
         </button>
