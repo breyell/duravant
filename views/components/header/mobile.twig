@@ -22,13 +22,17 @@
             @click="mobileMenuOpen = mobileMenuOpen === 'emergingMarkets' ? false : 'emergingMarkets'"
             class="-mx-4 p-4 transition-colors"
           >
-            <div x-show="mobileMenuOpen != 'emergingMarkets'">
+            <div
+              x-show="mobileMenuOpen != 'emergingMarkets'"
+              x-cloak
+            >
               {{ include('svgs/globe.twig', {
                 class: 'size-5',
               }) }}
             </div>
             <div
               x-show="mobileMenuOpen == 'emergingMarkets'"
+              x-cloak
               class="relative w-5 h-4"
             >
               <div
@@ -67,6 +71,7 @@
     </div>
     <div
       x-show="mobileMenuOpen == 'menu'"
+      x-cloak
       x-trap.noscroll="mobileMenuOpen == 'menu'"
       x-transition:enter="transition-opacity duration-300"
       x-transition:enter-start="opacity-0"
@@ -135,6 +140,7 @@
     </div>
     <div
       x-show="mobileMenuOpen == 'emergingMarkets'"
+      x-cloak
       x-trap.noscroll="mobileMenuOpen == 'emergingMarkets'"
       x-transition:enter="transition-opacity duration-300"
       x-transition:enter-start="opacity-0"
