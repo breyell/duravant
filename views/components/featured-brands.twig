@@ -45,12 +45,10 @@
         </div>
         <div class="col-span-12 lg:col-span-6 space-y-6">
           {% if logo %}
-            <div
-              style="max-height: {{ logo_max_height|default(9999) }}px;"
-              class="mb-12 max-w-5/6"
-            >
+            <div class="mb-12 max-w-5/6">
               {{ ResponsiveImage(logo, {
-                class: 'mx-auto lg:ml-0',
+                class: 'w-full object-contain object-left',
+                style: 'max-height: ' ~ logo_max_height|default(9999) ~ 'px;',
               }) }}
             </div>
           {% endif %}
