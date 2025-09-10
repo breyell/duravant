@@ -3,6 +3,24 @@
     "title": "Post Type - Brand",
     "fields": [
         {
+            "key": "field_68c0ea884852e",
+            "label": "Website",
+            "name": "website",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_6884fcfc39016",
             "label": "Logo",
             "name": "logo",
@@ -273,5 +291,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757376998
+    "modified": 1757473430
 }

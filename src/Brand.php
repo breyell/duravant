@@ -22,7 +22,7 @@ class Brand extends Post implements JsonSerializable
 		return [
 			'id' => $this->id,
 			'title' => $this->title(),
-			'link' => $this->link(),
+			'website' => $this->website,
 			'logo' => [
 				'src' => $image->src,
 				'srcset' => $image->srcset(),
