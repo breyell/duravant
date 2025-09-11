@@ -58,7 +58,7 @@
         </button>
         <mux-player
           x-ref="video"
-          class="[--controls:none] w-full scale-[1.62]"
+          class="[--controls:none] w-full scale-[1.62] pointer-events-none"
           {# scale amount is based on 16/9 video #}
           playback-id="{{ mux_video_playback_id }}"
           autoplay="muted"

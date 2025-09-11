@@ -12,7 +12,16 @@
       {{ include('components/hero-simple-standard/core.twig', {
         short: image ? true : false
       }) }}
-      <div class="span-content relative grid grid-cols-subgrid gap-y-6 pt-8 pb-16 lg:pb-20">
+      <div
+        class="
+          span-content relative grid grid-cols-subgrid gap-y-6
+          {% if image %}
+            pt-8 pb-16 lg:pb-20
+          {% else %}
+            py-12
+          {% endif %}
+        "
+      >
         {% if image %}
           <div class="col-span-12 lg:hidden">
             {{ ResponsiveImage(image, {
