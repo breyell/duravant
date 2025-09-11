@@ -27,6 +27,14 @@
       <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
     </div>
     <div class="wysiwyg">{{ wysiwyg }}</div>
+    <div class="mt-6 flex gap-6">
+      {% for item in links %}
+        {{ include('partials/arrow-link-large.twig', {
+          ...item.link,
+          link: item.link.url
+        }) }}
+      {% endfor %}
+    </div>
   </div>
   <div
     class="
