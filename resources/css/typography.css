@@ -29,7 +29,7 @@
 }
 
 @utility text-body-medium {
-	@apply font-aktiv-grotesk font-normal text-base leading-[1.3125rem];
+	@apply font-aktiv-grotesk font-normal text-base;
 }
 
 @utility text-body-small {

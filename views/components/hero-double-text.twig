@@ -10,21 +10,21 @@
     {% endif %}
     <div class="span-content relative grid grid-cols-subgrid gap-y-8 py-8 lg:py-16">
       {{ ResponsiveImage(image, {
-        class: 'span-content w-full aspect-[1.1] rounded-r-full lg:hidden',
+        class: 'col-span-12 sm:col-span-9 md:col-span-7 w-full aspect-[1.1] rounded-r-full lg:hidden',
       }) }}
       <div class="span-content lg:col-end-[col-7] lg:self-center">
-        <h1 class="text-h1">{{ heading }}</h1>
+        <h1 class="text-h2">{{ heading }}</h1>
         {% if wysiwyg %}
-          <div class="wysiwyg mt-6">{{ wysiwyg }}</div>
+          <div class="wysiwyg mt-4">{{ wysiwyg }}</div>
         {% endif %}
         {% if secondary_heading or secondary_wysiwyg %}
-          <div class="w-full h-1 gradient-light bg-gradient-to-r my-6"></div>
+          <div class="w-full h-1 gradient-light bg-gradient-to-l my-6"></div>
         {% endif %}
         {% if secondary_heading %}
-          <h2 class="text-h4">{{ secondary_heading }}</h2>
+          <h2 class="text-h5">{{ secondary_heading }}</h2>
         {% endif %}
         {% if secondary_wysiwyg %}
-          <div class="wysiwyg mt-3.5">{{ secondary_wysiwyg }}</div>
+          <div class="wysiwyg mt-2">{{ secondary_wysiwyg }}</div>
         {% endif %}
         {% if links %}
           <div class="mt-6 flex gap-6">

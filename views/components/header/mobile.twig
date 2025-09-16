@@ -18,7 +18,7 @@
           >
         </a>
         <div class="flex gap-x-4">
-          <button
+          {# <button
             @click="mobileMenuOpen = mobileMenuOpen === 'emergingMarkets' ? false : 'emergingMarkets'"
             class="-mx-4 p-4 transition-colors"
           >
@@ -42,7 +42,7 @@
                 class="absolute bottom-0 left-0 w-6 h-0.5 rounded-full bg-gray-dark -rotate-45 -translate-y-1.75"
               ></div>
             </div>
-          </button>
+          </button> #}
           <button
             @click="mobileMenuOpen = mobileMenuOpen === 'menu' ? false : 'menu'; activeIndex = 0"
             :aria-expanded="mobileMenuOpen == 'menu'"
@@ -138,7 +138,7 @@
         </div>
       </div>
     </div>
-    <div
+    {# <div
       x-show="mobileMenuOpen == 'emergingMarkets'"
       x-cloak
       x-trap.noscroll="mobileMenuOpen == 'emergingMarkets'"
@@ -153,7 +153,6 @@
       <div class="h-full overflow-y-auto">
         <div class="fluid-grid">
           <div class="span-content flex flex-col py-8">
-            <header class="text-h4 mb-7">Emerging Markets</header>
             <ul class="space-y-9">
               {% for item in global.emerging_markets %}
                 <li class="">
@@ -172,6 +171,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> #}
   </div>
 </header>

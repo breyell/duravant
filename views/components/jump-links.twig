@@ -1,11 +1,11 @@
 <section class="overflow-hidden">
   <div class="fluid-grid">
-    <div class="span-content relative py-16 bg-bone flex flex-col lg:col-end-[col-6] lg:px-16">
+    <div class="span-content relative py-16 bg-bone flex flex-col lg:col-end-[col-6] lg:pr-16 xl:pl-16">
       <div class="absolute left-1/2 top-0 w-[200vw] h-full -translate-x-1/2 bg-bone lg:left-auto lg:-right-6 lg:translate-x-0"></div>
       <div class="relative">
         <div class="inline-block">
           <h2 class="text-h4 inline-block text-balance">{{ heading }}</h2>
-          <div class="w-full h-1 gradient-light bg-linear-to-r mt-2 mb-6"></div>
+          <div class="w-full h-1 gradient-light bg-linear-to-l mt-2 mb-6"></div>
         </div>
         <nav class="">
           <ul class="space-y-6">
@@ -17,7 +17,7 @@
                   target="{{ item.link.target | default('_self') }}"
                 >
                   <span class="text-h6">{{ item.link.title }}</span>
-                  {{ include('svgs/arrow-right.twig', { class: 'inline-block ml-1.5 size-4 shrink-0 -translate-y-0.5 rotate-90 transition-transform group-hover:translate-x-1' }) }}
+                  {{ include('svgs/arrow-right.twig', { class: 'inline-block ml-1.5 size-4 shrink-0 -translate-y-0.5 rotate-90 transition-transform group-hover:translate-y-1' }) }}
                 </a>
               </li>
             {% endfor %}

@@ -3,19 +3,23 @@
     <div class="span-content text-center">
       <div class="inline-block">
         <h2 class="text-h4 inline-block">{{ global.values.heading }}</h2>
-        <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
+        <div class="w-full h-1 gradient-light bg-linear-to-l my-3"></div>
       </div>
       <p class="text-body-large">{{ global.values.body }}</p>
     </div>
-    <div class="span-content grid grid-cols-1 lg:grid-cols-5 gap-x-fluid-grid-gap mt-8 lg:mt-12 text-center lg:text-left gap-y-8">
+    <div class="span-content grid grid-cols-1 lg:grid-cols-5 gap-x-fluid-grid-gap mt-8 lg:mt-12 text-center lg:text-left gap-y-12">
       {% for value in global.values.values %}
         <div class="">
           {{ ResponsiveImage(value.image, {
-            class: 'size-[7.8125rem] mx-auto lg:ml-0 object-cover',
+            class: 'size-18 lg:size-24 mx-auto lg:ml-0 object-cover',
           }) }}
-          <h3 class="text-h5 mt-4">{{ value.heading }}</h3>
-          <div class="text-body-large mt-4">{{ value.subheading }}</div>
-          <p class="text-body-medium">{{ value.body }}</p>
+          <h3 class="text-h4 lg:text-h6 text-balance mt-4">{{ value.heading }}</h3>
+          {% if value.subheading %}
+            <div class="text-body-large mt-1">{{ value.subheading }}</div>
+          {% endif %}
+          {% if value.body %}
+            <p class="text-body-medium mt-4">{{ value.body }}</p>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

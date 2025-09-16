@@ -76,7 +76,7 @@
 } */
 
 @utility wysiwyg {
-	@apply space-y-3.5;
+	@apply space-y-3.5 *:first:mt-0 *:last:mb-0;
 
 	h1,
 	h2,

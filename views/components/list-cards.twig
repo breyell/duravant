@@ -5,21 +5,22 @@
       <div class="mt-3 h-1 w-full gradient-light bg-linear-to-r"></div>
     </div>
   </div>
-  <div class="span-content snap-x scroll-pl-4 flex gap-x-9 overflow-x-auto -mx-4 px-4 mt-9 lg:grid lg:grid-cols-12 lg:gap-fluid-grid-gap lg:mx-0 lg:px-0 lg:overflow-visible">
+  <div class="span-content snap-x scroll-pl-(--col-gap) flex gap-x-9 overflow-x-auto -mx-(--col-gap) px-(--col-gap) mt-5 py-4 lg:grid lg:grid-cols-12 lg:gap-fluid-grid-gap lg:mx-0 lg:px-0 lg:overflow-visible">
     {% for card in cards %}
-      <div class="w-64 shrink-0 snap-start lg:col-span-3 lg:w-full">
+      <div class="group relative w-64 shrink-0 snap-start lg:col-span-3 lg:w-full">
         {{ ResponsiveImage(card.image, {
           class: 'w-full aspect-[1.67] object-cover',
         }) }}
-        <div class="px-4 pt-6">
+        <div class="pt-6 px-2">
           <h3 class="">
             <a
-              class="group p-3 -m-3 inline items-center"
+              class="p-3 -m-3 inline items-center"
               href="{{ card.link.url }}"
               target="{{ card.link.target | default('_self') }}"
             >
-              <span class="text-h4">{{ card.link.title }}</span>
+              <span class="text-h6 xl:text-h5">{{ card.link.title }}</span>
               {{ include('svgs/arrow-right.twig', { class: 'inline-block ml-2.5 size-4 shrink-0 -translate-y-0.5 transition-transform group-hover:translate-x-1' }) }}
+              <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
             </a>
           </h3>
           <ul class="marker:text-blue-dark marker:text-lg list-disc pl-3.5 space-y-3 mt-3">

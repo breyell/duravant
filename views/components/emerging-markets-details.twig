@@ -4,8 +4,7 @@
       class: 'w-full mb-10',
     }) }}
     <div class="space-y-2.5">
-      <h2 class="text-h3">{{ heading }}</h2>
-      <div class="text-body-large">{{ subheading }}</div>
+      <h2 class="text-h3 text-balance">{{ heading }}</h2>
       <div class="wysiwyg">{{ wysiwyg }}</div>
     </div>
   </div>
@@ -18,7 +17,7 @@
           }) }}
         </div>
         <div class="space-y-2.5">
-          <h3 class="text-h4">{{ market.name }}</h3>
+          <h3 class="text-h5">{{ market.name }}</h3>
           {% if market.body %}
             <p class="text-body-medium">{{ market.body }}</p>
           {% endif %}

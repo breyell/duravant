@@ -17,7 +17,10 @@
         <h3 class="text-h4 text-balance">{{ heading }}</h3>
         <p class="text-body-medium">{{ body }}</p>
         {% if link %}
-          {{ include('partials/arrow-link-small.twig', link) }}
+          {{ include('partials/arrow-link-small.twig', {
+            ...link,
+            link: link.url,
+          }) }}
         {% endif %}
       </div>
     </div>

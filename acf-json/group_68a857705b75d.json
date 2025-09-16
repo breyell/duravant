@@ -53,27 +53,6 @@
             "append": ""
         },
         {
-            "key": "field_68a85e5e7ed7c",
-            "label": "Subheading",
-            "name": "subheading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_68a8578ad20ca",
             "label": "WYSIWYG",
             "name": "wysiwyg",
@@ -253,5 +232,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755864677
+    "modified": 1757704284
 }

@@ -11,9 +11,9 @@
         <button
           @click="open = !open"
           :aria-expanded="open"
-          class="col-span-12 flex justify-between py-10"
+          class="col-span-12 group flex justify-between py-10"
         >
-          <h2 class="text-h4 lg:text-h3">{{ location_group.heading }}</h2>
+          <h2 class="text-h4 lg:text-h3 group-hover:underline">{{ location_group.heading }}</h2>
           <div
             :class="open && '-scale-y-100'"
             class="w-6.5 flex items-center transition-transform"

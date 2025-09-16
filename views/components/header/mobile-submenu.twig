@@ -31,39 +31,36 @@
     </ul>
     <div class="my-7 w-full h-1 gradient-light bg-linear-to-r"></div>
     <div class="flex flex-col gap-y-7 mt-8">
-      <article class="relative flex gap-x-6">
-        <img
-          src="https://picsum.photos/600/400"
-          alt=""
-          class="hidden xs:block w-36 aspect-square object-cover shrink-0"
-        >
         <div class="flex flex-col justify-center">
-          <h3 class="">
-            <a
-              href="#"
-              class="group inline"
-            >
-              <span class="absolute inset-0"></span>
-              <span class="text-h6">Lorem ipsum dolor sit amet consect</span>
-              {{ include('svgs/arrow-right.twig', {
-                class: 'inline-block size-4 -translate-y-0.25 transition-transform group-hover:translate-x-1',
+          {% if item.type == 'image' %}
+            {{ ResponsiveImage(item.image, {
+              class: '',
+            }) }}
+          {% elseif item.type == 'link_card' %}
+            <article class="relative flex gap-x-6">
+              {{ ResponsiveImage(item.card_image, {
+                class: 'w-36 aspect-square object-cover shrink-0',
               }) }}
-            </a>
-          </h3>
-          <p class="text-body-medium">Lorem ipsum dolor sit amet consectetur adipiscing elim mattissit phasellus mollis sit aliquam sit nullam.</p>
+              <div class="flex flex-col">
+                <h3 class="">
+                  <a
+                    href="{{ item.card_link.url }}"
+                    class="group"
+                  >
+                    <span class="absolute inset-0"></span>
+                    <div class="inline-flex gap-x-2 items-center">
+                      <span class="text-h6">{{ item.card_link.title }}</span>
+                      {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 shrink-0 transition-transform group-hover:translate-x-1' }) }}
+                    </div>
+                    <span class="absolute -inset-3 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
+                  </a>
+                </h3>
+                <p class="text-body-medium mt-2.5">{{ item.card_body }}</p>
+              </div>
+            </article>
+          {% endif %}
         </div>
       </article>
-      {# {% for card in 1..2 %}
-        <div class="col-span-3 flex flex-col gap-y-2.5">
-          <div class="">
-            {{ include('partials/arrow-link-large.twig', {
-              title: 'Lorem Ipsum',
-              link: '#',
-            }) }}
-          </div>
-          <p class="text-body-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus numquam culpa quisquam! Minima pariatur autem expedita distinctio.</p>
-        </div>
-      {% endfor %} #}
     </div>
   </div>
 </div>
