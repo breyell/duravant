@@ -38,9 +38,9 @@
           "
         >
           {% if brand.image %}
-            <div class="w-full max-h-96 lg:max-h-none lg:aspect-ratio-4/3">
+            <div class="w-full max-h-96 lg:max-h-none lg:aspect-retro">
               {{ ResponsiveImage(brand.image, {
-                class: 'w-full object-contain',
+                class: 'w-full object-contain lg:h-full',
               }) }}
             </div>
           {% endif %}
@@ -83,9 +83,9 @@
         </div>
         {% if loop.index is even and brand.image %}
           <div class="hidden lg:block col-span-12 lg:col-span-6 lg:self-center">
-            <div class="w-full max-h-96 lg:max-h-none lg:aspect-ratio-4/3">
+            <div class="w-full max-h-96 lg:max-h-none lg:aspect-retro">
               {{ ResponsiveImage(brand.image, {
-                class: 'w-full object-contain',
+                class: 'w-full object-contain lg:h-full',
               }) }}
             </div>
           </div>
