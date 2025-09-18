@@ -1,44 +1,50 @@
+{% if content_source == 'custom' %}
+  {% set component_content = custom_content %}
+{% else %}
+  {% set component_content = global.image_grid %}
+{% endif %}
+
 <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mx-auto max-w-(--breakpoint-2xl)">
   {% if rows == 2 %}
-    {% if global.image_grid.image_one %}
-      {{ ResponsiveImage(global.image_grid.image_one, {
+    {% if component_content.image_one %}
+      {{ ResponsiveImage(component_content.image_one, {
         class: 'col-span-2 aspect-[2] w-full object-cover',
       }) }}
     {% endif %}
-    {% if global.image_grid.image_two %}
-      {{ ResponsiveImage(global.image_grid.image_two, {
+    {% if component_content.image_two %}
+      {{ ResponsiveImage(component_content.image_two, {
         class: 'col-span-1 aspect-square w-full object-cover',
       }) }}
     {% endif %}
-    {% if global.image_grid.image_three %}
-      {{ ResponsiveImage(global.image_grid.image_three, {
+    {% if component_content.image_three %}
+      {{ ResponsiveImage(component_content.image_three, {
         class: 'hidden lg:block col-span-1 lg:col-span-2 aspect-square lg:aspect-[2] w-full object-cover',
       }) }}
     {% endif %}
   {% endif %}
-  {% if global.image_grid.image_four %}
+  {% if component_content.image_four %}
     {% if rows == 2 %}
-      {{ ResponsiveImage(global.image_grid.image_four, {
+      {{ ResponsiveImage(component_content.image_four, {
         class: 'col-span-1 aspect-square w-full object-cover',
       }) }}
     {% else %}
-      {{ ResponsiveImage(global.image_grid.image_four, {
+      {{ ResponsiveImage(component_content.image_four, {
         class: 'col-span-1 aspect-square w-full object-cover hidden md:block',
       }) }}
     {% endif %}
   {% endif %}
-  {% if global.image_grid.image_five %}
-    {{ ResponsiveImage(global.image_grid.image_five, {
+  {% if component_content.image_five %}
+    {{ ResponsiveImage(component_content.image_five, {
       class: 'col-span-2 aspect-[2] w-full object-cover',
     }) }}
   {% endif %}
-  {% if global.image_grid.image_six %}
-    {{ ResponsiveImage(global.image_grid.image_six, {
+  {% if component_content.image_six %}
+    {{ ResponsiveImage(component_content.image_six, {
       class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
     }) }}
   {% endif %}
-  {% if global.image_grid.image_seven %}
-    {{ ResponsiveImage(global.image_grid.image_seven, {
+  {% if component_content.image_seven %}
+    {{ ResponsiveImage(component_content.image_seven, {
       class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
     }) }}
   {% endif %}
