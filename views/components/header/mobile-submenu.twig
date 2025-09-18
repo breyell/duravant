@@ -45,6 +45,7 @@
                 <h3 class="">
                   <a
                     href="{{ item.card_link.url }}"
+                    target="{{ item.card_link.target | default('_self') }}"
                     class="group"
                   >
                     <span class="absolute inset-0"></span>
