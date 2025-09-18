@@ -29,13 +29,20 @@ function br_big_image_size_threshold($threshold)
 }
 add_filter('big_image_size_threshold', 'br_big_image_size_threshold', 999, 1);
 
+function br_max_srcset_image_width($max_width, $size_array)
+{
+	return 4000;
+}
+add_filter('max_srcset_image_width', 'br_max_srcset_image_width', 10, 2);
+
 function add_image_sizes()
 {
+	// WordPress Sizes: 150, 300, 1536, 2048
+	// Custom Max size: 4000
 	add_image_size('512x512', 512, 512);
 	add_image_size('768x768', 768, 768);
 	add_image_size('1024x1024', 1024, 1024);
 	add_image_size('1280x1280', 1280, 1280);
-	add_image_size('1920x1920', 1920, 1920);
 	add_image_size('2560x2560', 2560, 2560);
 	add_image_size('3200x3200', 3200, 3200);
 }
