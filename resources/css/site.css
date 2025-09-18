@@ -218,8 +218,30 @@
 		@apply !grid sm:grid-cols-2 gap-x-(--col-gap) gap-y-5;
 	}
 
+	.mktoFormRow:has(#LblmarketingOptinTrigger) {
+		@apply !flex gap-x-0;
+
+		.mktoFormCol {
+			@apply !w-auto !min-h-auto;
+		}
+
+		.mktoFieldDescriptor.mktoFormCol {
+			@apply !w-6;
+		}
+
+		#LblmarketingOptinTrigger::before {
+			@apply top-1 left-0 !ml-0;
+		}
+	}
+
 	.mktoFormCol {
 		@apply !w-full !mb-0;
+	}
+
+	.mktoFormCol:has(.mktoEmailField),
+	.mktoFormCol:has(#LblAddress),
+	.mktoFormCol:has(#LblgenericText1) {
+		@apply col-span-2;
 	}
 
 	.mktoFieldWrap {
@@ -232,6 +254,10 @@
 
 	.mktoButtonWrap {
 		@apply !ml-0;
+	}
+
+	.mktoButtonRow {
+		@apply !-mt-24;
 	}
 
 	.mktoButton {
