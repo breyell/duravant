@@ -3,6 +3,27 @@
     "title": "Component - Emerging Market Details",
     "fields": [
         {
+            "key": "field_68cc318d74283",
+            "label": "ID",
+            "name": "id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68a85770d20c8",
             "label": "Image",
             "name": "image",
@@ -232,5 +253,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757704284
+    "modified": 1758212525
 }

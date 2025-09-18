@@ -1,4 +1,9 @@
-<section class="fluid-grid gap-y-8 py-16">
+<section
+  {% if id %}
+    id="{{ id }}"
+  {% endif %}
+  class="fluid-grid gap-y-8 py-16"
+>
   <div class="span-content lg:col-end-[col-7]">
     {{ ResponsiveImage(image, {
       class: 'w-full mb-10',

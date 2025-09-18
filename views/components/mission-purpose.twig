@@ -1,4 +1,8 @@
-<section class="">
+<section
+  {% if id %}
+    id="{{ id }}"
+  {% endif %}
+>
   <div class="fluid-grid">
     <div class="span-content relative py-28 bg-blue-deep text-white lg:col-end-[col-7] lg:flex lg:flex-col lg:justify-center lg:px-16">
       <div class="absolute top-0 -left-(--col-gap) w-[calc(100%+2*var(--col-gap))] h-full lg:w-[calc(100%+1.5*var(--col-gap))]">
