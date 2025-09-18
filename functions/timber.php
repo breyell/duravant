@@ -23,14 +23,21 @@ add_filter('timber/post/classmap', function ($classmap) {
 	return array_merge($classmap, $custom_classmap);
 });
 
+function br_big_image_size_threshold($threshold)
+{
+	return 4000;
+}
+add_filter('big_image_size_threshold', 'br_big_image_size_threshold', 999, 1);
+
 function add_image_sizes()
 {
-	add_image_size('small_custom', 512, 512);
-	add_image_size('medium_custom', 768, 768);
-	add_image_size('large_custom', 1024, 1024);
-	add_image_size('xlarge_custom', 1280, 1280);
-	add_image_size('xxlarge_custom', 1920, 1920);
-	add_image_size('xxxlarge_custom', 3000, 3000);
+	add_image_size('512x512', 512, 512);
+	add_image_size('768x768', 768, 768);
+	add_image_size('1024x1024', 1024, 1024);
+	add_image_size('1280x1280', 1280, 1280);
+	add_image_size('1920x1920', 1920, 1920);
+	add_image_size('2560x2560', 2560, 2560);
+	add_image_size('3200x3200', 3200, 3200);
 }
 add_action('after_setup_theme', 'add_image_sizes');
 
