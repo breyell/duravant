@@ -52,7 +52,7 @@
         {% for tab in solution.tabs %}
           <div
             x-show="activeTab == {{ loop.index }}"
-            class="space-y-4"
+            class="space-y-4 flex flex-col lg:h-full"
           >
             {% if tab.brand %}
               {{ ResponsiveImage(get_post(tab.brand).logo, {
@@ -74,7 +74,7 @@
             {% endif %}
             {% if tab.image %}
               {{ ResponsiveImage(tab.image, {
-                class: 'w-full h-72 object-contain',
+                class: 'w-full h-72 object-contain lg:grow',
               }) }}
             {% endif %}
           </div>
