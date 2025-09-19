@@ -1,9 +1,7 @@
 export default function ($brands) {
 	return {
 		brands: $brands,
-		// selectedSolution: [],
-		selectedProductCategory: [],
-		selectedSolution: [],
+		selectedItem: '',
 		currentPage: 1,
 		perPage: 4,
 		width: undefined,
@@ -25,15 +23,15 @@ export default function ($brands) {
 		get filteredBrands() {
 			let filteredBrands = this.brands;
 
-			if (this.selectedProductCategory.length) {
+			if (this.selectedItem.startsWith('category|')) {
 				filteredBrands = filteredBrands.filter((brand) => {
-					return brand.productCategories.includes(parseInt(this.selectedProductCategory))
+					return brand.productCategories.includes(parseInt(this.selectedItem.split('|')[1]))
 				})
 			}
 
-			if (this.selectedSolution.length) {
+			if (this.selectedItem.startsWith('solution|')) {
 				filteredBrands = filteredBrands.filter((brand) => {
-					return brand.solutions.includes(parseInt(this.selectedSolution))
+					return brand.solutions.includes(parseInt(this.selectedItem.split('|')[1]))
 				})
 			}
 

@@ -23,26 +23,22 @@
   class="fluid-grid mb-12"
 >
   <div class="span-content grid grid-cols-subgrid">
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
+    <div class="col-span-12 lg:col-span-3 mb-8">
       <select
-        x-model="selectedProductCategory"
-        class="border cursor-pointer w-full h-12 text-body-medium rounded-md px-5 py-3 border-gray-light"
+        x-model="selectedItem"
+        class="border cursor-pointer w-full h-12 text-body-medium rounded-md pl-5 pr-8 py-3 border-gray-light"
       >
-        <option value="">All Product Categories</option>
-        {% for category in product_categories %}
-          <option value="{{ category.id }}">{{ category.title }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
-      <select
-        x-model="selectedSolution"
-        class="border cursor-pointer w-full h-12 text-body-medium rounded-md px-5 py-3 border-gray-light"
-      >
-        <option value="">All Solutions</option>
-        {% for solution in solutions %}
-          <option value="{{ solution.id }}">{{ solution.title }}</option>
-        {% endfor %}
+        <option value="">All Brands</option>
+        <optgroup label="Solutions">
+          {% for solution in solutions %}
+            <option value="solution|{{ solution.id }}">{{ solution.title }}</option>
+          {% endfor %}
+        </optgroup>
+        <optgroup label="Product Categories">
+          {% for category in product_categories %}
+            <option value="category|{{ category.id }}">{{ category.title }}</option>
+          {% endfor %}
+        </optgroup>
       </select>
     </div>
   </div>
