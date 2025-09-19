@@ -55,7 +55,10 @@
           {% endif %}
           <div class="">
             {% if item.heading_is_link %}
-              {{ include('partials/arrow-link-large.twig', item.heading_link) }}
+              {{ include('partials/arrow-link-large.twig', {
+                ...item.heading_link,
+                link: item.heading_link.url,
+              }) }}
             {% else %}
               <h3 class="text-h5 text-balance">{{ item.heading }}</h3>
             {% endif %}
