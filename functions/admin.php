@@ -82,3 +82,9 @@ function remove_draft_widget()
 {
 	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
 }
+
+function load_admin_style()
+{
+	wp_enqueue_style('admin_css', get_template_directory_uri() . '/admin.css', false, '1.0.0');
+}
+add_action('admin_enqueue_scripts', 'load_admin_style');
