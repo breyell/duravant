@@ -6,7 +6,15 @@
       </div>
     {% endif %}
     <article
-      x-data="{ activeTab: 1 }"
+      x-data="{
+        activeTab: 1,
+        sectionTitle: '{{ solution.heading }}',
+        tabTitles: [
+          {% for tab in solution.tabs %}
+            '{{ tab.heading }}'{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ],
+      }"
       id="{{ solution.id }}"
       class="span-content grid grid-cols-subgrid gap-y-10 py-16"
     >
@@ -19,6 +27,13 @@
           <div class="lg:hidden relative">
             <select
               x-model="activeTab"
+              @change="
+                dataLayer.push({
+                  'event': 'markets_tab_click',
+                  'section_title': sectionTitle,
+                  'tab_title': tabTitles[activeTab - 1],
+                });
+              "
               class="w-full"
             >
               {% for tab in solution.tabs %}
@@ -29,7 +44,14 @@
           <div class="hidden lg:flex lg:flex-col">
             {% for tab in solution.tabs %}
               <button
-                @click="activeTab = {{ loop.index }}"
+                @click="
+                  activeTab = {{ loop.index }};
+                  dataLayer.push({
+                    'event': 'markets_tab_click',
+                    'section_title': sectionTitle,
+                    'tab_title': tabTitles[activeTab - 1],
+                  });
+                "
                 :class="activeTab == {{ loop.index }} && 'bg-blue-baby hover:!bg-blue-baby'"
                 class="
                   py-6 px-3 border-gray-light hover:bg-blue-pale transition-colors
