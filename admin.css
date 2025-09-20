@@ -1,3 +1,4 @@
+/* Prevents cropping of page builder component images */
 .acfe-flexible-layout-thumbnail {
 	background-size: contain !important;
 }
