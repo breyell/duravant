@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             '@mux/mux-player': ['@mux/mux-player'],
-            '@mux/mux-player': ['@mux/mux-player'],
+            '@formkit/auto-animate': ['@formkit/auto-animate'],
             '@alpinejs/collapse': ['@alpinejs/collapse'],
             '@alpinejs/focus': ['@alpinejs/focus'],
             '@alpinejs/resize': ['@alpinejs/resize'],
