@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
     base: `${root.slice(root.indexOf('/wp-content'))}/${mode !== 'development' ? 'dist/' : ''}`,
     build: {
       manifest: 'manifest.json',
+			sourcemap: 'inline',
       rollupOptions: {
         input: ['style.css', 'main.js'],
         output: {
