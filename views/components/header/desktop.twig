@@ -119,11 +119,13 @@
                   {% if item.type == 'image' %}
                     {{ ResponsiveImage(item.image, {
                       class: '',
+                      sizes: '(min-wdith: 1376px) 505px, 42vw',
                     }) }}
                   {% elseif item.type == 'link_card' %}
                     <article class="relative flex gap-x-6">
                       {{ ResponsiveImage(item.card_image, {
                         class: 'w-36 aspect-square object-cover shrink-0',
+                        sizes: '144px',
                       }) }}
                       <div class="flex flex-col">
                         <h3 class="">

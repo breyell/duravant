@@ -3,6 +3,7 @@
     <div class="col-span-12 sm:col-span-9 md:col-span-7 lg:col-span-5">
       {{ ResponsiveImage(image, {
         class: 'rounded-r-full object-cover -ml-(--col-gap) max-w-none w-[calc(100%+var(--col-gap))] aspect-[1.1] xl:-ml-32 xl:w-[calc(100%+8rem)]',
+        sizes: '(min-width: 1376px) 634px, (min-width: 1024px) 42vw, (min-width: 768px) 59vw, (min-width: 640px) 75vw, , 100vw',
       }) }}
     </div>
     <div class="col-span-12 lg:col-span-7 lg:self-center">
@@ -14,6 +15,7 @@
           <li class="flex gap-3 lg:flex-col lg:justify-center">
             {{ ResponsiveImage(country.image, {
               class: 'h-6 w-auto object-contain',
+              sizes: '100px',
             }) }}
             <p class="text-h5">{{ country.link.title }}</p>
           </li>

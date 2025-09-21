@@ -25,6 +25,7 @@
     {% if brand %}
       {{ ResponsiveImage(get_post(brand).logo, {
         class: '',
+        sizes: '200px',
       }) }}
     {% endif %}
     <h2 class="text-h4">{{ heading }}</h2>
@@ -42,6 +43,7 @@
     <div class="span-content lg:col-start-[col-7] self-center">
       {{ ResponsiveImage(image, {
         class: 'w-full',
+        sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
       }) }}
     </div>
   {% endif %}

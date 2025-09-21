@@ -10,6 +10,7 @@
     <div class="col-start-[full-start] col-end-[content-end] sm:col-end-[col-10]">
       {{ ResponsiveImage(component_content.image, {
         class: 'h-96 rounded-r-full object-cover object-right',
+        sizes: '(min-width: 1536px) 1075px, (min-width: 1280px) 70vw, (min-width: 1024px) 75vw, (min-width: 640px) 83vw, 100vw',
       }) }}
     </div>
   {% endif %}
@@ -42,6 +43,7 @@
     {% if component_content.image %}
       {{ ResponsiveImage(component_content.image, {
         class: 'ml-auto w-9/12 xl:w-[70%] h-full object-cover',
+        sizes: '(min-width: 1536px) 1075px, (min-width: 1280px) 70vw, (min-width: 1024px) 75vw, (min-width: 640px) 83vw, 100vw',
       }) }}
     {% endif %}
   </div>

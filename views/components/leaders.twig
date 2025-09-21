@@ -30,6 +30,7 @@
               {% if show_images %}
                 {{ ResponsiveImage(leader.image, {
                   class: 'w-64 aspect-square object-cover',
+                  sizes: '256px',
                 }) }}
               {% else %}
                 <div class="h-1 w-full gradient-light bg-linear-to-l"></div>

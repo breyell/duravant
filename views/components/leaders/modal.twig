@@ -18,6 +18,7 @@
       {% if show_images %}
         {{ ResponsiveImage(leader.image, {
           class: 'w-full aspect-square md:w-40 object-cover',
+          sizes: '(min-width: 768px) 160px, 100vw',
         }) }}
       {% endif %}
       <div class="flex flex-col justify-center gap-y-1.5 lg:pr-24">

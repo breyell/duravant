@@ -9,16 +9,19 @@
     {% if component_content.image_one %}
       {{ ResponsiveImage(component_content.image_one, {
         class: 'col-span-2 aspect-[2] w-full object-cover',
+        sizes: '(min-width: 1536px) 615px, (min-width: 1024px) 40vw, (min-width: 768px) 67vw, 100vw',
       }) }}
     {% endif %}
     {% if component_content.image_two %}
       {{ ResponsiveImage(component_content.image_two, {
         class: 'col-span-1 aspect-square w-full object-cover',
+        sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
       }) }}
     {% endif %}
     {% if component_content.image_three %}
       {{ ResponsiveImage(component_content.image_three, {
-        class: 'hidden lg:block col-span-1 lg:col-span-2 aspect-square lg:aspect-[2] w-full object-cover',
+        class: 'hidden lg:block col-span-1 lg:col-span-2 lg:aspect-[2] w-full object-cover',
+        sizes: '(min-width: 1536px) 615px, (min-width: 1024px) 40vw, (min-width: 768px) 67vw, 100vw',
       }) }}
     {% endif %}
   {% endif %}
@@ -26,26 +29,31 @@
     {% if rows == 2 %}
       {{ ResponsiveImage(component_content.image_four, {
         class: 'col-span-1 aspect-square w-full object-cover',
+        sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
       }) }}
     {% else %}
       {{ ResponsiveImage(component_content.image_four, {
         class: 'col-span-1 aspect-square w-full object-cover hidden md:block',
+        sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
       }) }}
     {% endif %}
   {% endif %}
   {% if component_content.image_five %}
     {{ ResponsiveImage(component_content.image_five, {
       class: 'col-span-2 aspect-[2] w-full object-cover',
+      sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
     }) }}
   {% endif %}
   {% if component_content.image_six %}
     {{ ResponsiveImage(component_content.image_six, {
       class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
+      sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
     }) }}
   {% endif %}
   {% if component_content.image_seven %}
     {{ ResponsiveImage(component_content.image_seven, {
       class: 'hidden lg:block col-span-1 aspect-square w-full object-cover',
+      sizes: '(min-width: 1536px) 308px, (min-width: 1024px) 42vw, (min-width: 768px) 33vw, 50vw',
     }) }}
   {% endif %}
 </section>

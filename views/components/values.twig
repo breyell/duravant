@@ -12,6 +12,7 @@
         <div class="">
           {{ ResponsiveImage(value.image, {
             class: 'size-18 lg:size-24 mx-auto lg:ml-0 object-cover',
+            sizes: '(min-width: 1024px) 96px, 72px',
           }) }}
           <h3 class="text-h4 lg:text-h6 text-balance mt-4">{{ value.heading }}</h3>
           {% if value.subheading %}

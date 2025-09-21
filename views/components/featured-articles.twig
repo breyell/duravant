@@ -31,6 +31,7 @@
       >
         {{ ResponsiveImage(article.image, {
           class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
+          sizes: '(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw',
         }) }}
         <h2 class="text-h5 text-balance mt-6">{{ article.heading }}</h2>
         {# <div class="w-full h-1 gradient-light bg-linear-to-l my-2.5"></div> #}

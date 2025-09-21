@@ -35,10 +35,12 @@
               >
                 {{ ResponsiveImage(market.image, {
                   class: 'w-full aspect-[1.75] object-cover',
+                  sizes: '(min-width: 1376px) 234px, (min-width: 1024px) 25vw, 192px',
                 }) }}
                 <div class="relative bg-blue text-gray-dark p-2.5 min-h-36 flex gap-x-1 overflow-hidden">
                   {{ ResponsiveImage(market.icon_light, {
                     class: 'absolute -top-1/4 -left-1/6 size-[105%]',
+                    sizes: '192px',
                   }) }}
                   <div class="relative flex flex-col justify-end">
                     <h3 class="text-h5 text-balance">{{ market.title }}</h3>
@@ -62,6 +64,7 @@
             >
               {{ ResponsiveImage(market.image, {
                   class: 'size-full object-cover',
+                  sizes: '(min-width: 1376px) 234px, (min-width: 1024px) 25vw, 192px',
                 }) }}
               <div class="absolute z-10 inset-0 bg-linear-to-t from-gray-dark to-65% to-white/0"></div>
               <h3 class="absolute z-20 top-3.5 bottom-3.5 left-2.5 right-2.5 flex items-end text-h5">{{ market.title }}</h3>
@@ -69,6 +72,7 @@
                 <div class="relative size-full">
                   {{ ResponsiveImage(market.icon_light, {
                     class: 'absolute -top-1/4 -left-1/4 size-11/12',
+                    sizes: '192px',
                   }) }}
                   <div class="relative size-full flex flex-col justify-end">
                     <h3 class="text-h5 text-balance">{{ market.title }}</h3>

@@ -7,6 +7,7 @@
   <div class="span-content lg:col-end-[col-7]">
     {{ ResponsiveImage(image, {
       class: 'w-full mb-10',
+      sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
     }) }}
     <div class="space-y-2.5">
       <h2 class="text-h3 text-balance">{{ heading }}</h2>
@@ -19,6 +20,7 @@
         <div class="shrink-0">
           {{ ResponsiveImage(market.flag, {
             class: 'w-8',
+            sizes: '32px',
           }) }}
         </div>
         <div class="space-y-2.5">

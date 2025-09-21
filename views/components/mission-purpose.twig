@@ -8,6 +8,7 @@
       <div class="absolute top-0 -left-(--col-gap) w-[calc(100%+2*var(--col-gap))] h-full lg:w-[calc(100%+1.5*var(--col-gap))]">
         {{ ResponsiveImage(global.mission_purpose.mission_background, {
           class: 'size-full object-cover',
+          sizes: '(min-width: 1376px) 688px, (min-width: 1024px) 50vw, 100vw',
         }) }}
       <div class="absolute top-0 left-0 size-full from-[#016373] to-transparent bg-linear-to-r"></div>
       </div>
@@ -22,6 +23,7 @@
     <div class="span-content py-16 lg:col-start-[col-7] lg:px-8">
       {{ ResponsiveImage(global.mission_purpose.purpose_image, {
         class: 'w-full aspect-[1.9] object-cover',
+        sizes: '(min-width: 1376px) 552px, (min-width: 1024px) 50vw, 100vw',
       }) }}
       <div class="mt-10 text-center">
         <div class="inline-flex flex-col">

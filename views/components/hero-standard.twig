@@ -26,6 +26,7 @@
           <div class="col-span-12 sm:col-span-9 md:col-span-7 lg:hidden">
             {{ ResponsiveImage(image, {
               class: 'w-full aspect-[1.1] rounded-r-full object-cover',
+              sizes: '(min-width: 1376px) 505px, (min-width: 1024px) 42vw, (min-width: 768px) 58vw, (min-width: 640px) 75vw, 100vw',
             }) }}
           </div>
         {% endif %}
@@ -58,6 +59,7 @@
           <div class="hidden lg:block lg:col-span-5 lg:-mt-36">
             {{ ResponsiveImage(image, {
               class: 'w-full aspect-[1.1] rounded-r-full object-cover',
+              sizes: '(min-width: 1376px) 505px, (min-width: 1024px) 42vw, (min-width: 768px) 58vw, (min-width: 640px) 75vw, 100vw',
             }) }}
           </div>
         {% endif %}

@@ -79,6 +79,7 @@
             {% if tab.brand %}
               {{ ResponsiveImage(get_post(tab.brand).logo, {
                 class: '',
+                sizes: '200px',
               }) }}
             {% endif %}
             <p class="text-body-large">{{ tab.primary_body }}</p>
@@ -97,6 +98,7 @@
             {% if tab.image %}
               {{ ResponsiveImage(tab.image, {
                 class: 'w-full h-72 object-contain lg:grow',
+                sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
               }) }}
             {% endif %}
           </div>

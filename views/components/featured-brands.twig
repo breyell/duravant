@@ -41,6 +41,7 @@
             <div class="w-full max-h-96 lg:max-h-none lg:aspect-retro">
               {{ ResponsiveImage(brand.image, {
                 class: 'w-full object-contain lg:h-full',
+                sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
               }) }}
             </div>
           {% endif %}
@@ -50,6 +51,7 @@
             <div class="mb-12 max-w-3/5">
               {{ ResponsiveImage(logo, {
                 class: 'w-full object-contain object-left',
+                sizes: '(min-width: 1376px) 370px, (min-width: 1024px) 30vw, 60vw',
               }) }}
             </div>
           {% endif %}
@@ -86,6 +88,7 @@
             <div class="w-full max-h-96 lg:max-h-none lg:aspect-retro">
               {{ ResponsiveImage(brand.image, {
                 class: 'w-full object-contain lg:h-full',
+                sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
               }) }}
             </div>
           </div>

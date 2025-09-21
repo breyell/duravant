@@ -15,10 +15,16 @@
 </head>
 
 <body {{ function('body_class') }}>
-  {# <div>
-    <a class="" href="#main">Skip To Main Content</a>
-    <a class="" href="#footer">Skip to Footer</a>
-  </div> #}
+  <div>
+    <a
+      class="transition duration-150 left-0 bg-blue-deep text-white text-h5 absolute z-50 p-3 m-3 -translate-y-20 focus-visible:translate-y-0 focus-default"
+    href="#main"
+    >Skip To Main Content</a>
+    <a
+      class="transition duration-150 left-0 bg-blue-deep text-white text-h5 absolute z-50 p-3 m-3 -translate-y-20 focus-visible:translate-y-0 focus-default"
+    href="#footer"
+    >Skip To Footer</a>
+  </div>
 
   {% include "components/header.twig" %}
 

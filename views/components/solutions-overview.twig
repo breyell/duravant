@@ -8,6 +8,7 @@
       {% endif %}
       {{ ResponsiveImage(image, {
         class: 'hidden lg:block -ml-12 mt-auto -mb-12 w-[calc(100%+3rem)] max-w-none h-60 rounded-tr-full object-cover xl:-ml-32 xl:w-[calc(100%+8rem)]',
+        sizes: '(min-width: 1376px) 634px, (min-width: 1024px) 45vw, (min-width: 768px) 59vw, (min-width: 640px) 75vw, 100vw',
       }) }}
     </div>
     <div class="col-span-12 lg:col-span-7 self-center">
@@ -34,6 +35,7 @@
     <div class="col-span-12 lg:hidden">
       {{ ResponsiveImage(image, {
         class: 'mt-12 -ml-4 sm:-ml-8 w-[calc(100%+1rem)] md:w-[calc(75%+1rem)] max-w-none rounded-tr-full',
+        sizes: '(min-width: 1376px) 634px, (min-width: 1024px) 45vw, (min-width: 768px) 59vw, (min-width: 640px) 75vw, 100vw',
       }) }}
     </div>
   </div>

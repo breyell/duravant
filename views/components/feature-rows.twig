@@ -4,6 +4,7 @@
       <div class="span-content grid grid-cols-subgrid gap-y-6">
         {{ ResponsiveImage(row.image, {
           class: 'col-span-12 lg:col-span-7 w-full aspect-video object-cover' ~ (loop.index is even ? ' lg:hidden'),
+          sizes: '(min-width: 1376px) 727px, (min-width: 1024px) 58vw, 100vw',
         }) }}
         <div class="col-span-12 lg:col-span-5 self-center flex flex-col">
           <h2 class="text-h4 text-balance">{{ row.heading }}</h2>
@@ -25,6 +26,7 @@
         {% if loop.index is even %}
         {{ ResponsiveImage(row.image, {
           class: 'col-span-12 lg:col-span-7 hidden w-full aspect-video object-cover lg:block',
+          sizes: '(min-width: 1376px) 727px, (min-width: 1024px) 58vw, 100vw',
         }) }}
         {% endif %}
       </div>
