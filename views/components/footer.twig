@@ -20,13 +20,15 @@
       <p class="mt-5 text-body-large">{{ global.footer_text }}</p>
       <ul class="flex gap-x-11 mt-9">
         {% for item in global.social_links %}
-          <a
-            href="{{ item.url }}"
-            target="_blank"
-            class="inline-block size-7.5 hover:text-blue"
-          >
-            {{ include('svgs/social/' ~ item.platform ~ '.twig') }}
-          </a>
+          <li class="">
+            <a
+              href="{{ item.url }}"
+              target="_blank"
+              class="inline-block size-7.5 hover:text-blue"
+            >
+              {{ include('svgs/social/' ~ item.platform ~ '.twig') }}
+            </a>
+          </li>
         {% endfor %}
       </ul>
     </div>

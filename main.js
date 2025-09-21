@@ -17,7 +17,7 @@ Alpine.data('video', video)
 Alpine.data('brandFilter', brandFilter)
 
 Alpine.directive('auto-animate', (el, { expression }, { evaluate }) => {
-	autoAnimate(el, (expression && evaluate(expression)) || {})
+  autoAnimate(el, (expression && evaluate(expression)) || {})
 })
 
 Alpine.start()
