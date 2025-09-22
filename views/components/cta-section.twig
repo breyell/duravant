@@ -27,7 +27,7 @@
           {% for item in component_content.links %}
             <a
               class="button-tertiary"
-              href="{{ item.link.link }}"
+              href="{{ item.link.url }}"
               target="{{ item.link.target | default('_self') }}"
             >{{ item.link.title }}</a>
           {% endfor %}
