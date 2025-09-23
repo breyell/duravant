@@ -81,8 +81,17 @@
           {% if item.children|length > 0 %}
             <button
               @click="openIndex === {{ loop.index }} ? openIndex = 0 : $nextTick(() => { openIndex = {{ loop.index }} })"
-              class="font-aktiv-grotesk-extended font-semibold text-sm uppercase py-3 px-2 hover:underline hover:decoration-4 hover:underline-offset-4 hover:decoration-gray"
-            >{{ item.title }}</button>
+              {# hover:underline hover:decoration-4 hover:underline-offset-4 hover:decoration-gray #}
+              class="py-3 px-2"
+            >
+              <span
+                :class="{ 'after:scale-x-200': openIndex === {{ loop.index }} }"
+                class="
+                  relative inline-block font-aktiv-grotesk-extended font-semibold text-sm uppercase
+                  hover:after:scale-x-100 after:bg-gray-dark after:absolute after:top-full after:left-1/2 after:w-1/2 after:h-1 after:-translate-x-1/2 after:scale-x-0 after:transition-transform
+                "
+              >{{ item.title }}</span>
+            </button>
             <div
               x-show="openIndex === {{ loop.index }}"
               x-trap="openIndex === {{ loop.index }}"
@@ -95,7 +104,7 @@
               x-transition:leave="transition ease-in duration-300"
               x-transition:leave-start="opacity-100"
               x-transition:leave-end="opacity-0"
-              class="absolute z-40 top-full left-0 w-full fluid-grid bg-white py-10"
+              class="absolute z-40 top-full left-0 w-full fluid-grid bg-white py-10 shadow-nav-panel"
             >
               <div class="span-content grid grid-cols-subgrid">
                 <div class="col-span-3 flex flex-col gap-y-2">
