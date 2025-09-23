@@ -1,0 +1,12 @@
+{% extends 'layouts/default.twig' %}
+
+{% block main %}
+  {# {{ include('components/hero-simple.twig', { heading: 'News' }) }} #}
+  <section class="fluid-grid">
+    <div class="span-content">
+      {{ include('partials/breadcrumbs.twig') }}
+    </div>
+  </section>
+  {{ include('components/news-article.twig', post.article_content) }}
+  {{ include('components/cta-section.twig', post.cta_section) }}
+{% endblock %}

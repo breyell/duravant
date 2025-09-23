@@ -35,6 +35,10 @@ if ($post_type === 'solution') {
 	array_splice($context['breadcrumbs'], 1, 0, [Timber::get_post($context['global']['blog_page'])]);
 
 	return Timber::render('templates/blog-post.twig', $context);
+} elseif ($post_type === 'news') {
+	array_splice($context['breadcrumbs'], 1, 0, [Timber::get_post($context['global']['news_page'])]);
+
+	return Timber::render('templates/news-article.twig', $context);
 }
 
 return Timber::render('templates/page-builder.twig', $context);

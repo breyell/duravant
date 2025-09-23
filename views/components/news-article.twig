@@ -1,0 +1,27 @@
+<section class="fluid-grid mt-4 mb-12 gap-y-12 lg:mb-16">
+  <div class="span-content lg:col-start-[col-1] lg:col-end-[col-9]">
+    <h1 class="text-h3 mb-3">{{ heading }}</h1>
+    {% if subheading %}
+      <div class="text-body-medium italic mb-3">{{ subheading }}</div>
+    {% endif %}
+    <div class="wysiwyg">{{ content }}</div>
+  </div>
+  <div class="span-content lg:col-start-[col-10] lg:col-end-[content-end]">
+    <div class="">
+      <img
+        class="w-40"
+        src="{{ theme.path }}/dist/svgs/logo.svg"
+        alt="Duravant Logo"
+      >
+      <div class="w-full h-1 gradient-light bg-linear-to-r my-6"></div>
+      <div class="text-h5">Media Contact</div>
+      <div class="text-body-medium">{{ global.media_contact.contact_info }}</div>
+      <div class="">
+        <a
+          href="mailto:{{ global.media_contact.email }}"
+          class="text-body-medium text-blue-deep transition-colors hover:text-black"
+        >Email</a>
+      </div>
+    </div>
+  </div>
+</section>
