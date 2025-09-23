@@ -10,7 +10,16 @@
       sizes: '100vw',
     }) }}
     <div class="fluid-grid">
-      <div class="span-lg relative text-white pt-16 pb-64">
+      <div
+        class="
+          span-lg relative text-white pt-16
+          {% if image %}
+            pb-32 xs:pb-64
+          {% else %}
+            pb-16
+          {% endif %}
+        "
+      >
         <h1 class="text-h3 text-balance">{{ heading }}</h1>
         {% if body %}
           <p class="text-body-large mt-4">{{ body }}</p>
@@ -18,11 +27,20 @@
       </div>
     </div>
   </div>
-  <div class="fluid-grid relative -mt-52">
-    {{ ResponsiveImage(image, {
-      class: 'span-lg w-full aspect-[1.44] object-cover',
-      sizes: '(min-width: 1376px) 838px, (min-width: 1024px) 67vw, (min-width: 768px) 84vw, 100vw',
-    }) }}
+  <div
+    class="
+      fluid-grid relative
+      {% if image %}
+        -mt-20 xs:-mt-52
+      {% endif %}
+    "
+  >
+    {% if image %}
+      {{ ResponsiveImage(image, {
+        class: 'span-lg w-full aspect-[1.44] object-cover',
+        sizes: '(min-width: 1376px) 838px, (min-width: 1024px) 67vw, (min-width: 768px) 84vw, 100vw',
+      }) }}
+    {% endif %}
     <div class="span-lg mt-8 mb-12 flex flex-col gap-y-4 md:flex-row">
       <div class="grow flex flex-col gap-y-4 md:flex-row md:items-center">
         <div class="flex flex-col gap-y-4 md:flex-row md:items-center">
