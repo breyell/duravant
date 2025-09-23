@@ -1,0 +1,13 @@
+<figure class="relative">
+  <div class="absolute top-0 left-0 size-full gradient-light bg-linear-to-r opacity-40">
+  </div>
+  {{ include('svgs/quote.twig', {
+    class: 'absolute top-2.5 left-5 w-14 text-blue-light opacity-40',
+  }) }}
+  <div class="relative p-5 space-y-3.5">
+    <blockquote class="text-body-large">"{{ quote }}"</blockquote>
+    {% if quote_author %}
+      <figcaption class="text-body-medium text-right">- {{ quote_author }}</figcaption>
+    {% endif %}
+  </div>
+</figure>

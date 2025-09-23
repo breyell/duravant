@@ -1,0 +1,19 @@
+{% if images|length == 1 %}
+  {% set sizes = '(min-width: 1376px) 838px, (min-width: 1024px) 67vw, (min-width: 768px) 84vw, 100vw' %}
+{% elseif images|length == 2 %}
+  {% set sizes = '(min-width: 1376px) 395px, (min-width: 1024px) 33vw, (min-width: 768px) 42vw, 100vw' %}
+{% endif %}
+
+<div class="flex flex-col md:flex-row gap-y-12 gap-x-fluid-grid-gap">
+  {% for item in images %}
+    <figure class="w-full">
+      {{ ResponsiveImage(item.image, {
+        class: 'w-full',
+        sizes: sizes,
+      }) }}
+      {% if item.caption %}
+        <figcaption class="text-body-medium italic mt-3">{{ item.caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endfor %}
+</div>

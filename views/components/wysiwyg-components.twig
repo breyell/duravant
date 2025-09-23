@@ -1,0 +1,7 @@
+<section class="fluid-grid pb-24">
+  <div class="span-lg space-y-12">
+    {% for component in wysiwyg_components %}
+      {% include "components/wysiwyg-components/" ~ component.acf_fc_layout | replace({'_': '-'}) ~ ".twig" with component %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+{% extends 'layouts/default.twig' %}
+
+{% block main %}
+  {{ include('components/hero-blog.twig', post.blog_hero) }}
+  {{ include('components/wysiwyg-components.twig', post.blog_content) }}
+  {{ include('components/featured-articles.twig', post.featured_articles) }}
+  {{ include('components/cta-section.twig', post.cta_section) }}
+{% endblock %}

@@ -1,4 +1,16 @@
-<section class="fluid-grid my-16 lg:my-24">
+<section
+  class="
+    fluid-grid
+    {% if background_color != 'white' %}
+      py-16 lg:py-24
+    {% else %}
+      my-16 lg:my-24
+    {% endif %}
+    {% if background_color == 'bone' %}
+      bg-bone
+    {% endif %}
+  "
+>
   {% if heading %}
     <h2 class="span-lg text-h3 text-center text-balance mb-8">{{ heading }}</h2>
   {% endif %}
@@ -8,10 +20,23 @@
         {% set article_page = get_post(article.page) %}
         {% set article = {
           image: article_page.featured_image,
-          heading: article_page.featured_article_content.heading,
+          heading: article_page.featured_article_content.heading ?: article_page.title,
           body: article_page.featured_article_content.body,
-          link: article_page.featured_article_content.link,
+          link: article_page.featured_article_content.link.url ?: article_page.link,
         } %}
+      {% elseif article.type == 'blog' %}
+        {% set blog_article = get_post(article.blog_post) %}
+        {% set article = {
+          image: blog_article.blog_hero.image,
+          heading: blog_article.blog_hero.heading,
+          body: blog_article.featured_article_content.body,
+          link: blog_article.link,
+        } %}
+      {% else %}
+        {% set article = article|merge({
+          link_target: article.link.target,
+          link: article.link.url,
+        }) %}
       {% endif %}
       <article
         class="
@@ -39,7 +64,8 @@
         <div class="mt-2.5">
           <a
             class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
-            href="{{ article.link.url }}"
+            href="{{ article.link }}"
+            target="{{ link_target | default('_self') }}"
           >
             <span class="text-body-medium">{{ article.link.title }}</span>
             <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>

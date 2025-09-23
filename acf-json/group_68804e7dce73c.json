@@ -3,6 +3,32 @@
     "title": "Component - Featured Articles",
     "fields": [
         {
+            "key": "field_68d2219a5a154",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "bone": "Bone"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_6889b45cedcee",
             "label": "Layout",
             "name": "layout",
@@ -146,6 +172,54 @@
                     "bidirectional_target": [],
                     "save_post_type": "",
                     "min": "",
+                    "parent_repeater": "field_68b448cd60091"
+                },
+                {
+                    "key": "field_68d2193865cb3",
+                    "label": "Blog Post",
+                    "name": "blog_post",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_68b448ee60092",
+                                "operator": "==",
+                                "value": "blog"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "blog"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "save_custom": 0,
+                    "acfe_add_post": 0,
+                    "acfe_edit_post": 0,
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_post_type": "",
+                    "save_post_status": "",
+                    "min": "",
+                    "max": "",
                     "parent_repeater": "field_68b448cd60091"
                 },
                 {
@@ -301,5 +375,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757117757
+    "modified": 1758601648
 }
