@@ -1,0 +1,8 @@
+{% set article = get_post(article) %}
+
+<section class="relative">
+  {{ ResponsiveImage(article.blog_hero.image, {
+    class: '',
+    sizes: '',
+  }) }}
+</section>

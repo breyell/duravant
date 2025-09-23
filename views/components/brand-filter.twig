@@ -25,18 +25,6 @@
   <div class="span-content grid grid-cols-subgrid">
     <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
       <select
-        x-model="selectedProductCategory"
-        @change="selectedSolution = []"
-        class="border cursor-pointer w-full h-12 text-body-medium rounded-md px-5 py-3 border-gray-light"
-      >
-        <option value="">All Product Categories</option>
-        {% for category in product_categories %}
-          <option value="{{ category.id }}">{{ category.title }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
-      <select
         x-model="selectedSolution"
         @change="selectedProductCategory = []"
         class="border cursor-pointer w-full h-12 text-body-medium rounded-md px-5 py-3 border-gray-light"
@@ -44,6 +32,18 @@
         <option value="">All Solutions</option>
         {% for solution in solutions %}
           <option value="{{ solution.id }}">{{ solution.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-span-12 md:col-span-6 lg:col-span-3 mb-8">
+      <select
+        x-model="selectedProductCategory"
+        @change="selectedSolution = []"
+        class="border cursor-pointer w-full h-12 text-body-medium rounded-md px-5 py-3 border-gray-light"
+      >
+        <option value="">All Product Categories</option>
+        {% for category in product_categories %}
+          <option value="{{ category.id }}">{{ category.title }}</option>
         {% endfor %}
       </select>
     </div>

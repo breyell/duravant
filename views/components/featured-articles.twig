@@ -1,79 +1,81 @@
-<section
-  class="
-    fluid-grid
-    {% if background_color != 'white' %}
-      py-16 lg:py-24
-    {% else %}
-      my-16 lg:my-24
-    {% endif %}
-    {% if background_color == 'bone' %}
-      bg-bone
-    {% endif %}
-  "
->
-  {% if heading %}
-    <h2 class="span-lg text-h3 text-center text-balance mb-8">{{ heading }}</h2>
-  {% endif %}
-  <div class="span-content grid grid-cols-subgrid gap-y-8">
-    {% for article in articles %}
-      {% if article.type == 'page' %}
-        {% set article_page = get_post(article.page) %}
-        {% set article = {
-          image: article_page.featured_image,
-          heading: article_page.featured_article_content.heading ?: article_page.title,
-          body: article_page.featured_article_content.body,
-          link: article_page.featured_article_content.link.url ?: article_page.link,
-        } %}
-      {% elseif article.type == 'blog' %}
-        {% set blog_article = get_post(article.blog_post) %}
-        {% set article = {
-          image: blog_article.blog_hero.image,
-          heading: blog_article.blog_hero.heading,
-          body: blog_article.featured_article_content.body,
-          link: blog_article.link,
-        } %}
+{% if articles %}
+  <section
+    class="
+      fluid-grid
+      {% if background_color != 'white' %}
+        py-16 lg:py-24
       {% else %}
-        {% set article = article|merge({
-          link_target: article.link.target,
-          link: article.link.url,
-        }) %}
+        my-16 lg:my-24
       {% endif %}
-      <article
-        class="
-          relative col-span-12
-          {% if layout == 'thirds' %}
-            md:col-span-4
-          {% elseif layout == 'sixty-forty' %}
-            {% if loop.first %}
-              md:col-span-7
-            {% elseif loop.index == 2 %}
-              md:col-span-5
-            {% else %}
-              hidden
+      {% if background_color == 'bone' %}
+        bg-bone
+      {% endif %}
+    "
+  >
+    {% if heading %}
+      <h2 class="span-lg text-h3 text-center text-balance mb-8">{{ heading }}</h2>
+    {% endif %}
+    <div class="span-content grid grid-cols-subgrid gap-y-8">
+      {% for article in articles %}
+        {% if article.type == 'page' %}
+          {% set article_page = get_post(article.page) %}
+          {% set article = {
+            image: article_page.featured_image,
+            heading: article_page.featured_article_content.heading ?: article_page.title,
+            body: article_page.featured_article_content.body,
+            link: article_page.featured_article_content.link.url ?: article_page.link,
+          } %}
+        {% elseif article.type == 'blog' %}
+          {% set blog_article = get_post(article.blog_post) %}
+          {% set article = {
+            image: blog_article.blog_hero.image,
+            heading: blog_article.blog_hero.heading,
+            body: blog_article.article_preview,
+            link: blog_article.link,
+          } %}
+        {% else %}
+          {% set article = article|merge({
+            link_target: article.link.target,
+            link: article.link.url,
+          }) %}
+        {% endif %}
+        <article
+          class="
+            relative col-span-12
+            {% if layout == 'thirds' %}
+              md:col-span-4
+            {% elseif layout == 'sixty-forty' %}
+              {% if loop.first %}
+                md:col-span-7
+              {% elseif loop.index == 2 %}
+                md:col-span-5
+              {% else %}
+                hidden
+              {% endif %}
             {% endif %}
-          {% endif %}
-        "
-      >
-        {{ ResponsiveImage(article.image, {
-          class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
-          sizes: '(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw',
-        }) }}
-        <h2 class="text-h5 text-balance mt-6">{{ article.heading }}</h2>
-        {# <div class="w-full h-1 gradient-light bg-linear-to-l my-2.5"></div> #}
-        <p class="text-body-medium mt-2">{{ article.body }}</p>
-        <div class="mt-2.5">
-          <a
-            class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
-            href="{{ article.link }}"
-            target="{{ link_target | default('_self') }}"
-          >
-            <span class="text-body-medium">{{ article.link.title }}</span>
-            <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
-            <span class="absolute inset-0"></span>
-            {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
-          </a>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-</section>
+          "
+        >
+          {{ ResponsiveImage(article.image, {
+            class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
+            sizes: '(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw',
+          }) }}
+          <h2 class="text-h5 text-balance mt-6">{{ article.heading }}</h2>
+          {# <div class="w-full h-1 gradient-light bg-linear-to-l my-2.5"></div> #}
+          <p class="text-body-medium mt-2">{{ article.body }}</p>
+          <div class="mt-2.5">
+            <a
+              class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
+              href="{{ article.link }}"
+              target="{{ link_target | default('_self') }}"
+            >
+              <span class="text-body-medium">{{ article.link.title }}</span>
+              <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
+              <span class="absolute inset-0"></span>
+              {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
