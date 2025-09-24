@@ -1,0 +1,91 @@
+{% set blog_articles = get_posts({
+  post_type: 'blog',
+  posts_per_page: -1,
+  orderby: 'title',
+  order: 'ASC',
+}) %}
+
+{% set blog_categories = get_terms({
+  taxonomy: 'blog-category',
+}) %}
+
+{% set blog_data = blog_articles|escape('js')|json_encode %}
+
+<section
+  x-data='blogFilter({{ blog_data }})'
+  x-init="start()"
+  class="fluid-grid my-8"
+>
+  <div class="span-content grid grid-cols-subgrid">
+    <select
+      x-model="selectedBlogCategory"
+      class="span-content md:col-start-[col-1] sm:col-end-[col-7] md:col-end-[col-5] cursor-pointer"
+    >
+      <option value="">All Categories</option>
+      {% for item in blog_categories %}
+        <option value="{{ item.slug }}">{{ item.name }}</option>
+      {% endfor %}
+    </select>
+    {# Text shown when there are Articles #}
+    <div x-show="filteredArticles.length > 0" class="span-content text-h6 md:col-start-[col-7] md:col-end-[content-end] md:text-right mt-8 md:mt-0">Showing <span x-text="(currentPage - 1)*perPage + 1"></span>-<span x-text="currentPage*perPage < filteredArticles.length ? currentPage*perPage : filteredArticles.length"></span> of <span x-text="filteredArticles.length"></span> Articles</div>
+    {# Text shown when there are ZERO Articles #}
+    <div x-show="filteredArticles.length === 0" class="text-h5">No Articles</div>
+    <div class="span-content grid grid-cols-subgrid mt-8 lg:mt-16">
+      <div class="span-content grid grid-cols-subgrid gap-y-12" x-auto-animate>
+        {# No results  #}
+        <template x-if="filteredArticles.length === 0">
+          <p class="span-content text-body-large">Sorry, no matches were found.</p>
+        </template>
+        {# Results #}
+        <template
+          x-for="article in displayedArticles"
+          :key="article.id"
+        >
+          <article class="relative col-span-12 sm:col-span-6 md:col-span-4">
+            <img
+              :src="article.image.src || '{{ fallback_article_image.src }}'"
+              :alt="article.image.alt || '{{ fallback_article_image.alt }}'"
+              :srcset="article.image.srcset || '{{ fallback_article_image.srcset }}'"
+              :width="article.image.width  || '{{ fallback_article_image.width }}'"
+              :height="article.image.height || '{{ fallback_article_image.height }}'"
+              class="w-full object-cover aspect-[1.44]"
+              sizes="(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw"
+              loading="lazy"
+            >
+            <h2
+              x-text="article.title"
+              class="text-h5 text-balance mt-6"
+            ></h2>
+            <p
+              x-show="article.preview"
+              x-text="article.preview"
+              class="text-body-medium mt-2"
+            ></p>
+            <div class="mt-2.5">
+              <a
+                class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
+                :href="article.link"
+              >
+                <span
+                  x-text="'Read More'"
+                  class="text-body-medium"
+                ></span>
+                <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
+                <span class="absolute inset-0"></span>
+                {{ include('svgs/arrow-right.twig', {
+                  class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1',
+                }) }}
+              </a>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div
+        x-show="filteredArticles.length > 0"
+        class="span-content"
+      >
+        {{ include('components/filter/pagination.twig') }}
+      </div>
+    </div>
+  </div>
+</section>

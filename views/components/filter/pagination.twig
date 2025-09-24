@@ -1,7 +1,4 @@
-<div
-  x-show="filteredBrands.length > 0"
-  class="flex gap-x-3 justify-center mt-12"
->
+<div class="flex gap-x-3 justify-center mt-12">
   <template x-if="currentPage !== 1">
     <button
       @click.prevent="currentPage = currentPage - 1"
@@ -38,9 +35,7 @@
     </button>
   </template>
   <template x-if="currentPage === totalPages">
-    <span
-      class="text-blue-navy size-10 py-3 transition-transform opacity-25"
-    >
+    <span class="text-blue-navy size-10 py-3 transition-transform opacity-25">
       {{ include('svgs/caret-right.twig', {
         class: 'size-full',
       }) }}

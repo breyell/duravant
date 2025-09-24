@@ -90,7 +90,10 @@
       </li>
     </template>
   </ul>
-  <div class="span-content">
-    {{ include('components/brand-filter/pagination.twig') }}
+  <div
+    x-show="filteredBrands.length > 0"
+    class="span-content"
+  >
+    {{ include('components/filter/pagination.twig') }}
   </div>
 </section>

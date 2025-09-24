@@ -1,6 +1,8 @@
 <?php
 
+require_once __DIR__ . '/../src/BlogPost.php';
 require_once __DIR__ . '/../src/Brand.php';
+require_once __DIR__ . '/../src/NewsArticle.php';
 
 use Timber\Timber;
 use Twig\TwigFunction;
@@ -12,12 +14,16 @@ add_filter('timber/context', function ($context) {
 	$context['primary_menu'] = Timber::get_menu('primary');
 	$context['utility_menu'] = Timber::get_menu('utility');
 	$context['footer_menu'] = Timber::get_menu('footer');
+	$context['fallback_article_image'] = Timber::get_post($context['global']['fallback_article_image']);
+	$context['blog_page_url'] = Timber::get_post($context['global']['blog_page'])->link;
 	return $context;
 });
 
 add_filter('timber/post/classmap', function ($classmap) {
 	$custom_classmap = [
+		'blog' => BlogPost::class,
 		'brand' => Brand::class,
+		'news' => NewsArticle::class,
 	];
 
 	return array_merge($classmap, $custom_classmap);
