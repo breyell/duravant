@@ -33,7 +33,17 @@ export default function (articles, blogCategories) {
 			this.$watch('currentPage', () => this.updateUrl())
 		},
 		categoryBySlug(slug) {
-			return blogCategories.find((category) => slug === category.slug).name
+			if (blogCategories.isArray) {
+				return blogCategories.find((category) => slug === category.slug).name
+			}
+
+			if (typeof blogCategories == 'object') {
+				for (const category of Object.values(blogCategories)) {
+					if (category.slug === slug) {
+						return category.name
+					}
+				}
+			}
 		},
 		get totalPages() {
 			return Math.ceil(this.filteredArticles.length / this.perPage)
