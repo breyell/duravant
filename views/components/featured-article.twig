@@ -1,51 +1,55 @@
-<h1 class="sr-only">Blog</h1>
-<section class="fluid-grid">
+{% if blog_page_url == post.link %}
+  <h1 class="sr-only">Blog</h1>
+  <section class="fluid-grid">
     <div class="span-content">
       {{ include('partials/breadcrumbs.twig') }}
     </div>
   </section>
-<article class="relative py-16">
+{% endif %}
 
-{% set article = get_post(article) %}
-{{ ResponsiveImage(global.simple_standard_hero_background_image, {
-    class: 'span-full absolute size-full top-0 left-0 object-cover object-top-left',
-    sizes: '100vw',
-  }) }}
-  <div class="fluid-grid gap-y-6 relative">
-    <div class="span-content lg:hidden">
-      {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
-        class: 'w-full aspect-[1.44] object-cover',
-        sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
-      }) }}
-    </div>
-    <div class="span-content lg:col-end-[col-7] text-white self-center">
-      <h2 class="text-h2">{{ article.blog_hero.heading }}</h2>
-      <div class="grow my-1 flex flex-col gap-y-4 md:flex-row md:items-center">
-        <div class="flex flex-col gap-y-4 md:flex-row md:items-center">
-          {% for category in article.terms('blog-category') %}
-            {# link needs updating #}
-            <a
-              href="{{ blog_page_url }}#{{ category.slug }}"
-              class="text-body-medium text-blue-deep transition-colors hover:text-black"
-            >{{ category.name }}</a>
-            <div class="hidden md:block h-10 w-px mx-6 bg-blue-dark"></div>
-          {% endfor %}
+{% if article %}
+  {% set article = get_post(article) %}
+  <article class="relative py-16">
+    {{ ResponsiveImage(global.simple_standard_hero_background_image, {
+      class: 'span-full absolute size-full top-0 left-0 object-cover object-top-left',
+      sizes: '100vw',
+    }) }}
+    <div class="fluid-grid gap-y-6 relative">
+      <div class="span-content lg:hidden">
+        {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
+          class: 'w-full aspect-[1.44] object-cover',
+          sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
+        }) }}
+      </div>
+      <div class="span-content lg:col-end-[col-7] text-white self-center">
+        <h2 class="text-h2">{{ article.blog_hero.heading }}</h2>
+        <div class="grow my-1 flex flex-col gap-y-4 md:flex-row md:items-center">
+          <div class="flex flex-col gap-y-4 md:flex-row md:items-center">
+            {% for category in article.terms('blog-category') %}
+              {# link needs updating #}
+              <a
+                href="{{ blog_page_url }}#{{ category.slug }}"
+                class="text-body-medium text-blue-deep transition-colors hover:text-black"
+              >{{ category.name }}</a>
+              <div class="hidden md:block h-10 w-px mx-6 bg-blue-dark"></div>
+            {% endfor %}
+          </div>
+          <div class="text-body-medium">{{ article.date }}</div>
         </div>
-        <div class="text-body-medium">{{ article.date }}</div>
+        <p class="text-body-medium">{{ article.blog_hero.body }}</p>
+        <div class="mt-6">
+          <a
+            class="button-secondary"
+            href="{{ article.link }}"
+          >Read more <span class="sr-only">about {{ article.blog_hero.heading }}</span></a>
+        </div>
       </div>
-      <p class="text-body-medium">{{ article.blog_hero.body }}</p>
-      <div class="mt-6">
-        <a
-          class="button-secondary"
-          href="{{ article.link }}"
-        >Read more <span class="sr-only">about {{ article.blog_hero.heading }}</span></a>
+      <div class="hidden lg:block col-start-[col-7] col-end-[content-end]">
+        {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
+          class: 'w-full aspect-[1.44] object-cover',
+          sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
+        }) }}
       </div>
     </div>
-    <div class="hidden lg:block col-start-[col-7] col-end-[content-end]">
-      {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
-        class: 'w-full aspect-[1.44] object-cover',
-        sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
-      }) }}
-    </div>
-  </div>
-</article>
+  </article>
+{% endif %}
