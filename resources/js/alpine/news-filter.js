@@ -1,0 +1,78 @@
+export default function ($articles) {
+	return {
+		articles: $articles,
+		currentPage: 1,
+		perPage: 6,
+		queryParams: new URLSearchParams(window.location.search),
+		start() {
+			// Set query params to variables
+			if (this.queryParams.get('pg')) {
+				if (parseInt(this.queryParams.get('pg')) > this.totalPages) {
+					this.currentPage = this.totalPages
+					this.updateUrl()
+				} else {
+					this.currentPage = parseInt(this.queryParams.get('pg'))
+				}
+			}
+
+			// Watch filter options and upadte url on change
+			this.$watch('currentPage', () => this.updateUrl())
+		},
+		get totalPages() {
+			return Math.ceil(this.filteredArticles.length / this.perPage)
+		},
+		get filteredArticles() {
+			let filteredArticles = this.articles;
+
+			return filteredArticles
+		},
+		get displayedArticles() {
+			return this.filteredArticles.slice(
+				(this.currentPage - 1) * this.perPage,
+				this.currentPage * this.perPage
+			)
+		},
+		updateUrl() {
+			this.$nextTick(() => {
+				if (this.currentPage != 1) {
+					this.queryParams.set('pg', this.currentPage)
+				} else {
+					this.queryParams.delete('pg')
+				}
+
+				if (this.queryParams.size === 0) {
+					window.history.replaceState(
+						{},
+						'',
+						window.location.protocol.concat(
+							'//',
+							window.location.host,
+							window.location.pathname
+						)
+					)
+				} else {
+					window.history.replaceState({}, '', `?${this.queryParams.toString()}`)
+				}
+			})
+		},
+		getUrl(newPage) {
+			let tempQueryParams = this.queryParams
+
+			if (newPage != 1) {
+				this.queryParams.set('pg', newPage)
+			} else {
+				this.queryParams.delete('pg')
+			}
+
+			if (tempQueryParams.size === 0) {
+				return window.location.protocol.concat(
+					'//',
+					window.location.host,
+					window.location.pathname
+				)
+			}
+
+			return '?' + this.queryParams.toString()
+		}
+	}
+}

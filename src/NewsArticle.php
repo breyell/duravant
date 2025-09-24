@@ -22,16 +22,9 @@ class NewsArticle extends Post implements JsonSerializable
 		return [
 			'id' => $this->id,
 			'title' => $this->title(),
-			// 'website' => $this->website,
-			// 'logo' => [
-			// 	'src' => $image->src,
-			// 	'srcset' => $image->srcset(),
-			// 	'alt' => $image->alt,
-			// 	'width' => $image->width,
-			// 	'height' => $image->height,
-			// ],
-			// 'previewHeading' => $this->preview_heading,
-			// 'previewBody' => $this->preview_body,
+			'link' => $this->link(),
+			'date' => $this->date(),
+			'preview' => $this->article_preview(),
 		];
 	}
 }

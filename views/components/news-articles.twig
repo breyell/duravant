@@ -1,0 +1,60 @@
+{% set news_articles = get_posts({
+  post_type: 'news',
+  order: 'ASC',
+}) %}
+
+{% set news_data = news_articles|escape('js')|json_encode %}
+
+<section
+  x-data='newsFilter({{ news_data }})'
+  x-init="start()"
+  class="fluid-grid my-8"
+>
+  <div class="span-content grid grid-cols-subgrid">
+    {# Text shown when there are Articles #}
+    <div x-show="filteredArticles.length > 0" class="span-lg text-h6">Showing <span x-text="(currentPage - 1)*perPage + 1"></span>-<span x-text="currentPage*perPage < filteredArticles.length ? currentPage*perPage : filteredArticles.length"></span> of <span x-text="filteredArticles.length"></span> Articles</div>
+    <div class="span-content grid grid-cols-subgrid mt-8 lg:mt-16">
+      <div class="span-lg grid grid-cols-subgrid" x-auto-animate>
+        <template
+          x-for="article in displayedArticles"
+          :key="article.id"
+        >
+          <div class="group col-span-12">
+            <article class="relative space-y-2">
+              <h2
+                x-text="article.title"
+                class="text-h5 uppercase"
+              ></h2>
+              <div
+                x-text="article.date"
+                class="text-body-medium"
+              ></div>
+              <div
+                x-show="article.preview"
+                x-text="article.preview"
+                class="text-body-medium"
+              ></div>
+              <div class="">
+                <a
+                  :href="article.link"
+                  class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
+                >
+                  <span class="text-body-medium">Read More</span>
+                  {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
+                  <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
+                </a>
+              </div>
+            </article>
+            <div class="group-last:hidden w-full h-px bg-gray my-12"></div>
+          </div>
+        </template>
+      </div>
+      <div
+        x-show="filteredArticles.length > 0"
+        class="span-content"
+      >
+        {{ include('components/filter/pagination.twig') }}
+      </div>
+    </div>
+  </div>
+</section>

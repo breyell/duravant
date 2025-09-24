@@ -47,7 +47,7 @@
           {% for category in post.terms('blog-category') %}
             {# link needs updating #}
             <a
-              href="#{{ category.slug }}"
+              href="{{ blog_page_url }}#{{ category.slug }}"
               class="text-body-medium text-blue-deep transition-colors hover:text-black"
             >{{ category.name }}</a>
             <div class="hidden md:block h-10 w-px mx-6 bg-blue-dark"></div>

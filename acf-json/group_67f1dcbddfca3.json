@@ -343,7 +343,7 @@
                     "sub_fields": [],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_thumbnail": "1900",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -736,7 +736,7 @@
                     ],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_thumbnail": "1901",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -1276,7 +1276,7 @@
                     "sub_fields": [],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_thumbnail": "1906",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -1741,5 +1741,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1758662190
+    "modified": 1758731014
 }
