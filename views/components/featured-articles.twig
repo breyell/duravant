@@ -55,7 +55,7 @@
             {% endif %}
           "
         >
-          {{ ResponsiveImage(article.image, {
+          {{ ResponsiveImage(article.image ?: fallback_article_image, {
             class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
             sizes: '(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw',
           }) }}

@@ -13,7 +13,7 @@
   }) }}
   <div class="fluid-grid gap-y-6 relative">
     <div class="span-content lg:hidden">
-      {{ ResponsiveImage(article.blog_hero.image, {
+      {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
         class: 'w-full aspect-[1.44] object-cover',
         sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
       }) }}
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="hidden lg:block col-start-[col-7] col-end-[content-end]">
-      {{ ResponsiveImage(article.blog_hero.image, {
+      {{ ResponsiveImage(article.blog_hero.image ?: fallback_article_image, {
         class: 'w-full aspect-[1.44] object-cover',
         sizes: '(min-width: 1376px) 616px, (min-width: 1024px) 50vw, 100vw',
       }) }}
