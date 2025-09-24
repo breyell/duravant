@@ -1,6 +1,7 @@
-export default function ($articles) {
+export default function (articles, blogCategories) {
 	return {
-		articles: $articles,
+		articles: articles,
+		blogCategories: blogCategories,
 		selectedBlogCategory: '',
 		currentPage: 1,
 		perPage: 12,
@@ -8,7 +9,7 @@ export default function ($articles) {
 		start() {
 			// Set query params to variables
 			if (this.queryParams.get('category')) {
-				this.selectedBlogCategory = this.queryParams.get('category').split(',')
+				this.selectedBlogCategory = this.queryParams.get('category')
 			}
 
 			if (this.queryParams.get('pg')) {
@@ -30,6 +31,9 @@ export default function ($articles) {
 				this.currentPage = 1
 			})
 			this.$watch('currentPage', () => this.updateUrl())
+		},
+		categoryBySlug(slug) {
+			return blogCategories.find((category) => slug === category.slug).name
 		},
 		get totalPages() {
 			return Math.ceil(this.filteredArticles.length / this.perPage)

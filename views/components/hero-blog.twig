@@ -43,36 +43,38 @@
     {% endif %}
     <div class="span-lg mt-8 mb-12 flex flex-col gap-y-4 md:flex-row">
       <div class="grow flex flex-col gap-y-4 md:flex-row md:items-center">
-        <div class="flex flex-col gap-y-4 md:flex-row md:items-center">
-          {% for category in post.terms('blog-category') %}
-            {# link needs updating #}
+        <div class="flex flex-col mt-2 gap-y-2">
+          <div class="text-body-medium">{{ post.date }}</div>
+          <div class="flex">
+            {% for category in post.terms('blog-category') %}
+              <a
+                href="{{ blog_page_url }}?category={{ category.slug }}"
+                class="text-body-medium text-blue-deep transition-colors hover:text-gray-dark"
+              >{{ category.name }}</a>{% if not loop.last %}<span class="pr-1">,</span>{% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="flex items-center">
+          <div class="text-body-medium mr-3">Share</div>
+          {% for item in [
+            { platform: 'linkedin', link_prefix: 'https://www.linkedin.com/sharing/share-offsite/?url=' },
+            { platform: 'x', link_prefix: 'https://x.com/intent/tweet?url=' },
+            { platform: 'facebook', link_prefix: 'https://www.facebook.com/sharer/sharer.php?u=' },
+          ] %}
             <a
-              href="{{ blog_page_url }}#{{ category.slug }}"
-              class="text-body-medium text-blue-deep transition-colors hover:text-black"
-            >{{ category.name }}</a>
-            <div class="hidden md:block h-10 w-px mx-6 bg-blue-dark"></div>
+              href="{{ item.link_prefix }}{{ post.link }}"
+              target="_blank"
+              class="inline-flex items-center justify-center size-10 hover:text-blue"
+            >
+              <div class="sr-only">Share this article on {{ item.platform }}</div>
+              <div class="size-4">
+                {{ include('svgs/social/' ~ item.platform ~ '.twig') }}
+              </div>
+            </a>
           {% endfor %}
         </div>
-        <div class="text-body-medium">{{ post.date }}</div>
-      </div>
-      <div class="flex items-center md:justify-end">
-        <div class="text-body-medium mr-3">Share</div>
-        {% for item in [
-          { platform: 'linkedin', link_prefix: 'https://www.linkedin.com/sharing/share-offsite/?url=' },
-          { platform: 'x', link_prefix: 'https://x.com/intent/tweet?url=' },
-          { platform: 'facebook', link_prefix: 'https://www.facebook.com/sharer/sharer.php?u=' },
-        ] %}
-          <a
-            href="{{ item.link_prefix }}{{ post.link }}"
-            target="_blank"
-            class="inline-flex items-center justify-center size-10 hover:text-blue"
-          >
-            <div class="sr-only">Share this article on {{ item.platform }}</div>
-            <div class="size-4">
-              {{ include('svgs/social/' ~ item.platform ~ '.twig') }}
-            </div>
-          </a>
-        {% endfor %}
       </div>
     </div>
   </div>

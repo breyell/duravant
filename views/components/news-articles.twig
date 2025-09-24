@@ -1,6 +1,7 @@
 {% set news_articles = get_posts({
   post_type: 'news',
-  order: 'ASC',
+  posts_per_page: -1,
+  order: 'DESC',
 }) %}
 
 {% set news_data = news_articles|escape('js')|json_encode %}
@@ -19,11 +20,11 @@
           x-for="article in displayedArticles"
           :key="article.id"
         >
-          <div class="group col-span-12">
+          <div class="group span-lg">
             <article class="relative space-y-2">
               <h2
                 x-text="article.title"
-                class="text-h5 uppercase"
+                class="text-h5"
               ></h2>
               <div
                 x-text="article.date"

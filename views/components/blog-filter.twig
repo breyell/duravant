@@ -1,5 +1,6 @@
 {% set blog_articles = get_posts({
   post_type: 'blog',
+  order: 'DESC',
   posts_per_page: -1,
 }) %}
 
@@ -8,9 +9,10 @@
 }) %}
 
 {% set blog_data = blog_articles|escape('js')|json_encode %}
+{% set blog_categories_data = blog_categories|escape('js')|json_encode %}
 
 <section
-  x-data='blogFilter({{ blog_data }})'
+  x-data='blogFilter({{ blog_data }}, {{ blog_categories_data }})'
   x-init="start()"
   class="fluid-grid my-8"
 >
@@ -27,7 +29,7 @@
     {# Text shown when there are Articles #}
     <div x-show="filteredArticles.length > 0" class="span-content text-h6 md:col-start-[col-7] md:col-end-[content-end] md:text-right mt-8 md:mt-0">Showing <span x-text="(currentPage - 1)*perPage + 1"></span>-<span x-text="currentPage*perPage < filteredArticles.length ? currentPage*perPage : filteredArticles.length"></span> of <span x-text="filteredArticles.length"></span> Articles</div>
     {# Text shown when there are ZERO Articles #}
-    <div x-show="filteredArticles.length === 0" class="text-h5">No Articles</div>
+    <div x-show="filteredArticles.length === 0" class="span-content text-h5 mt-8">No Articles</div>
     <div class="span-content grid grid-cols-subgrid mt-8 lg:mt-16">
       <div class="span-content grid grid-cols-subgrid gap-y-12" x-auto-animate>
         {# No results  #}
@@ -50,26 +52,43 @@
               sizes="(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw"
               loading="lazy"
             >
-            <h2
-              x-text="article.title"
-              class="text-h5 text-balance mt-6"
-            ></h2>
+            <h2 class="mt-6">
+              <a
+                x-text="article.title"
+                :href="article.link"
+                class="text-h5 text-balance hover:underline"
+              ></a>
+            </h2>
+            <div class="flex flex-col mt-2 gap-y-2">
+              <div
+                x-text="article.date"
+                class="text-body-medium"
+              ></div>
+              <div class="flex">
+                <template x-for="(category, index) in article.blogCategories">
+                  <span class="flex">
+                    <a
+                      x-text="categoryBySlug(category)"
+                      :href="'{{ blog_page_url }}?category='.category"
+                      class="text-body-medium text-blue-deep transition-colors hover:text-gray-dark"
+                    ></a>
+                    <span
+                      :class="{ 'hidden': index === article.blogCategories.length - 1 }"
+                      class="pr-1"
+                    >,</span>
+                  </span>
+                </template>
+              </div>
+            </div>
             <p
               x-show="article.preview"
               x-text="article.preview"
               class="text-body-medium mt-2"
             ></p>
             <div class="mt-2.5">
-              <a
-                class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
-                :href="article.link"
-              >
-                <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
-                <span class="absolute inset-0"></span>
-                {{ include('svgs/arrow-right.twig', {
-                  class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1',
-                }) }}
-              </a>
+              <div class="inline-flex gap-x-1.5 items-center">
+                {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25' }) }}
+              </div>
             </div>
           </article>
         </template>

@@ -4,17 +4,22 @@
 >
   <ol class="flex flex-wrap">
     {% for crumb in breadcrumbs %}
+      {% if crumb.title|length > 30 %}
+        {% set crumb_title = crumb.title|slice(0, 30) ~ '...' %}
+      {% else %}
+        {% set crumb_title = crumb.title %}
+      {% endif %}
       <li>
         {% if loop.last %}
           <span
             class="text-body-small text-bold text-gray"
             aria-current="page"
-          >{{ crumb.title }}</span>
+          >{{ crumb_title }}</span>
         {% else %}
           <a
             class="text-body-small text-gray transition-colors hover:text-blue-deep"
             href="{{ crumb.link }}"
-          >{{ crumb.title }}</a>
+          >{{ crumb_title }}</a>
           <span class="text-body-small text-gray px-4">/</span>
         {% endif %}
       </li>
