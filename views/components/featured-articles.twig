@@ -68,7 +68,6 @@
               href="{{ article.link }}"
               target="{{ link_target | default('_self') }}"
             >
-              <span class="text-body-medium">{{ article.link.title }}</span>
               <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
               <span class="absolute inset-0"></span>
               {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
