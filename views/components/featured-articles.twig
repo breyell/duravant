@@ -32,7 +32,7 @@
             heading: blog_article.blog_hero.heading,
             body: blog_article.article_preview,
             link: blog_article.link,
-            date: blog_article.post_date|date("F d, Y"),
+            date: blog_article.post_date|date("M d, Y"),
             categories: blog_article.terms('blog-category'),
           } %}
         {% else %}
@@ -58,49 +58,58 @@
           "
         >
           {{ ResponsiveImage(article.image ?: fallback_article_image, {
-            class: 'w-full object-cover aspect-[1.44] ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
+            class: 'w-full object-cover aspect-[1.44] mb-6 ' ~ (layout == 'sixty-forty' and not loop.first ? 'md:aspect-square'),
             sizes: '(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw',
           }) }}
           {% if article.date %}
-            <h2 class="text-h5 text-balance mt-6">
-              <a
-                href="{{ article.link }}"
-                class="hover:underline"
-              >{{ article.heading }}</a>
-            </h2>
-          {% else %}
-            <h2 class="text-h5 text-balance mt-6">{{ article.heading }}</h2>
-          {% endif %}
-          {% if article.date %}
-            <div class="flex flex-col mt-2 gap-y-2">
-              <div class="text-body-medium">{{ article.date }}</div>
-              <div class="flex">
+            <div class="flex flex-wrap gap-2 items-center">
+              <div class="text-body-small">{{ article.date }}</div>
+              <div class="flex flex-wrap gap-2">
                 {% for category in article.categories %}
                   <a
                     href="{{ blog_page_url }}?category={{ category.slug }}"
-                    class="text-body-medium text-blue-deep transition-colors hover:text-gray-dark"
-                  >{{ category.name }}</a>{% if not loop.last %}<span class="pr-1">,</span>{% endif %}
+                    class="category-pill"
+                  >{{ category.name }}</a>
                 {% endfor %}
               </div>
             </div>
           {% endif %}
-          <p class="text-body-medium mt-2">{{ article.body }}</p>
-          <div class="mt-2.5">
+          <div
             {% if article.date %}
-              <div class="inline-flex gap-x-1.5 items-center">
-                {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25' }) }}
-              </div>
-            {% else %}
-              <a
-                class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
-                href="{{ article.link }}"
-                target="{{ link_target | default('_self') }}"
-              >
-                <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
-                <span class="absolute inset-0"></span>
-                {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
-              </a>
+              class="relative"
             {% endif %}
+          >
+            {% if article.date %}
+              <h2 class="text-h5 mt-2 text-balance">
+                <a
+                  href="{{ article.link }}"
+                  class="hover:underline"
+                >
+                  <span class="">{{ article.heading }}</span>
+                  <span class="absolute inset-0"></span>
+                </a>
+              </h2>
+            {% else %}
+              <h2 class="text-h5 mt-2 text-balance">{{ article.heading }}</h2>
+            {% endif %}
+            <p class="text-body-medium mt-2">{{ article.body }}</p>
+            <div class="mt-2.5">
+              {% if article.date %}
+                <div class="inline-flex gap-x-1.5 items-center">
+                  {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25' }) }}
+                </div>
+              {% else %}
+                <a
+                  class="group p-3 -m-3 inline-flex gap-x-1.5 items-center"
+                  href="{{ article.link }}"
+                  target="{{ link_target | default('_self') }}"
+                >
+                  <span class="absolute -inset-3 sm:-inset-4 border-4 border-blue opacity-0 transition-opacity group-hover:opacity-100"></span>
+                  <span class="absolute inset-0"></span>
+                  {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25 transition-transform group-hover:translate-x-1' }) }}
+                </a>
+              {% endif %}
+            </div>
           </div>
         </article>
       {% endfor %}

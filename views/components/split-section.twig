@@ -1,4 +1,11 @@
-<section class="fluid-grid">
+<section
+  class="
+    fluid-grid
+    {% if background_color == 'bone' %}
+      bg-bone
+    {% endif %}
+  "
+>
   {% if image_side == 'left' %}
     <div class="hidden lg:block span-content lg:col-end-[col-7]">
       <div
@@ -24,7 +31,9 @@
     "
   >
     <div class="inline-block">
-      <h2 class="text-h4 inline-block">{{ heading }}</h2>
+      {% if heading %}
+        <h2 class="text-h4 inline-block">{{ heading }}</h2>
+      {% endif %}
       <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
     </div>
     <div class="wysiwyg">{{ wysiwyg }}</div>

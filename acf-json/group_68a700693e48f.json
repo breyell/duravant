@@ -3,6 +3,32 @@
     "title": "Component - Split Section",
     "fields": [
         {
+            "key": "field_68d4bb16eb2a6",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "bone": "Bone"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_68a7209206fc1",
             "label": "Image Side",
             "name": "image_side",
@@ -183,5 +209,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757607278
+    "modified": 1758772023
 }

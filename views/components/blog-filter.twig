@@ -27,7 +27,7 @@
       {% endfor %}
     </select>
     {# Text shown when there are Articles #}
-    <div x-show="filteredArticles.length > 0" class="span-content text-h6 md:col-start-[col-7] md:col-end-[content-end] md:text-right mt-8 md:mt-0">Showing <span x-text="(currentPage - 1)*perPage + 1"></span>-<span x-text="currentPage*perPage < filteredArticles.length ? currentPage*perPage : filteredArticles.length"></span> of <span x-text="filteredArticles.length"></span> Articles</div>
+    <div x-show="filteredArticles.length > 0" class="span-content text-h6 md:col-start-[col-7] md:col-end-[content-end] md:text-right md:self-center mt-8 md:mt-0">Showing <span x-text="(currentPage - 1)*perPage + 1"></span>-<span x-text="currentPage*perPage < filteredArticles.length ? currentPage*perPage : filteredArticles.length"></span> of <span x-text="filteredArticles.length"></span> Articles</div>
     {# Text shown when there are ZERO Articles #}
     <div x-show="filteredArticles.length === 0" class="span-content text-h5 mt-8">No Articles</div>
     <div class="span-content grid grid-cols-subgrid mt-8 lg:mt-16">
@@ -48,55 +48,50 @@
               :srcset="article.image.srcset || '{{ fallback_article_image.srcset }}'"
               :width="article.image.width  || '{{ fallback_article_image.width }}'"
               :height="article.image.height || '{{ fallback_article_image.height }}'"
-              class="w-full object-cover aspect-[1.44]"
+              class="w-full object-cover aspect-[1.44] mb-6"
               sizes="(min-width: 1376px) 395px, (min-width: 768px) 33vw, 100vw"
               loading="lazy"
             >
-            <h2 class="mt-6">
-              <a
-                x-text="article.title"
-                :href="article.link"
-                class="text-h5 text-balance hover:underline"
-              ></a>
-            </h2>
-            <div class="flex flex-col mt-2 gap-y-2">
+            <div class="flex flex-wrap gap-2 items-center">
               <div
                 x-text="article.date"
-                class="text-body-medium"
+                class="text-body-small"
               ></div>
-              <div class="flex">
-                <template x-for="(category, index) in article.blogCategories">
-                  <span class="flex">
-                    <a
-                      x-text="categoryBySlug(category)"
-                      :href="'{{ blog_page_url }}?category=' + category"
-                      class="text-body-medium text-blue-deep transition-colors hover:text-gray-dark"
-                    ></a>
-                    <span
-                      :class="{ 'hidden': index === article.blogCategories.length - 1 }"
-                      class="pr-1"
-                    >,</span>
-                  </span>
+              <div class="flex flex-wrap gap-2">
+                <template x-for="category in article.blogCategories">
+                  <a
+                    x-text="categoryBySlug(category)"
+                    :href="'{{ blog_page_url }}?category=' + category"
+                    class="category-pill"
+                  ></a>
                 </template>
               </div>
             </div>
-            <p
-              x-show="article.preview"
-              x-text="article.preview"
-              class="text-body-medium mt-2"
-            ></p>
-            <div class="mt-2.5">
-              <div class="inline-flex gap-x-1.5 items-center">
-                {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25' }) }}
+            <div class="relative">
+              <h2 class="text-h5 mt-2 text-balance">
+                <a
+                  :href="article.link"
+                  class="hover:underline"
+                >
+                  <span x-text="article.title"></span>
+                  <span class="absolute inset-0"></span>
+                </a>
+              </h2>
+              <p
+                x-show="article.preview"
+                x-text="article.preview"
+                class="text-body-medium mt-2"
+              ></p>
+              <div class="mt-2.5">
+                <div class="inline-flex gap-x-1.5 items-center">
+                  {{ include('svgs/arrow-right.twig', { class: 'inline-block size-4 translate-y-0.25' }) }}
+                </div>
               </div>
             </div>
           </article>
         </template>
       </div>
-      <div
-        x-show="filteredArticles.length > 0"
-        class="span-content"
-      >
+      <div class="span-content">
         {{ include('components/filter/pagination.twig') }}
       </div>
     </div>

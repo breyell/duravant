@@ -3,6 +3,28 @@
     "title": "Component - Logo Cloud",
     "fields": [
         {
+            "key": "field_68d4bda3ad7a1",
+            "label": "Narrower Logo Section on Desktop",
+            "name": "narrower_logo_section_desktop",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "",
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_687fb322adf87",
             "label": "Heading",
             "name": "heading",
@@ -193,5 +215,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1753199877
+    "modified": 1758772705
 }
