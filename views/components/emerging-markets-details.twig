@@ -30,7 +30,10 @@
           {% endif %}
           {% if market.link %}
             <div class="">
-              {{ include('partials/arrow-link-small.twig', market.link) }}
+              {{ include('partials/arrow-link-small.twig', {
+                ...market.link,
+                link: market.link.url,
+              }) }}
             </div>
           {% endif %}
         </div>
