@@ -343,7 +343,7 @@
                     "sub_fields": [],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "1900",
+                    "acfe_flexible_thumbnail": "",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -652,6 +652,26 @@
                     "acfe_layout_col": "auto",
                     "acfe_layout_allowed_col": false
                 },
+                "layout_68d58bbb5354f": {
+                    "key": "layout_68d58bbb5354f",
+                    "name": "events",
+                    "label": "Events",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_layout_locations": [],
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false,
+                    "acfe_layout_col": "auto",
+                    "acfe_layout_allowed_col": false
+                },
                 "layout_6899f2a403f64": {
                     "key": "layout_6899f2a403f64",
                     "name": "faq",
@@ -736,7 +756,7 @@
                     ],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "1901",
+                    "acfe_flexible_thumbnail": "",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -1276,7 +1296,7 @@
                     "sub_fields": [],
                     "min": "",
                     "max": "",
-                    "acfe_flexible_thumbnail": "1906",
+                    "acfe_flexible_thumbnail": "",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -1741,5 +1761,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1758731014
+    "modified": 1758825414
 }
