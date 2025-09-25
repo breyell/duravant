@@ -30,12 +30,12 @@
       {% endif %}
     "
   >
-    <div class="inline-block">
-      {% if heading %}
+    {% if heading %}
+      <div class="inline-block">
         <h2 class="text-h4 inline-block">{{ heading }}</h2>
-      {% endif %}
-      <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
-    </div>
+        <div class="w-full h-1 gradient-light bg-linear-to-r my-3"></div>
+      </div>
+    {% endif %}
     <div class="wysiwyg">{{ wysiwyg }}</div>
     <div class="mt-6 flex gap-6">
       {% for item in links %}
