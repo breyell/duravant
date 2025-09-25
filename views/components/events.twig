@@ -52,14 +52,12 @@
           </div>
           <div class="text-body-medium">
             {% if event.end_date %}
-              {{ event.date_or_start_date }} - {{ event.end_date }}
               {% if event.date_or_start_date|date('F') == event.end_date|date('F') %}
                 {{ event.date_or_start_date|date('F j') }} - {{ event.end_date|date('j, Y') }}
               {% else %}
                 {{ event.date_or_start_date|date('F j') }} - {{ event.end_date|date('F j, Y') }}
               {% endif %}
             {% else %}
-              {{ event.date_or_start_date }}
               <div class="text-body-medium">{{ event.date_or_start_date|date('F j, Y') }}</div>
             {% endif %}
           </div>
