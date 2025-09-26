@@ -179,7 +179,10 @@
     "label_placement": "left",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content"
+        "the_content",
+        "permalink",
+        "preview",
+        "slug"
     ],
     "active": true,
     "description": "",
@@ -191,5 +194,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1758828167
+    "modified": 1758850857
 }

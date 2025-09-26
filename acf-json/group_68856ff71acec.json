@@ -113,7 +113,10 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "the_content",
-        "discussion"
+        "discussion",
+        "permalink",
+        "preview",
+        "slug"
     ],
     "active": true,
     "description": "",
@@ -125,5 +128,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755412471
+    "modified": 1758850896
 }

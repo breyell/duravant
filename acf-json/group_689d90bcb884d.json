@@ -63,7 +63,9 @@
     "hide_on_screen": [
         "comments",
         "the_content",
-        "permalink"
+        "permalink",
+        "preview",
+        "slug"
     ],
     "active": true,
     "description": "",
@@ -75,5 +77,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1755408948
+    "modified": 1758850922
 }

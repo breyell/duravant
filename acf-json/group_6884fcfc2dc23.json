@@ -256,7 +256,10 @@
     "hide_on_screen": [
         "comments",
         "the_content",
-        "discussion"
+        "discussion",
+        "permalink",
+        "preview",
+        "slug"
     ],
     "active": true,
     "description": "",
@@ -268,5 +271,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1757524855
+    "modified": 1758850799
 }
