@@ -79,10 +79,6 @@
 	@apply inline-flex items-center px-2 py-1 font-aktiv-grotesk font-normal text-sm !leading-none text-gray-dark border border-blue-baby bg-blue-baby rounded-full transition-colors hover:bg-blue hover:border-blue;
 }
 
-/* @utility button-small {
-	@apply inline-flex items-center font-aktiv-grotesk-extended font-semibold text-xs leading-none uppercase text-gray-dark bg-blue px-4 py-2 rounded-full transition-colors hover:bg-blue-dark;
-} */
-
 @utility wysiwyg {
 	@apply space-y-3.5 *:first:mt-0 *:last:mb-0;
 
